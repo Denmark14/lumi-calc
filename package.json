@@ -4,7 +4,10 @@
   "repository": "github:smogon/damage-calc",
   "license": "MIT",
   "dependencies": {
-    "@smogon/calc": "file:calc"
+    "@smogon/calc": "file:calc",
+    "csv": "^6.2.7",
+    "csv-parse": "^5.3.5",
+    "csvtojson": "^2.0.10"
   },
   "devDependencies": {
     "eslint": "^8.27.0",
