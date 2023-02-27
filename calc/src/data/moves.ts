@@ -4751,7 +4751,6 @@ const SV_PATCH: {[name: string]: DeepPartial<MoveData>} = {
 const SV: {[name: string]: MoveData} = extend(true, {}, SS, SV_PATCH);
 
 export const MOVES = [{}, RBY, GSC, ADV, DPP, BW, XY, SM, SS, SV];
-
 export class Moves implements I.Moves {
   private readonly gen: I.GenerationNum;
 

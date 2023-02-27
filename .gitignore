@@ -6,3 +6,6 @@ eslint-cache/
 Thumbs.db
 pnpm-debug.log
 npm-debug.log
+
+# Lumi additions
+output
