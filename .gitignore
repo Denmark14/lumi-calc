@@ -9,3 +9,5 @@ npm-debug.log
 
 # Lumi additions
 output
+
+!/dist/index.html
