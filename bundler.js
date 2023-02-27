@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const babel = require('@babel/core');
 const terser = require('terser');
-
+const lumiSetBuilder = require('./handleTrainers');
 const config = {
   compact: false,
   plugins: [
@@ -32,6 +32,7 @@ const config = {
 class Bundler {
   constructor(dirname) {
     this.built = path.resolve(dirname, 'dist');
+    lumiSetBuilder();
   }
 
   read(f, b = 0, e = 0) {
