@@ -1,117 +1,41 @@
 const fs = require('fs');
 const path = require('path')
+const trainerData = require('../input/TrainerTable.json');
+const parentFilePath = path.resolve(__dirname, '..');
+const rawDocumentFile = fs.readFileSync(path.join(parentFilePath, 'input', 'docs.csv'), 'utf-8');
+const {generateTrainerName} = require('./trainerUtils');
+const { 
+    getAbilityIdFromAbilityName,
+    getAbilityString,
+    getPokemonName,
+    getPokemonMonsNoFromName,
+    getNatureId,
+    getNatureName,
+    getItemIdFromItemName,
+    getItemString,
+    getMoves,
+    getMoveId,
+    getMoveString,
+    generateMovesViaLearnset,
+} = require('./pokemonUtils');
 
-const pokemonData = require('./input/PersonalTable.json');
-const trainerData = require('./input/TrainerTable.json');
-const NameData = require('./input/english_ss_monsname.json');
-const AbilityNameData = require('./input/english_ss_tokusei.json');
-const typeNameData = require('./input/english_ss_typename.json');
-const formNames = require('./input/english_ss_zkn_form.json');
-const learnset = require('./input/WazaOboeTable.json');
-const natureNameData = require('./input/english_ss_seikaku.json');
-const itemNameData = require('./input/english_ss_itemname.json');
-const SMOGON_MOVES = require('./input/moves.json');
-
-const rawDocumentFile = fs.readFileSync(path.join(__dirname, 'input', 'docs.csv'), 'utf-8');
-const moveEnum = fs.readFileSync(path.join(__dirname, 'input', 'moves.txt'), 'utf-8').split('\n').map(e => e.trim()).filter(e => e);
-
-function getTypes(e) {
-    return e.type1 === e.type2 ? [getTypeName(e.type1)] : [getTypeName(e.type1), getTypeName(e.type2)];
+if(!fs.existsSync(path.join(parentFilePath, 'output'))) {
+    fs.mkdirSync(path.join(parentFilePath, 'output'));
 }
 
-function getTypeName(typeId) {
-    return typeNameData.labelDataArray[typeId].wordDataArray[0].str;
+if(!fs.existsSync(path.join(parentFilePath, 'output', 'LumiMons.json'))) {
+    require('./createLumiMons')();
 }
 
-function makeAbilityObject(ha) {
-    const abilitiyString = AbilityNameData.labelDataArray[ha].wordDataArray[0].str;
-
-    return { 0: abilitiyString };
+if(!fs.existsSync(path.join(parentFilePath, 'output', 'missingTrainers.json'))) {
+    require('./createMissingTrainers')();
 }
 
-function getPokemonName(id) {
-    try {
-        const Name = NameData.labelDataArray[id].wordDataArray[0].str;
-        Name.replace('♀', '-F')
-        Name.replace('♂', '-M')
-        Name.replace('’', '\u2019')
-        return Name;
-    } catch (e) {
-        console.error(id, e);
-    }
-}
-
-function getFormName(id) {
-    switch (id) {
-        case 1131:
-            return 'Ash-Greninja'
-        case 1174:
-            return 'Meowstic-F'
-        case 1199:
-            return 'Rockruff Own-Tempo'
-        case 1330:
-            return 'Indeedee-F'
-        case 1343:
-            return 'Basculegion-F'
-        default:
-            return formNames.labelDataArray[id].wordDataArray[0].str;
-    }
-}
-
-function getGender(sex) {
-    if (sex === 0) return 'M';
-    if (sex === 254) return 'F';
-    if (sex === 255) return 'N';
-    return null;
-}
-
-const speciesData = pokemonData.Personal.reduce((pkmn, e, i) => {
-    if (i === 0) return pkmn;
-
-    const formIndex = e.form_index;
-    if (formIndex === 0 || e.id === e.monsno) {
-        const name = getPokemonName(e.monsno);
-        pkmn[name] = {};
-        pkmn[name].types = getTypes(e);
-        pkmn[name].bs = { hp: e.basic_hp, at: e.basic_atk, df: e.basic_def, sa: e.basic_spatk, sd: e.basic_spdef, sp: e.basic_agi }
-        pkmn[name].weightkg = e.weight / 10;
-        pkmn[name].abilities = makeAbilityObject(e.tokusei3)
-
-        const g = getGender(e.sex);
-        if (g) {
-            pkmn[name].gender = g;
-        }
-
-        return pkmn;
-    }
-
-    const name = getPokemonName(e.monsno);
-    const formName = getFormName(i);
-
-    if (!formName) {
-        console.warn('Form Error:', i, formName,Name);
-    }
-    if (!pkmn[name].hasOwnProperty('otherFormes')) {
-        pkmn[name].otherFormes = [];
-    }
-    pkmn[name].otherFormes.push(formName);
-    pkmn[formName] = {}
-    pkmn[formName].types = getTypes(e);
-    pkmn[formName].bs = { hp: e.basic_hp, at: e.basic_atk, df: e.basic_def, sa: e.basic_spatk, sd: e.basic_spdef, sp: e.basic_agi }
-    pkmn[formName].weightkg = e.weight / 10;
-    pkmn[formName].abilities = makeAbilityObject(e.tokusei3)
-    const g = getGender(e.sex);
-    if (g) {
-        pkmn[formName].gender = g;
-    }
-    pkmn[formName].baseSpecies = name;
-    return pkmn;
-}, {})
-
-fs.writeFileSync(path.join(__dirname, 'output', 'LumiMons.json'), JSON.stringify(speciesData, null, 2), 'utf-8');
+const speciesData = require(path.join(parentFilePath, 'output', 'LumiMons.json'));
+const missingTrainers = require(path.join(parentFilePath, 'output', 'missingTrainers.json'));
 
 const docSets = [];
-
+const trainerDocs = [];
 const partyMatchups = [];
 const abilityMatchups = [];
 const moveMatchups = [];
@@ -129,60 +53,71 @@ function stripTypeFromHiddenPower(str) {
     return str.substring(0, i).trim();
 }
 
-function generateDocPokemonObject(name, level, nature, ability, itemName, move1, move2, move3, move4, ivs, evs, id, pNum) {
+function generateDocPokemonObject(documentName, documentLevel, documentNature, documentAbility, documentItemName, documentMove1, documentMove2, documentMove3, documentMove4, ivs, evs, id, pNum) {
 
-    const monsno = NameData.labelDataArray.findIndex(e => e.wordDataArray[0].str === name)
+    const documentMonsNo = getPokemonMonsNoFromName(documentName);
+    if (!documentName || !documentLevel || isNaN(parseInt(documentLevel))) return;
 
-    if (!name || !level || isNaN(parseInt(level))) return;
-
-    if (monsno === -1) {
-        console.error(`Unhandled MonsNo: ${monsno}, ${name}, ${id}`);
+    if (documentMonsNo === -1) {
+        console.error(`Unhandled MonsNo: ${documentMonsNo}, ${documentName}, ${id}`);
         return;
     };
 
-    const abilityId = AbilityNameData.labelDataArray.findIndex(e => e.wordDataArray[0].str === ability);
-
+    const documentAbilityId = getAbilityIdFromAbilityName(documentAbility);
     const trainerPokeData = trainerData.TrainerPoke[id];
+
     if (trainerPokeData === undefined) {
-        console.warn(id)
-        throw new Error(`${name || 'undefined'} - ${id || 'undefined'}`);
+        console.warn(`Invalid Trainer ID: ${id}`);
+        throw new Error(`${documentName || 'undefined'} - ${id || 'undefined'}`);
     }
+
     const propName = `P${pNum}`;
     const gameMonsNo = trainerPokeData[`${propName}MonsNo`]
-    const gameMonsName = NameData.labelDataArray[gameMonsNo]?.wordDataArray[0].str;
-    if (gameMonsNo !== monsno) {
-        partyMatchups.push(`Bad party matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum}\n\tDocs: ${name}\n\tGame: ${gameMonsName}`)
+    const gameMonsName = getPokemonName(gameMonsNo);
+    const gameMonLevel = trainerPokeData[`${propName}Level`];
+
+    if (gameMonsNo !== documentMonsNo) {
+        partyMatchups.push(`Bad party matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum}\n\tDocs: ${documentName}\n\tGame: ${gameMonsName}`)
         return;
     }
+
     const trainerAbilityId = trainerPokeData[`${propName}Tokusei`];
-    const abilityMatch = trainerAbilityId === abilityId;
+    const abilityMatch = trainerAbilityId === documentAbilityId;
     if (!abilityMatch) {
-        abilityMatchups.push(`Party ID ${id} - ${getPokemonName(monsno)}\nDocs ability: ${ability || 'undefined'} - ${abilityId}\nGamedata Ability: ${getAbilityString(trainerAbilityId) || 'undefined'} - ${trainerAbilityId}`)
+        abilityMatchups.push(`Party ID ${id} - ${getPokemonName(documentMonsNo)}\nDocs ability: ${documentAbility || 'undefined'} - ${documentAbilityId}\nGamedata Ability: ${getAbilityString(trainerAbilityId) || 'undefined'} - ${trainerAbilityId}`)
     }
 
-    if (move1.includes('Hidden Power')) {
-        move1 = stripTypeFromHiddenPower(move1);
+    if (documentMove1.includes('Hidden Power')) {
+        documentMove1 = stripTypeFromHiddenPower(documentMove1);
     }
-    if (move2.includes('Hidden Power')) {
-        move2 = stripTypeFromHiddenPower(move2);
+    if (documentMove2.includes('Hidden Power')) {
+        documentMove2 = stripTypeFromHiddenPower(documentMove2);
     }
-    if (move3.includes('Hidden Power')) {
-        move3 = stripTypeFromHiddenPower(move3);
+    if (documentMove3.includes('Hidden Power')) {
+        documentMove3 = stripTypeFromHiddenPower(documentMove3);
     }
-    if (move4.includes('Hidden Power')) {
-        move4 = stripTypeFromHiddenPower(move4);
+    if (documentMove4.includes('Hidden Power')) {
+        documentMove4 = stripTypeFromHiddenPower(documentMove4);
     }
+
     const docSet = {
-        level: level,
-        ability: ability,
-        nature: nature,
+        level: documentLevel,
+        ability: documentAbility,
+        nature: documentNature,
         ivs: parseIvs(ivs),
         evs: parseEvs(evs),
-        moves: getMoves(getMoveId(move1), getMoveId(move2), getMoveId(move3), getMoveId(move4), name, level)
+        moves: getMoves(
+            getMoveId(documentMove1),
+            getMoveId(documentMove2),
+            getMoveId(documentMove3),
+            getMoveId(documentMove4),
+            documentName,
+            documentLevel
+        )
     }
 
-    if (itemName) {
-        docSet['item'] = itemName;
+    if (documentItemName) {
+        docSet['item'] = documentItemName;
     }
 
     const docMove1Id = getMoveId(docSet.moves[0]);
@@ -200,40 +135,40 @@ function generateDocPokemonObject(name, level, nature, ability, itemName, move1,
 
     
     if (gameMove1Id === 0 && gameMove2Id === 0 && gameMove3Id === 0 && gameMove4Id === 0) {
-        const moveNames = generateMovesViaLearnset(monsno, level);
+        const moveNames = generateMovesViaLearnset(gameMonsNo, gameMonLevel);
         [gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id] = [getMoveId(moveNames[0]), getMoveId(moveNames[1]), getMoveId(moveNames[2]), getMoveId(moveNames[3])];
         generatedFromLearnset = true;
     }
 
 
     if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove1Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${name}\n\tMove Slot: ${1}\n\tDocs: ${move1} - ${docMove1Id}\n\tGame: ${getMoveString(gameMove1Id)} - ${gameMove1Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
+        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${1}\n\tDocs: ${documentMove1} - ${docMove1Id}\n\tGame: ${getMoveString(gameMove1Id)} - ${gameMove1Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
     }
     if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove2Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${name}\n\tMove Slot: ${2}\n\tDocs: ${move2} - ${docMove2Id}\n\tGame: ${getMoveString(gameMove2Id)} - ${gameMove2Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
+        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${2}\n\tDocs: ${documentMove2} - ${docMove2Id}\n\tGame: ${getMoveString(gameMove2Id)} - ${gameMove2Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
     }
     if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove3Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${name}\n\tMove Slot: ${3}\n\tDocs: ${move3} - ${docMove3Id}\n\tGame: ${getMoveString(gameMove3Id)} - ${gameMove3Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
+        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${3}\n\tDocs: ${documentMove3} - ${docMove3Id}\n\tGame: ${getMoveString(gameMove3Id)} - ${gameMove3Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
     }
     if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove4Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${name}\n\tMove Slot: ${4}\n\tDocs: ${move4} - ${docMove4Id}\n\tGame: ${getMoveString(gameMove4Id)} - ${gameMove4Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
+        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${4}\n\tDocs: ${documentMove4} - ${docMove4Id}\n\tGame: ${getMoveString(gameMove4Id)} - ${gameMove4Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
     }
 
-    if (itemName) {
-        const itmName = itemName.replaceAll('\'', '’');//Kings rock hack
+    if (documentItemName) {
+        const docItemName = documentItemName.replaceAll('\'', '’');//Kings rock hack
         const gameItemId = trainerPokeData[`${propName}Item`];
-        const itemId = itemNameData.labelDataArray.findIndex(e => e.wordDataArray[0]?.str === itmName);
+        const itemId = getItemIdFromItemName(docItemName);
         if (itemId === -1 || (itemId !== gameItemId)) {
-            itemMatchups.push(`Bad Item Matchup:\n\tParty: ${id}\n\tParty Slot:${pNum}\n\tDoc Data: ${itemName} - ${itemId}\n\tGame Data: ${getItemString(gameItemId)} - ${gameItemId}`);
+            itemMatchups.push(`Bad Item Matchup:\n\tParty: ${id}\n\tParty Slot:${pNum}\n\tDoc Data: ${docItemName} - ${itemId}\n\tGame Data: ${getItemString(gameItemId)} - ${gameItemId}`);
         }
     }
 
-    const natureId = natureNameData.labelDataArray.findIndex(e => e.wordDataArray[0].str === nature);
+    const docNatureId = getNatureId(documentNature);
     const gameNatureId = trainerPokeData[`${propName}Seikaku`];
-    if (natureId === -1 || natureId !== gameNatureId) {
-        const docNatureString = getNatureName(natureId);
+    if (docNatureId === -1 || docNatureId !== gameNatureId) {
+        const docNatureString = getNatureName(docNatureId);
         const gameNatureString = getNatureName(gameNatureId);
-        natureMatchups.push(`Bad Nature Matchup:\n\tParty: ${id}\n\tParty Slot:${pNum}\n\tDoc Data: ${docNatureString} - ${natureId}\n\tGame Data: ${gameNatureString} - ${gameNatureId}`);
+        natureMatchups.push(`Bad Nature Matchup:\n\tParty: ${id}\n\tParty Slot:${pNum}\n\tDoc Data: ${docNatureString} - ${docNatureId}\n\tGame Data: ${gameNatureString} - ${gameNatureId}`);
     }
 
     //{hp: iv, at: iv, df: iv, sa: iv, sd: iv, sp: iv};
@@ -444,30 +379,6 @@ function areEffortValuesValid(docSet, hp, atk, def, spa, spd, spe) {
     return badProp === '' ? { valid: true } : { valid: false, badProp, badMatches };
 }
 
-function getMoveId(moveName) {
-    if (!moveName) return 0;
-    const id = moveEnum.findIndex(e => e === moveName.trim());
-    return id;
-}
-
-function generateTrainerName(rawTrainerName, Pokemon1Level) {
-    const level = parseInt(Pokemon1Level);
-    if(isNaN(level)) return;
-
-    const i1 = rawTrainerName.indexOf('[');
-    const i2 = rawTrainerName.indexOf(']');
-
-    const badSection = rawTrainerName.substring(i1, i2);
-    const isBossTrainer = (badSection.includes('City') || badSection.includes('League'));
-    if(!isBossTrainer || rawTrainerName.includes('Master')) return rawTrainerName;
-    const trainerSubstring = rawTrainerName.substring(0, i1 - 1) + rawTrainerName.substring(i2 + 1);
-    if(level === 100) return trainerSubstring + ' Rematch';
-    return trainerSubstring;
-}
-
-const trainerDocs = []
-const missingTrainers = require(path.join(__dirname, 'output', 'missingTrainers.json'));
-
 rawDocumentFile.split('\n').forEach((line, i) => {
     if (line > 3) return;
     const [
@@ -661,74 +572,6 @@ function getAttribName(str) {
             console.warn('GetAttribError:', str);
             throw Error();
     }
-}
-
-function getItemString(itemId) {
-    return itemNameData.labelDataArray[itemId].wordDataArray[0].str;
-}
-
-function getAbilityString(abiltiyId) {
-    const abilityString = AbilityNameData.labelDataArray[abiltiyId].wordDataArray[0].str;
-    if (!abilityString) {
-        console.warn(abilityString, abiltiyId);
-    }
-    return abilityString;
-}
-
-function getNatureName(natureId) {
-    return natureNameData.labelDataArray[natureId].wordDataArray[0].str;
-}
-
-function isSmogonCompatible(str) {
-    for (let gen of SMOGON_MOVES) {
-        if (Object.keys(gen).includes(str)) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-function getMoveString(id) {
-    const str = moveEnum[id];
-    if (!isSmogonCompatible(str)) {
-        throw Error(`Incompatible move string found: ID - ${id}, String: ${str}`)
-    }
-
-    return str;
-}
-
-function generateMovesViaLearnset(monsNo, level) {
-    const idx = learnset.WazaOboe[monsNo].ar.findIndex((e, i) => {
-        if (i % 2 === 1) return;
-        return e > level;
-    })
-
-    const moves = learnset.WazaOboe[monsNo].ar.slice(0, idx);
-    return [
-        getMoveString(moves.at(-7)),
-        getMoveString(moves.at(-5)),
-        getMoveString(moves.at(-3)),
-        getMoveString(moves.at(-1)),
-    ]
-}
-
-function getMoves(m1, m2, m3, m4, monsno, level) {
-    if (m1 === m2 && m1 === m3 && m1 === m4) {
-        return generateMovesViaLearnset(monsno, level);
-    }
-
-    const moves = [
-        moveEnum[m1],
-        moveEnum[m2],
-        moveEnum[m3],
-        moveEnum[m4]
-    ]
-
-    if (moves[0] === null) {
-        console.warn('Moves:', m1, m2, m3, m4, monsno, JSON.stringify(moves));
-    }
-    return moves;
 }
 
 trainerDocs.forEach((e, i) => {
@@ -951,22 +794,20 @@ trainerDocs.forEach((e, i) => {
     }
 })
 
-const filepath = path.join(__dirname, 'output');
-fs.writeFileSync(path.join(filepath, 'sets.json'), JSON.stringify({ ...sets }), 'utf-8')
+const filepath = path.join(parentFilePath, 'output');
+
+//Documentation
 fs.writeFileSync(path.join(filepath, 'bad_abilities.txt'), abilityMatchups.join('\n'), 'utf-8')
 fs.writeFileSync(path.join(filepath, 'bad_parties.txt'), partyMatchups.join('\n'), 'utf-8')
 fs.writeFileSync(path.join(filepath, 'bad_moves.txt'), moveMatchups.join('\n'), 'utf-8')
-
 fs.writeFileSync(path.join(filepath, 'bad_items.txt'), itemMatchups.join('\n'), 'utf-8')
 fs.writeFileSync(path.join(filepath,'bad_natures.txt'), natureMatchups.join('\n'), 'utf-8')
-
 fs.writeFileSync(path.join(filepath, 'bad_evs.txt'), evMatchups.join('\n'), 'utf-8')
 fs.writeFileSync(path.join(filepath,'bad_ivs.txt'), ivMatchups.join('\n'), 'utf-8')
-
 fs.writeFileSync(path.join(filepath, 'bad_docs.txt'), 'Modified game data was taken as true.\n\n' + badDocs.join('\n'), 'utf-8')
 fs.writeFileSync(path.join(filepath, 'bad_gamedata.txt'), 'Doc data was taken as true.\n\n' + badGameData.join('\n'), 'utf-8')
-
 fs.writeFileSync(path.join(filepath, 'ev_changelog.txt'), evChangelog.join('\n'), 'utf-8')
 
-console.log(missingTrainers.length)
-fs.writeFileSync(path.join(filepath, 'missingTrainers2.json'), JSON.stringify(missingTrainers), 'utf-8')
+//Data files
+fs.writeFileSync(path.join(filepath, 'sets.json'), JSON.stringify({ ...sets }), 'utf-8')
+fs.writeFileSync(path.join(filepath, 'missingTrainers.json'), JSON.stringify(missingTrainers), 'utf-8')

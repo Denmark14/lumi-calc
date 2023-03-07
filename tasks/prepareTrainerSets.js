@@ -1,225 +1,16 @@
 const fs = require('fs');
 const path = require('path');
-const trainerNames = require(path.join(__dirname, 'input', 'english_dp_trainers_name.json'));
-const trainerLabels = require(path.join(__dirname, 'input', 'english_dp_trainers_type.json'));
-const TRAINER_TABLE = require(path.join(__dirname, 'input', 'TrainerTable.json'));
-const areas = fs.readFileSync(path.join(__dirname, 'input', 'areas.csv'), 'utf8').split('\n').map(x => x.split(','));
-const bdspLocationFiles = fs.readdirSync(path.join(__dirname, 'placedatas'));
+const parentFilePath = path.resolve(__dirname, '..');
+const TRAINER_TABLE = require(path.join(parentFilePath, 'input', 'TrainerTable.json'));
+const {getTrainerLabel, getTrainerName, getTrainerDataFromPlaceDatas} = require('./trainerUtils');
+const {getPokemonName, getAbilityString, getNatureName, getMoves, getItemString} = require('./pokemonUtils');
 
-const pokemonData = require('./input/PersonalTable.json');
-const NameData = require('./input/english_ss_monsname.json');
-const AbilityNameData = require('./input/english_ss_tokusei.json');
-const typeNameData = require('./input/english_ss_typename.json');
-const formNames = require('./input/english_ss_zkn_form.json');
-const learnset = require('./input/WazaOboeTable.json');
-const natureNameData = require('./input/english_ss_seikaku.json');
-const itemNameData = require('./input/english_ss_itemname.json');
-const SMOGON_MOVES = require('./input/moves.json');
-
-
-
-const areaMap = {};
-areas.forEach(x => {
-    areaMap[x[0]] = x[4];
-});
-
-const moveEnum = fs.readFileSync(path.join(__dirname, 'input', 'moves.txt'), 'utf-8').split('\n').map(e => e.trim()).filter(e => e);
-
-function getTypes(e) {
-    return e.type1 === e.type2 ? [getTypeName(e.type1)] : [getTypeName(e.type1), getTypeName(e.type2)];
+if(!fs.existsSync(path.join(parentFilePath, 'output', 'LumiMons.json'))) {
+    require('./createLumiMons')();
 }
 
-function getTypeName(typeId) {
-    return typeNameData.labelDataArray[typeId].wordDataArray[0].str;
-}
-
-function makeAbilityObject(ha) {
-    const abilitiyString = AbilityNameData.labelDataArray[ha].wordDataArray[0].str;
-
-    return { 0: abilitiyString };
-}
-
-function getPokemonName(id) {
-    try {
-        const Name = NameData.labelDataArray[id].wordDataArray[0].str;
-        Name.replace('♀', '-F')
-        Name.replace('♂', '-M')
-        Name.replace('’', '\u2019')
-        return Name;
-    } catch (e) {
-        console.error(id, e);
-    }
-}
-
-function getFormName(id) {
-    switch (id) {
-        case 1131:
-            return 'Ash-Greninja'
-        case 1174:
-            return 'Meowstic-F'
-        case 1199:
-            return 'Rockruff Own-Tempo'
-        case 1330:
-            return 'Indeedee-F'
-        case 1343:
-            return 'Basculegion-F'
-        default:
-            return formNames.labelDataArray[id].wordDataArray[0].str;
-    }
-}
-
-function getItemString(itemId) {
-    return itemNameData.labelDataArray[itemId].wordDataArray[0].str;
-}
-
-function getAbilityString(abiltiyId) {
-    const abilityString = AbilityNameData.labelDataArray[abiltiyId].wordDataArray[0].str;
-    if (!abilityString) {
-        console.warn(abilityString, abiltiyId);
-    }
-    return abilityString;
-}
-
-function getNatureName(natureId) {
-    return natureNameData.labelDataArray[natureId].wordDataArray[0].str;
-}
-
-function isSmogonCompatible(str) {
-    for (let gen of SMOGON_MOVES) {
-        if (Object.keys(gen).includes(str)) {
-            return true;
-        }
-    }
-
-    return false;
-}
-
-const data = pokemonData.Personal.reduce((pkmn, e, i) => {
-    if (i === 0) return pkmn;
-
-    const formIndex = e.form_index;
-    if (formIndex === 0 || e.id === e.monsno) {
-        const name = getPokemonName(e.monsno);
-        pkmn[name] = {};
-        pkmn[name].types = getTypes(e);
-        pkmn[name].bs = { hp: e.basic_hp, at: e.basic_atk, df: e.basic_def, sa: e.basic_spatk, sd: e.basic_spdef, sp: e.basic_agi }
-        pkmn[name].weightkg = e.weight / 10;
-        pkmn[name].abilities = makeAbilityObject(e.tokusei3)
-
-        const g = getGender(e.sex);
-        if (g) {
-            pkmn[name].gender = g;
-        }
-
-        return pkmn;
-    }
-
-    const name = getPokemonName(e.monsno);
-    const formName = getFormName(i);
-
-    if (!formName) {
-        console.warn('Form Error:', i, formName,Name);
-    }
-    if (!pkmn[name].hasOwnProperty('otherFormes')) {
-        pkmn[name].otherFormes = [];
-    }
-    pkmn[name].otherFormes.push(formName);
-    pkmn[formName] = {}
-    pkmn[formName].types = getTypes(e);
-    pkmn[formName].bs = { hp: e.basic_hp, at: e.basic_atk, df: e.basic_def, sa: e.basic_spatk, sd: e.basic_spdef, sp: e.basic_agi }
-    pkmn[formName].weightkg = e.weight / 10;
-    pkmn[formName].abilities = makeAbilityObject(e.tokusei3)
-    const g = getGender(e.sex);
-    if (g) {
-        pkmn[formName].gender = g;
-    }
-    pkmn[formName].baseSpecies = name;
-    return pkmn;
-}, {})
-
-function getMoveString(id = 0) {
-    const str = moveEnum[id];
-    if (!isSmogonCompatible(str)) {
-        throw Error(`Incompatible move string found: ID - ${id}, String: ${str}`)
-    }
-
-    return str;
-}
-
-function generateMovesViaLearnset(monsNo, level) {
-    const idx = learnset.WazaOboe[monsNo].ar.findIndex((e, i) => {
-        if (i % 2 === 1) return;
-        return e > level;
-    })
-
-    const moves = learnset.WazaOboe[monsNo].ar.slice(0, idx);
-
-    return [
-        getMoveString(moves.at(-7)),
-        getMoveString(moves.at(-5)),
-        getMoveString(moves.at(-3)),
-        getMoveString(moves.at(-1)),
-    ]
-}
-
-function getMoves(m1, m2, m3, m4, monsno, level) {
-    if (m1 === m2 && m1 === m3 && m1 === m4) {
-        return generateMovesViaLearnset(monsno, level);
-    }
-
-    const moves = [
-        moveEnum[m1],
-        moveEnum[m2],
-        moveEnum[m3],
-        moveEnum[m4]
-    ]
-
-    if (moves[0] === null) {
-        console.warn('Moves:', m1, m2, m3, m4, monsno, JSON.stringify(moves));
-    }
-    return moves;
-}
-
-
-function getGender(sex) {
-    if (sex === 0) return 'M';
-    if (sex === 254) return 'F';
-    if (sex === 255) return 'N';
-    return null;
-}
-
-function getTrainerLabel(labelName) {
-    return trainerLabels.labelDataArray.find(e => e.labelName === labelName)?.wordDataArray[0].str;
-}
-
-function getTrainerName(labelName) {
-    return trainerNames.labelDataArray.find(e => e.labelName === labelName)?.wordDataArray[0].str;
-}
-
-function getTrainerDataFromPlaceDatas() {
-    let trainers = [];
-    for (let i = 0; i < bdspLocationFiles.length; i++) {
-        const data = require('./PlaceDatas/' + bdspLocationFiles[i])
-        for (let event of data.Data) {
-            if (event.TrainerID > 0 && event.TrainerID < 10000 && event.zoneID !== -1) {
-                const trainerData = TRAINER_TABLE.TrainerData[event.TrainerID];
-                const trainerType = TRAINER_TABLE.TrainerType[trainerData.TypeID];
-                const trainerLabel = getTrainerLabel(trainerType.LabelTrType);
-                const trainerName = getTrainerName(trainerData.NameLabel);
-
-                trainers.push({ zoneName: areaMap[event.zoneID], zoneId: event.zoneID, trainerId: event.TrainerID, rematch: 0, name: trainerName, type: trainerLabel});
-            }
-        }
-    }
-
-    return trainers
-}
-
-const BDSPTrainers = getTrainerDataFromPlaceDatas()
-const missingBDSPTrainers = TRAINER_TABLE.TrainerPoke.filter(trainer => {
-    return !BDSPTrainers.includes(t => t.trainerId === trainer.ID)
-}).filter(trainer => trainer.ID !== 0)
-
+const speciesData = require('../output/LumiMons.json');
+const BDSPTrainers = getTrainerDataFromPlaceDatas();
 
 const unusedRematches = new Set();
 
@@ -264,7 +55,7 @@ for (let i = 0; i < TRAINER_TABLE.TrainerRematch.length; i++) {
     }
 }
 
-const sets = require('./output/sets.json');
+const sets = require('../output/sets.json');
 
 BDSPTrainers.forEach((e, i) => {
     const partyData = TRAINER_TABLE.TrainerPoke[e.trainerId];
@@ -288,7 +79,7 @@ BDSPTrainers.forEach((e, i) => {
     }
     if (!partyData.P1MonsNo) return;
     const p1Name = getPokemonName(partyData.P1MonsNo);
-    let p1FormName = partyData.P1FormNo > 0 ? data[p1Name].otherFormes[partyData.P1FormNo - 1] : null;
+    let p1FormName = partyData.P1FormNo > 0 ? speciesData[p1Name].otherFormes[partyData.P1FormNo - 1] : null;
     const p1MonName = p1FormName ?? p1Name;
     if (sets[p1MonName] === undefined) {
         sets[p1MonName] = {};
@@ -324,7 +115,7 @@ BDSPTrainers.forEach((e, i) => {
     if (!partyData.P2MonsNo) return;
 
     const p2monName = getPokemonName(partyData.P2MonsNo);
-    let p2FormName = partyData.P2FormNo > 0 ? data[p2monName].otherFormes[partyData.P2FormNo - 1] : null;
+    let p2FormName = partyData.P2FormNo > 0 ? speciesData[p2monName].otherFormes[partyData.P2FormNo - 1] : null;
     const p2name = p2FormName ?? p2monName;
     if (sets[p2name] === undefined) {
         sets[p2name] = {};
@@ -360,7 +151,7 @@ BDSPTrainers.forEach((e, i) => {
     if (!partyData.P3MonsNo) return;
 
     const p3monName = getPokemonName(partyData.P3MonsNo);
-    let p3FormName = partyData.P3FormNo > 0 ? data[p3monName].otherFormes[partyData.P3FormNo - 1] : null;
+    let p3FormName = partyData.P3FormNo > 0 ? speciesData[p3monName].otherFormes[partyData.P3FormNo - 1] : null;
     const p3name = p3FormName ?? p3monName;
 
     if (sets[p3name] === undefined) {
@@ -397,7 +188,7 @@ BDSPTrainers.forEach((e, i) => {
     if (!partyData.P4MonsNo) return;
 
     const p4monName = getPokemonName(partyData.P4MonsNo);
-    let p4FormName = partyData.P4FormNo > 0 ? data[p4monName].otherFormes[partyData.P4FormNo - 1] : null;
+    let p4FormName = partyData.P4FormNo > 0 ? speciesData[p4monName].otherFormes[partyData.P4FormNo - 1] : null;
     const p4name = p4FormName ?? p4monName;
 
     if (sets[p4name] === undefined) {
@@ -433,7 +224,7 @@ BDSPTrainers.forEach((e, i) => {
 
     if (!partyData.P5MonsNo) return;
     const p5monName = getPokemonName(partyData.P5MonsNo);
-    let p5FormName = partyData.P5FormNo > 0 ? data[p5monName].otherFormes[partyData.P5FormNo - 1] : null;
+    let p5FormName = partyData.P5FormNo > 0 ? speciesData[p5monName].otherFormes[partyData.P5FormNo - 1] : null;
     const p5name = p5FormName ?? p5monName;
 
     if (sets[p5name] === undefined) {
@@ -469,7 +260,7 @@ BDSPTrainers.forEach((e, i) => {
 
     if (!partyData.P6MonsNo) return;
     const p6monName = getPokemonName(partyData.P6MonsNo);
-    let p6FormName = partyData.P6FormNo > 0 ? data[p6monName].otherFormes[partyData.P6FormNo - 1] : null;
+    let p6FormName = partyData.P6FormNo > 0 ? speciesData[p6monName].otherFormes[partyData.P6FormNo - 1] : null;
     const p6name = p6FormName ?? p6monName;
 
     if (sets[p6name] === undefined) {
@@ -504,45 +295,14 @@ BDSPTrainers.forEach((e, i) => {
     }
 });
 
-function findMissingTrainers(trainers) {
-    const arr = [...Array(2000).keys()];
-    arr.splice(0, 1);
-    for(let trainer of trainers) {
-        const idx = arr.findIndex(e => e === trainer.trainerId);
-        arr.splice(idx, 1);
-    }
 
-    let volkners = [];
-    let missingTrainers = [];
-    for(let element of arr) {
-        const trainerData = TRAINER_TABLE.TrainerData[element];
-        const trainerType = TRAINER_TABLE.TrainerType[trainerData.TypeID];
-        const trainerLabel = getTrainerLabel(trainerType.LabelTrType);
-        const trainerName = getTrainerName(trainerData.NameLabel);
-
-        if(trainerName === 'Volkner') {
-            //We extended the trainer by duplicating Volkner trainers, therefore any Volkners outside of the docs' specified IDs should be considered undefined trainers
-            volkners.push({ trainerId: element, name: trainerName, type: trainerLabel})
-        } else {
-            missingTrainers.push({ trainerId: element, name: trainerName, type: trainerLabel});
-        }
-    }
-
-   return {
-    volkners,
-    missingTrainers
-   }
-}
-
-const {volkners, missingTrainers} = findMissingTrainers(BDSPTrainers);
-const filepath = path.join(__dirname, 'output')
-fs.writeFileSync(path.join(filepath, 'missingTrainers.json'), JSON.stringify(missingTrainers), 'utf-8');
-fs.writeFileSync(path.join(filepath, 'trainerSets.json'), JSON.stringify(sets, null, 2), 'utf-8');
+const filepath = path.join(parentFilePath, 'output')
+fs.writeFileSync(path.join(filepath, 'trainerSets.json'), JSON.stringify(sets), 'utf-8');
 
 module.exports = function(){
     //Overwrite the gen8 js file
     fs.writeFileSync(
-        path.join(__dirname, 'src', 'js', 'data', 'sets', 'gen8.js'),  
+        path.join(parentFilePath, 'src', 'js', 'data', 'sets', 'gen8.js'),  
         `var SETDEX_SS = ${JSON.stringify({ ...sets })}`,
         'utf-8'
     );
