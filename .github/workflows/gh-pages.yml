@@ -14,19 +14,19 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
+      - name: "Install Calc Dependencies"
+        run: | 
+          npm ci
+          cd ./calc/
+          npm ci
+          cd ..
       - name: "Install Import Dependencies"
         run: | 
           cd ./import/
           npm ci
           cd ..
-      - name: "Install Calc Dependencies"
-        run: | 
-          cd ./calc/
-          npm ci
-          cd ..
       - name: "Install App Dependencies"
         run: | 
-          npm ci
           npm run predeploy
       - name: "Github Pages Deployment"
         run: |
