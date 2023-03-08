@@ -17,9 +17,6 @@ jobs:
       - name: "Install Calc Dependencies"
         run: | 
           npm ci
-          cd ./calc/
-          npm ci
-          cd ..
       - name: "Install Import Dependencies"
         run: | 
           cd ./import/
