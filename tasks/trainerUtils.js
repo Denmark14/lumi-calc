@@ -24,7 +24,7 @@ function getTrainerName(labelName) {
 function getTrainerDataFromPlaceDatas() {
     let trainers = [];
     for (let i = 0; i < bdspLocationFiles.length; i++) {
-        const data = require('../PlaceDatas/' + bdspLocationFiles[i])
+        const data = require('../placedatas/' + bdspLocationFiles[i])
         for (let event of data.Data) {
             if (event.TrainerID > 0 && event.TrainerID < 10000 && event.zoneID !== -1) {
                 const trainerData = TRAINER_TABLE.TrainerData[event.TrainerID];
