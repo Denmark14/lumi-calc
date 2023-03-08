@@ -19,11 +19,12 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
       - name: "Install Dependencies"
-        run: cd ./import/
-        run: npm ci
-        run: cd ..
-        run: npm ci
-        run: npm run predeploy
+        run: |
+          cd ./import/
+          npm ci
+          cd ..
+          npm ci
+          npm run predeploy
       - name: "Github Pages Deployment"
         run: |
           git remote set-url origin https://git:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git
