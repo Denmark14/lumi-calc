@@ -8,20 +8,24 @@ jobs:
     # the operating system it will run on
     runs-on: ubuntu-latest
     # the list of steps that the action will go through
-    strategy:
-      matrix:
-        node: [ 14, 16, 18 ]
     steps:
       - uses: actions/checkout@v3
       - name: Use Node.js ${{ matrix.node }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node }}
-      - name: "Install Dependencies"
-        run: |
+          node-version: 16
+      - name: "Install Import Dependencies"
+        run: | 
           cd ./import/
           npm ci
           cd ..
+      - name: "Install Calc Dependencies"
+        run: | 
+          cd ./calc/
+          npm ci
+          cd ..
+      - name: "Install App Dependencies"
+        run: | 
           npm ci
           npm run predeploy
       - name: "Github Pages Deployment"
