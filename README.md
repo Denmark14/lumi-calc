@@ -19,6 +19,14 @@ filenames correctly. If the site does not work after an update, either ping Denm
 ticket, or roll back the commit if you know how. All building is run automatically and github pages will be updated
 after four minutes on average.
 
+You do not need to update all of them, singular file changes will work just fine.
+
+To acquire the jsons, unpack the following from your romfs dump using Aldo's [Repacker Tool](https://github.com/Ai0796/BDSP-Repacker):
+- `masterdatas` from `Dpr`, contains `TrainerTable.json`, which are your trainer sets.
+- `english` from `Message`, contains the names of all your abilities, types, trainer names and so on.
+- `common_msbt` from `Message`, contains the names and form names of Pokemon.
+- `personal_masterdatas` from `Pml`, contains the species data, move data and learnsets of all Pokemon.
+
 ## Romhack Relevant Changes
 
 This will function for any BDSP romhack. Simply update the files in `input` and either adapt your documentation to the 
