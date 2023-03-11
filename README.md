@@ -12,6 +12,19 @@ https://calc.pokemonshowdown.com.
 This repository houses both the package implementing the core damage formula mechanics in each
 generation ([`@smogon/calc`][1]) as well as [logic and markup for the official UI][2].
 
+## Lumi Relevant Changes
+
+To update the datasets, simply add the files to the `input` folder of the repository, making sure to match the
+filenames correctly. If the site does not work after an update, either ping Denmark on Discord, make an issue
+ticket, or roll back the commit if you know how. All building is run automatically and github pages will be updated
+after four minutes on average.
+
+## Romhack Relevant Changes
+
+This will function for any BDSP romhack. Simply update the files in `input` and either adapt your documentation to the 
+example csv provided, or change the parsing code in the relevant file in the `tasks` folder. You will also need to update
+the action yaml to specify your own repository.
+
 ## `@smogon/calc`
 
 The `@smogon/calc` package powers the UI, providing a programmatic interface for computing damage
@@ -172,7 +185,8 @@ how to programmatically update sets.
 
 ## Credits
 
-This project was created by Honko and is primarily maintained by Austin.
+This project was created by Honko and is primarily maintained by Austin. Adapted to
+Luminescent Platinum by Denmark.
 
 - Gens 1-6 were originally implemented by Honko.
 - The Omega Ruby / Alpha Sapphire update was done by gamut-was-taken and Austin.
@@ -180,6 +194,7 @@ This project was created by Honko and is primarily maintained by Austin.
 - The Gen 8 update was done by Austin and Kris.
 - The Gen 9 update was done by Austin and Kris.
 - Some CSS styling was contributed by Zarel to match the Pokémon Showdown! theme.
+- Build and Romhack data automation was done by Denmark.
 
 Many other contributors have added features or contributed bug fixes, please see the
 [full list of contributors](https://github.com/smogon/damage-calc/graphs/contributors).
