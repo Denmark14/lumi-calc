@@ -1,4 +1,4 @@
-﻿import * as I from './interface';
+import * as I from './interface';
 import {toID, extend, DeepPartial, assignWithout} from '../util';
 
 export interface SpeciesData {
@@ -30260,7 +30260,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     "gender": "F",
     "baseSpecies": "Basculegion"
   }
-}
+};
 
 const SS: {[name: string]: SpeciesData} = extend(true, {}, {}, SS_PATCH);
 
