@@ -146,7 +146,8 @@ async function importSetsForPokemon(
       const eligible =
         (gen <= 3 && format === 'UU') ||
         (gen >= 2 && gen <= 4 && format === 'NU') ||
-        (gen === 9 && USAGE.includes(format));
+        // @ts-ignore
+        (gen === 9 && USAGE.includes(format));// @ts-ignore
 
       if (!eligible) continue;
 
