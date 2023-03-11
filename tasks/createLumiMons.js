@@ -42,18 +42,30 @@ const speciesData = pokemonData.Personal.reduce((pkmn, currentPokemon, index) =>
     pkmn[name].otherFormes.push(formName);
     pkmn[formName] = {}
     pkmn[formName].types = getTypes(currentPokemon);
-    pkmn[name].bs = { hp: currentPokemon.basic_hp, at: currentPokemon.basic_atk, df: currentPokemon.basic_def, sa: currentPokemon.basic_spatk, sd: currentPokemon.basic_spdef, sp: currentPokemon.basic_agi }
-    pkmn[name].weightkg = currentPokemon.weight / 10;
-    pkmn[name].abilities = makeAbilityObject(currentPokemon.tokusei3)
+    pkmn[formName].bs = { hp: currentPokemon.basic_hp, at: currentPokemon.basic_atk, df: currentPokemon.basic_def, sa: currentPokemon.basic_spatk, sd: currentPokemon.basic_spdef, sp: currentPokemon.basic_agi }
+    pkmn[formName].weightkg = currentPokemon.weight / 10;
+    pkmn[formName].abilities = makeAbilityObject(currentPokemon.tokusei3)
     const gender = getGender(currentPokemon.sex);
     if (gender) {
-        pkmn[name].gender = gender;
+        pkmn[formName].gender = gender;
     }
 
     pkmn[formName].baseSpecies = name;
     return pkmn;
 }, {})
 
+function createSpeciesFile(lumiMons) {
+    const speciesFile = fs.readFileSync(path.join(__dirname, 'species.txt'), 'utf-8');
+    const specialLine = 'const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = ';
+    const startIndex = speciesFile.indexOf(specialLine)
+    const endIndex = startIndex + specialLine.length;
+    const newFile = [speciesFile.slice(0, endIndex), JSON.stringify(lumiMons, null, 2), ';' ,speciesFile.slice(endIndex)].join('');
+    const speciesFilePath = path.join(parentFilePath, 'calc', 'src', 'data');
+
+    fs.writeFileSync(path.join(speciesFilePath, 'species.ts'), newFile, 'utf-8');
+}
+
+createSpeciesFile(speciesData)
 module.exports = function() {
     fs.writeFileSync(path.join(parentFilePath, 'output', 'LumiMons.json'), JSON.stringify(speciesData), 'utf-8');
 };
