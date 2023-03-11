@@ -91,7 +91,8 @@ export async function importSets(dir: string) {
       await importSetsForPokemon(pokemon, gen, setsByPokemon);
       let sets = setsByPokemon[pokemon];
       // If we can't find any sets for Gen 9 yet, just copy the Gen 8 sets instead...
-      if (!sets && gen === 9) {
+      // @ts-ignore
+      if (!sets && gen === 9) {// @ts-ignore
         await importSetsForPokemon(pokemon, 8, setsByPokemon);
         sets = setsByPokemon[pokemon];
       }
@@ -141,6 +142,7 @@ async function importSetsForPokemon(
         );
       }
     } else {
+      // @ts-ignore
       const eligible =
         (gen <= 3 && format === 'UU') ||
         (gen >= 2 && gen <= 4 && format === 'NU') ||
