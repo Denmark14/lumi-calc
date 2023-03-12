@@ -44,7 +44,8 @@
     "test": "subpkg run test && npm run build && eslint --cache src --ext js",
     "postinstall": "subpkg install",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d dist",
+    "docgen": "node ./tasks/generateDocumentation.js"
   },
   "subPackages": [
     "calc"
