@@ -33,6 +33,23 @@ This will function for any BDSP romhack. Simply update the files in `input` and 
 example csv provided, or change the parsing code in the relevant file in the `tasks` folder. You will also need to update
 the action yaml to specify your own repository.
 
+## Lumi Documentation
+
+For the documentation team, download this repository and install [NodeJS](https://nodejs.org/en/).
+Both the LTS and Current versions will work, but LTS is preferable. 
+
+Once done, open your Operating System equivalent terminal and direct it to the repository folder,
+for Windows this would be Powershell.
+
+You can do this by shift + right clicking in the folder and selecting `Open Powershell Window Here`. 
+
+[Video tutorial for Mac/Linux users on how to navigate to a directory](https://www.youtube.com/watch?v=j6vKLJxAKfw)
+
+In the terminal/powershell, run the command `npm run docgen`. This will create the documentation 
+files for the google docs in the `output` folder.
+
+To update the generated documents, simply replace the files in `input` as per the above instructions.
+
 ## `@smogon/calc`
 
 The `@smogon/calc` package powers the UI, providing a programmatic interface for computing damage
