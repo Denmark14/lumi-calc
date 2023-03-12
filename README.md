@@ -41,7 +41,8 @@ Both the LTS and Current versions will work, but LTS is preferable.
 Once done, open your Operating System equivalent terminal and direct it to the repository folder,
 for Windows this would be Powershell.
 
-You can do this by shift + right clicking in the folder and selecting `Open Powershell Window Here`. 
+You can do this on Windows by shift + right clicking in the folder and selecting 
+`Open Powershell Window Here`. 
 
 [Video tutorial for Mac/Linux users on how to navigate to a directory](https://www.youtube.com/watch?v=j6vKLJxAKfw)
 
