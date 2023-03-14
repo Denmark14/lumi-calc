@@ -16624,8 +16624,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Multitype"
         },
-        "gender": "N",
-        "baseSpecies": "Arceus"
+        "otherFormes": [
+            "Arceus"
+        ],
+        "baseSpecies": "Arceus",
+        "gender": "N"
     },
     "Victini": {
         "types": [
@@ -24382,6 +24385,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Grassy Surge"
         },
+        "otherFormes": [
+            "Clone Venusaur"
+        ],
         "baseSpecies": "Venusaur"
     },
     "Gigantamax Venusaur": {
@@ -24401,6 +24407,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Chlorophyll"
         },
+        "otherFormes": [
+            "Gigantamax Venusaur"
+        ],
         "baseSpecies": "Venusaur"
     },
     "Mega Venusaur": {
@@ -24420,6 +24429,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Chlorophyll"
         },
+        "otherFormes": [
+            "Mega Venusaur"
+        ],
         "baseSpecies": "Venusaur"
     },
     "Clone Charizard": {
@@ -24439,6 +24451,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Drought"
         },
+        "otherFormes": [
+            "Clone Charizard"
+        ],
         "baseSpecies": "Charizard"
     },
     "Mega Charizard Y": {
@@ -24458,6 +24473,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Drought"
         },
+        "otherFormes": [
+            "Mega Charizard Y"
+        ],
         "baseSpecies": "Charizard"
     },
     "Gigantamax Charizard": {
@@ -24477,6 +24495,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Solar Power"
         },
+        "otherFormes": [
+            "Gigantamax Charizard"
+        ],
         "baseSpecies": "Charizard"
     },
     "Mega Charizard X": {
@@ -24496,6 +24517,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Solar Power"
         },
+        "otherFormes": [
+            "Mega Charizard X"
+        ],
         "baseSpecies": "Charizard"
     },
     "Clone Blastoise": {
@@ -24515,6 +24539,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Drizzle"
         },
+        "otherFormes": [
+            "Clone Blastoise"
+        ],
         "baseSpecies": "Blastoise"
     },
     "Gigantamax Blastoise": {
@@ -24533,6 +24560,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Rain Dish"
         },
+        "otherFormes": [
+            "Gigantamax Blastoise"
+        ],
         "baseSpecies": "Blastoise"
     },
     "Mega Blastoise": {
@@ -24551,6 +24581,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Rain Dish"
         },
+        "otherFormes": [
+            "Mega Blastoise"
+        ],
         "baseSpecies": "Blastoise"
     },
     "Gigantamax Butterfree": {
@@ -24570,6 +24603,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Tinted Lens"
         },
+        "otherFormes": [
+            "Gigantamax Butterfree"
+        ],
         "baseSpecies": "Butterfree"
     },
     "Mega Beedrill": {
@@ -24589,6 +24625,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Adaptability"
         },
+        "otherFormes": [
+            "Mega Beedrill"
+        ],
         "baseSpecies": "Beedrill"
     },
     "Mega Pidgeot": {
@@ -24608,6 +24647,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "No Guard"
         },
+        "otherFormes": [
+            "Mega Pidgeot"
+        ],
         "baseSpecies": "Pidgeot"
     },
     "Alolan Rattata": {
@@ -24627,6 +24669,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Hustle"
         },
+        "otherFormes": [
+            "Alolan Rattata"
+        ],
         "baseSpecies": "Rattata"
     },
     "Alolan Raticate": {
@@ -24646,6 +24691,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Hustle"
         },
+        "otherFormes": [
+            "Alolan Raticate"
+        ],
         "baseSpecies": "Raticate"
     },
     "Totem Raticate": {
@@ -24665,6 +24713,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Thick Fat"
         },
+        "otherFormes": [
+            "Totem Raticate"
+        ],
         "baseSpecies": "Raticate"
     },
     "Cosplay Pikachu": {
@@ -24683,8 +24734,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "F",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Cosplay Pikachu"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "F"
     },
     "Pikachu Rock Star": {
         "types": [
@@ -24702,8 +24756,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "F",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Pikachu Rock Star"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "F"
     },
     "Pikachu Belle": {
         "types": [
@@ -24721,8 +24778,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "F",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Pikachu Belle"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "F"
     },
     "Pikachu Pop Star": {
         "types": [
@@ -24740,8 +24800,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "F",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Pikachu Pop Star"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "F"
     },
     "Pikachu, Ph.D": {
         "types": [
@@ -24759,8 +24822,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "F",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Pikachu, Ph.D"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "F"
     },
     "Pikachu Libre": {
         "types": [
@@ -24778,8 +24844,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "F",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Pikachu Libre"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "F"
     },
     "Original Cap": {
         "types": [
@@ -24797,8 +24866,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Original Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "Hoenn Cap": {
         "types": [
@@ -24816,8 +24888,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Hoenn Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "Sinnoh Cap": {
         "types": [
@@ -24835,8 +24910,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Sinnoh Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "Unova Cap": {
         "types": [
@@ -24854,8 +24932,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Unova Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "Kalos Cap": {
         "types": [
@@ -24873,8 +24954,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Kalos Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "Alola Cap": {
         "types": [
@@ -24892,8 +24976,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Alola Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "Partner Cap": {
         "types": [
@@ -24911,8 +24998,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "Partner Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "World Cap": {
         "types": [
@@ -24930,8 +25020,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "M",
-        "baseSpecies": "Pikachu"
+        "otherFormes": [
+            "World Cap"
+        ],
+        "baseSpecies": "Pikachu",
+        "gender": "M"
     },
     "Partner Pikachu": {
         "types": [
@@ -24949,6 +25042,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
+        "otherFormes": [
+            "Partner Pikachu"
+        ],
         "baseSpecies": "Pikachu"
     },
     "Gigantamax Pikachu": {
@@ -24967,6 +25063,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
+        "otherFormes": [
+            "Gigantamax Pikachu"
+        ],
         "baseSpecies": "Pikachu"
     },
     "Clone Pikachu": {
@@ -24985,6 +25084,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Galvanize"
         },
+        "otherFormes": [
+            "Clone Pikachu"
+        ],
         "baseSpecies": "Pikachu"
     },
     "Alolan Raichu": {
@@ -25004,6 +25106,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Surge Surfer"
         },
+        "otherFormes": [
+            "Alolan Raichu"
+        ],
         "baseSpecies": "Raichu"
     },
     "Alolan Sandshrew": {
@@ -25023,6 +25128,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Slush Rush"
         },
+        "otherFormes": [
+            "Alolan Sandshrew"
+        ],
         "baseSpecies": "Sandshrew"
     },
     "Alolan Sandslash": {
@@ -25042,6 +25150,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Slush Rush"
         },
+        "otherFormes": [
+            "Alolan Sandslash"
+        ],
         "baseSpecies": "Sandslash"
     },
     "Alolan Vulpix": {
@@ -25060,6 +25171,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Snow Warning"
         },
+        "otherFormes": [
+            "Alolan Vulpix"
+        ],
         "baseSpecies": "Vulpix"
     },
     "Alolan Ninetales": {
@@ -25079,6 +25193,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Snow Warning"
         },
+        "otherFormes": [
+            "Alolan Ninetales"
+        ],
         "baseSpecies": "Ninetales"
     },
     "Alolan Diglett": {
@@ -25098,6 +25215,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sand Force"
         },
+        "otherFormes": [
+            "Alolan Diglett"
+        ],
         "baseSpecies": "Diglett"
     },
     "Alolan Dugtrio": {
@@ -25117,6 +25237,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sand Force"
         },
+        "otherFormes": [
+            "Alolan Dugtrio"
+        ],
         "baseSpecies": "Dugtrio"
     },
     "Alolan Meowth": {
@@ -25135,6 +25258,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Prankster"
         },
+        "otherFormes": [
+            "Alolan Meowth"
+        ],
         "baseSpecies": "Meowth"
     },
     "Galarian Meowth": {
@@ -25153,6 +25279,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Unnerve"
         },
+        "otherFormes": [
+            "Galarian Meowth"
+        ],
         "baseSpecies": "Meowth"
     },
     "Gigantamax Meowth": {
@@ -25171,6 +25300,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Unnerve"
         },
+        "otherFormes": [
+            "Gigantamax Meowth"
+        ],
         "baseSpecies": "Meowth"
     },
     "Alolan Persian": {
@@ -25189,6 +25321,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Prankster"
         },
+        "otherFormes": [
+            "Alolan Persian"
+        ],
         "baseSpecies": "Persian"
     },
     "Hisuian Growlithe": {
@@ -25208,6 +25343,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Justified"
         },
+        "otherFormes": [
+            "Hisuian Growlithe"
+        ],
         "baseSpecies": "Growlithe"
     },
     "Hisuian Arcanine": {
@@ -25227,6 +25365,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Defiant"
         },
+        "otherFormes": [
+            "Hisuian Arcanine"
+        ],
         "baseSpecies": "Arcanine"
     },
     "Mega Alakazam": {
@@ -25245,6 +25386,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Trace"
         },
+        "otherFormes": [
+            "Mega Alakazam"
+        ],
         "baseSpecies": "Alakazam"
     },
     "Gigantamax Machamp": {
@@ -25263,6 +25407,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Steadfast"
         },
+        "otherFormes": [
+            "Gigantamax Machamp"
+        ],
         "baseSpecies": "Machamp"
     },
     "Alolan Geodude": {
@@ -25282,6 +25429,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Galvanize"
         },
+        "otherFormes": [
+            "Alolan Geodude"
+        ],
         "baseSpecies": "Geodude"
     },
     "Alolan Graveler": {
@@ -25301,6 +25451,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Galvanize"
         },
+        "otherFormes": [
+            "Alolan Graveler"
+        ],
         "baseSpecies": "Graveler"
     },
     "Alolan Golem": {
@@ -25320,6 +25473,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Galvanize"
         },
+        "otherFormes": [
+            "Alolan Golem"
+        ],
         "baseSpecies": "Golem"
     },
     "Galarian Ponyta": {
@@ -25338,6 +25494,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Magic Guard"
         },
+        "otherFormes": [
+            "Galarian Ponyta"
+        ],
         "baseSpecies": "Ponyta"
     },
     "Galarian Rapidash": {
@@ -25357,6 +25516,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Magic Guard"
         },
+        "otherFormes": [
+            "Galarian Rapidash"
+        ],
         "baseSpecies": "Rapidash"
     },
     "Galarian Slowpoke": {
@@ -25375,6 +25537,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Regenerator"
         },
+        "otherFormes": [
+            "Galarian Slowpoke"
+        ],
         "baseSpecies": "Slowpoke"
     },
     "Galarian Slowbro": {
@@ -25394,6 +25559,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Regenerator"
         },
+        "otherFormes": [
+            "Galarian Slowbro"
+        ],
         "baseSpecies": "Slowbro"
     },
     "Mega Slowbro": {
@@ -25413,6 +25581,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shell Armor"
         },
+        "otherFormes": [
+            "Mega Slowbro"
+        ],
         "baseSpecies": "Slowbro"
     },
     "Galarian Farfetch'd": {
@@ -25431,6 +25602,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Scrappy"
         },
+        "otherFormes": [
+            "Galarian Farfetch'd"
+        ],
         "baseSpecies": "Farfetch’d"
     },
     "SPOOKYDEVTHING": {
@@ -25450,6 +25624,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Ice Body"
         },
+        "otherFormes": [
+            "SPOOKYDEVTHING"
+        ],
         "baseSpecies": "Dewgong"
     },
     "Alolan Grimer": {
@@ -25469,6 +25646,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Power of Alchemy"
         },
+        "otherFormes": [
+            "Alolan Grimer"
+        ],
         "baseSpecies": "Grimer"
     },
     "Alolan Muk": {
@@ -25488,6 +25668,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Power of Alchemy"
         },
+        "otherFormes": [
+            "Alolan Muk"
+        ],
         "baseSpecies": "Muk"
     },
     "Stitched Gengar": {
@@ -25507,6 +25690,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Merciless"
         },
+        "otherFormes": [
+            "Stitched Gengar"
+        ],
         "baseSpecies": "Gengar"
     },
     "Gigantamax Gengar": {
@@ -25526,6 +25712,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Cursed Body"
         },
+        "otherFormes": [
+            "Gigantamax Gengar"
+        ],
         "baseSpecies": "Gengar"
     },
     "Mega Gengar": {
@@ -25545,6 +25734,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Cursed Body"
         },
+        "otherFormes": [
+            "Mega Gengar"
+        ],
         "baseSpecies": "Gengar"
     },
     "Crystal Onix": {
@@ -25564,6 +25756,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Ice Body"
         },
+        "otherFormes": [
+            "Crystal Onix"
+        ],
         "baseSpecies": "Onix"
     },
     "Gigantamax Kingler": {
@@ -25582,6 +25777,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sheer Force"
         },
+        "otherFormes": [
+            "Gigantamax Kingler"
+        ],
         "baseSpecies": "Kingler"
     },
     "Hisuian Voltorb": {
@@ -25601,8 +25799,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aftermath"
         },
-        "gender": "N",
-        "baseSpecies": "Voltorb"
+        "otherFormes": [
+            "Hisuian Voltorb"
+        ],
+        "baseSpecies": "Voltorb",
+        "gender": "N"
     },
     "Hisuian Electrode": {
         "types": [
@@ -25621,8 +25822,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Grassy Surge"
         },
-        "gender": "N",
-        "baseSpecies": "Electrode"
+        "otherFormes": [
+            "Hisuian Electrode"
+        ],
+        "baseSpecies": "Electrode",
+        "gender": "N"
     },
     "Alolan Exeggutor": {
         "types": [
@@ -25641,6 +25845,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Rock Head"
         },
+        "otherFormes": [
+            "Alolan Exeggutor"
+        ],
         "baseSpecies": "Exeggutor"
     },
     "Alolan Marowak": {
@@ -25660,6 +25867,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Rock Head"
         },
+        "otherFormes": [
+            "Alolan Marowak"
+        ],
         "baseSpecies": "Marowak"
     },
     "Totem Marowak": {
@@ -25679,6 +25889,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Rock Head"
         },
+        "otherFormes": [
+            "Totem Marowak"
+        ],
         "baseSpecies": "Marowak"
     },
     "Galarian Weezing": {
@@ -25698,6 +25911,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Misty Surge"
         },
+        "otherFormes": [
+            "Galarian Weezing"
+        ],
         "baseSpecies": "Weezing"
     },
     "Mega Kangaskhan": {
@@ -25716,8 +25932,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Parental Bond"
         },
-        "gender": "F",
-        "baseSpecies": "Kangaskhan"
+        "otherFormes": [
+            "Mega Kangaskhan"
+        ],
+        "baseSpecies": "Kangaskhan",
+        "gender": "F"
     },
     "Galarian Mr. Mime": {
         "types": [
@@ -25736,6 +25955,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Ice Body"
         },
+        "otherFormes": [
+            "Galarian Mr. Mime"
+        ],
         "baseSpecies": "Mr. Mime"
     },
     "Mega Pinsir": {
@@ -25755,6 +25977,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aerilate"
         },
+        "otherFormes": [
+            "Mega Pinsir"
+        ],
         "baseSpecies": "Pinsir"
     },
     "Mega Gyarados": {
@@ -25774,6 +25999,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Mold Breaker"
         },
+        "otherFormes": [
+            "Mega Gyarados"
+        ],
         "baseSpecies": "Gyarados"
     },
     "Gigantamax Lapras": {
@@ -25793,6 +26021,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Hydration"
         },
+        "otherFormes": [
+            "Gigantamax Lapras"
+        ],
         "baseSpecies": "Lapras"
     },
     "Partner Eevee": {
@@ -25811,6 +26042,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Protean"
         },
+        "otherFormes": [
+            "Partner Eevee"
+        ],
         "baseSpecies": "Eevee"
     },
     "Gigantamax Eevee": {
@@ -25829,6 +26063,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Protean"
         },
+        "otherFormes": [
+            "Gigantamax Eevee"
+        ],
         "baseSpecies": "Eevee"
     },
     "Mega Aerodactyl": {
@@ -25848,6 +26085,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Tough Claws"
         },
+        "otherFormes": [
+            "Mega Aerodactyl"
+        ],
         "baseSpecies": "Aerodactyl"
     },
     "Gigantamax Snorlax": {
@@ -25866,6 +26106,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Gluttony"
         },
+        "otherFormes": [
+            "Gigantamax Snorlax"
+        ],
         "baseSpecies": "Snorlax"
     },
     "Galarian Articuno": {
@@ -25885,8 +26128,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Competitive"
         },
-        "gender": "N",
-        "baseSpecies": "Articuno"
+        "otherFormes": [
+            "Galarian Articuno"
+        ],
+        "baseSpecies": "Articuno",
+        "gender": "N"
     },
     "Galarian Zapdos": {
         "types": [
@@ -25905,8 +26151,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Defiant"
         },
-        "gender": "N",
-        "baseSpecies": "Zapdos"
+        "otherFormes": [
+            "Galarian Zapdos"
+        ],
+        "baseSpecies": "Zapdos",
+        "gender": "N"
     },
     "Galarian Moltres": {
         "types": [
@@ -25925,8 +26174,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Berserk"
         },
-        "gender": "N",
-        "baseSpecies": "Moltres"
+        "otherFormes": [
+            "Galarian Moltres"
+        ],
+        "baseSpecies": "Moltres",
+        "gender": "N"
     },
     "MK2 Armored Mewtwo": {
         "types": [
@@ -25945,8 +26197,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Steadfast"
         },
-        "gender": "N",
-        "baseSpecies": "Mewtwo"
+        "otherFormes": [
+            "MK2 Armored Mewtwo"
+        ],
+        "baseSpecies": "Mewtwo",
+        "gender": "N"
     },
     "Mega Mewtwo Y": {
         "types": [
@@ -25964,8 +26219,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Insomnia"
         },
-        "gender": "N",
-        "baseSpecies": "Mewtwo"
+        "otherFormes": [
+            "Mega Mewtwo Y"
+        ],
+        "baseSpecies": "Mewtwo",
+        "gender": "N"
     },
     "Mega Mewtwo X": {
         "types": [
@@ -25983,8 +26241,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Unnerve"
         },
-        "gender": "N",
-        "baseSpecies": "Mewtwo"
+        "otherFormes": [
+            "Mega Mewtwo X"
+        ],
+        "baseSpecies": "Mewtwo",
+        "gender": "N"
     },
     "Hisuian Typhlosion": {
         "types": [
@@ -26003,6 +26264,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Flash Fire"
         },
+        "otherFormes": [
+            "Hisuian Typhlosion"
+        ],
         "baseSpecies": "Typhlosion"
     },
     "Spiky-eared Pichu": {
@@ -26021,8 +26285,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
-        "gender": "F",
-        "baseSpecies": "Pichu"
+        "otherFormes": [
+            "Spiky-eared Pichu"
+        ],
+        "baseSpecies": "Pichu",
+        "gender": "F"
     },
     "Mega Ampharos": {
         "types": [
@@ -26041,6 +26308,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Mold Breaker"
         },
+        "otherFormes": [
+            "Mega Ampharos"
+        ],
         "baseSpecies": "Ampharos"
     },
     "Galarian Slowking": {
@@ -26060,6 +26330,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Regenerator"
         },
+        "otherFormes": [
+            "Galarian Slowking"
+        ],
         "baseSpecies": "Slowking"
     },
     "One form": {
@@ -26078,8 +26351,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "N",
-        "baseSpecies": "Unown"
+        "otherFormes": [
+            "One form"
+        ],
+        "baseSpecies": "Unown",
+        "gender": "N"
     },
     "Mega Steelix": {
         "types": [
@@ -26098,6 +26374,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sand Force"
         },
+        "otherFormes": [
+            "Mega Steelix"
+        ],
         "baseSpecies": "Steelix"
     },
     "Hisuian Qwilfish": {
@@ -26117,6 +26396,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Intimidate"
         },
+        "otherFormes": [
+            "Hisuian Qwilfish"
+        ],
         "baseSpecies": "Qwilfish"
     },
     "Mega Scizor": {
@@ -26136,6 +26418,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Technician"
         },
+        "otherFormes": [
+            "Mega Scizor"
+        ],
         "baseSpecies": "Scizor"
     },
     "Mega Heracross": {
@@ -26155,6 +26440,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Skill Link"
         },
+        "otherFormes": [
+            "Mega Heracross"
+        ],
         "baseSpecies": "Heracross"
     },
     "Hisuian Sneasel": {
@@ -26174,6 +26462,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Technician"
         },
+        "otherFormes": [
+            "Hisuian Sneasel"
+        ],
         "baseSpecies": "Sneasel"
     },
     "Galarian Corsola": {
@@ -26192,6 +26483,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Cursed Body"
         },
+        "otherFormes": [
+            "Galarian Corsola"
+        ],
         "baseSpecies": "Corsola"
     },
     "Mega Houndoom": {
@@ -26211,6 +26505,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Solar Power"
         },
+        "otherFormes": [
+            "Mega Houndoom"
+        ],
         "baseSpecies": "Houndoom"
     },
     "Mega Tyranitar": {
@@ -26230,6 +26527,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sand Stream"
         },
+        "otherFormes": [
+            "Mega Tyranitar"
+        ],
         "baseSpecies": "Tyranitar"
     },
     "Mega Sceptile": {
@@ -26249,6 +26549,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Lightning Rod"
         },
+        "otherFormes": [
+            "Mega Sceptile"
+        ],
         "baseSpecies": "Sceptile"
     },
     "Mega Blaziken": {
@@ -26268,6 +26571,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Speed Boost"
         },
+        "otherFormes": [
+            "Mega Blaziken"
+        ],
         "baseSpecies": "Blaziken"
     },
     "Mega Swampert": {
@@ -26287,6 +26593,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Swift Swim"
         },
+        "otherFormes": [
+            "Mega Swampert"
+        ],
         "baseSpecies": "Swampert"
     },
     "Galarian Zigzagoon": {
@@ -26306,6 +26615,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Quick Feet"
         },
+        "otherFormes": [
+            "Galarian Zigzagoon"
+        ],
         "baseSpecies": "Zigzagoon"
     },
     "Galarian Linoone": {
@@ -26325,6 +26637,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Quick Feet"
         },
+        "otherFormes": [
+            "Galarian Linoone"
+        ],
         "baseSpecies": "Linoone"
     },
     "Mega Gardevoir": {
@@ -26344,6 +26659,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pixilate"
         },
+        "otherFormes": [
+            "Mega Gardevoir"
+        ],
         "baseSpecies": "Gardevoir"
     },
     "Mega Sableye": {
@@ -26363,6 +26681,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Magic Bounce"
         },
+        "otherFormes": [
+            "Mega Sableye"
+        ],
         "baseSpecies": "Sableye"
     },
     "Mega Mawile": {
@@ -26382,6 +26703,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Huge Power"
         },
+        "otherFormes": [
+            "Mega Mawile"
+        ],
         "baseSpecies": "Mawile"
     },
     "Mega Aggron": {
@@ -26400,6 +26724,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Filter"
         },
+        "otherFormes": [
+            "Mega Aggron"
+        ],
         "baseSpecies": "Aggron"
     },
     "Mega Medicham": {
@@ -26419,6 +26746,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pure Power"
         },
+        "otherFormes": [
+            "Mega Medicham"
+        ],
         "baseSpecies": "Medicham"
     },
     "Mega Manectric": {
@@ -26437,6 +26767,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Intimidate"
         },
+        "otherFormes": [
+            "Mega Manectric"
+        ],
         "baseSpecies": "Manectric"
     },
     "Mega Sharpedo": {
@@ -26456,6 +26789,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Strong Jaw"
         },
+        "otherFormes": [
+            "Mega Sharpedo"
+        ],
         "baseSpecies": "Sharpedo"
     },
     "Mega Camerupt": {
@@ -26475,6 +26811,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sheer Force"
         },
+        "otherFormes": [
+            "Mega Camerupt"
+        ],
         "baseSpecies": "Camerupt"
     },
     "Mega Altaria": {
@@ -26494,6 +26833,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pixilate"
         },
+        "otherFormes": [
+            "Mega Altaria"
+        ],
         "baseSpecies": "Altaria"
     },
     "Sunny Form": {
@@ -26512,6 +26854,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Forecast"
         },
+        "otherFormes": [
+            "Sunny Form"
+        ],
         "baseSpecies": "Castform"
     },
     "Rainy Form": {
@@ -26530,6 +26875,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Forecast"
         },
+        "otherFormes": [
+            "Rainy Form"
+        ],
         "baseSpecies": "Castform"
     },
     "Snowy Form": {
@@ -26548,6 +26896,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Forecast"
         },
+        "otherFormes": [
+            "Snowy Form"
+        ],
         "baseSpecies": "Castform"
     },
     "Mega Banette": {
@@ -26566,6 +26917,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Prankster"
         },
+        "otherFormes": [
+            "Mega Banette"
+        ],
         "baseSpecies": "Banette"
     },
     "Mega Absol": {
@@ -26584,6 +26938,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Magic Bounce"
         },
+        "otherFormes": [
+            "Mega Absol"
+        ],
         "baseSpecies": "Absol"
     },
     "Mega Glalie": {
@@ -26602,6 +26959,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Refrigerate"
         },
+        "otherFormes": [
+            "Mega Glalie"
+        ],
         "baseSpecies": "Glalie"
     },
     "Mega Salamence": {
@@ -26621,6 +26981,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aerilate"
         },
+        "otherFormes": [
+            "Mega Salamence"
+        ],
         "baseSpecies": "Salamence"
     },
     "Mega Metagross": {
@@ -26640,8 +27003,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Tough Claws"
         },
-        "gender": "N",
-        "baseSpecies": "Metagross"
+        "otherFormes": [
+            "Mega Metagross"
+        ],
+        "baseSpecies": "Metagross",
+        "gender": "N"
     },
     "Mega Latias": {
         "types": [
@@ -26660,8 +27026,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "F",
-        "baseSpecies": "Latias"
+        "otherFormes": [
+            "Mega Latias"
+        ],
+        "baseSpecies": "Latias",
+        "gender": "F"
     },
     "Mega Latios": {
         "types": [
@@ -26680,8 +27049,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "M",
-        "baseSpecies": "Latios"
+        "otherFormes": [
+            "Mega Latios"
+        ],
+        "baseSpecies": "Latios",
+        "gender": "M"
     },
     "Primal Kyogre": {
         "types": [
@@ -26699,8 +27071,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Primordial Sea"
         },
-        "gender": "N",
-        "baseSpecies": "Kyogre"
+        "otherFormes": [
+            "Primal Kyogre"
+        ],
+        "baseSpecies": "Kyogre",
+        "gender": "N"
     },
     "Primal Groudon": {
         "types": [
@@ -26719,8 +27094,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Desolate Land"
         },
-        "gender": "N",
-        "baseSpecies": "Groudon"
+        "otherFormes": [
+            "Primal Groudon"
+        ],
+        "baseSpecies": "Groudon",
+        "gender": "N"
     },
     "Mega Rayquaza": {
         "types": [
@@ -26739,8 +27117,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Delta Stream"
         },
-        "gender": "N",
-        "baseSpecies": "Rayquaza"
+        "otherFormes": [
+            "Mega Rayquaza"
+        ],
+        "baseSpecies": "Rayquaza",
+        "gender": "N"
     },
     "Attack Forme": {
         "types": [
@@ -26758,8 +27139,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pressure"
         },
-        "gender": "N",
-        "baseSpecies": "Deoxys"
+        "otherFormes": [
+            "Attack Forme"
+        ],
+        "baseSpecies": "Deoxys",
+        "gender": "N"
     },
     "Defense Forme": {
         "types": [
@@ -26777,8 +27161,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pressure"
         },
-        "gender": "N",
-        "baseSpecies": "Deoxys"
+        "otherFormes": [
+            "Defense Forme"
+        ],
+        "baseSpecies": "Deoxys",
+        "gender": "N"
     },
     "Speed Forme": {
         "types": [
@@ -26796,8 +27183,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pressure"
         },
-        "gender": "N",
-        "baseSpecies": "Deoxys"
+        "otherFormes": [
+            "Speed Forme"
+        ],
+        "baseSpecies": "Deoxys",
+        "gender": "N"
     },
     "Sandy Cloak": {
         "types": [
@@ -26816,8 +27206,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Overcoat"
         },
-        "gender": "F",
-        "baseSpecies": "Wormadam"
+        "otherFormes": [
+            "Sandy Cloak"
+        ],
+        "baseSpecies": "Wormadam",
+        "gender": "F"
     },
     "Trash Cloak": {
         "types": [
@@ -26836,8 +27229,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Overcoat"
         },
-        "gender": "F",
-        "baseSpecies": "Wormadam"
+        "otherFormes": [
+            "Trash Cloak"
+        ],
+        "baseSpecies": "Wormadam",
+        "gender": "F"
     },
     "Sunshine Form": {
         "types": [
@@ -26856,6 +27252,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Flower Gift"
         },
+        "otherFormes": [
+            "Sunshine Form"
+        ],
         "baseSpecies": "Cherrim"
     },
     "East Sea": {
@@ -26875,6 +27274,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sand Force"
         },
+        "otherFormes": [
+            "East Sea"
+        ],
         "baseSpecies": "Gastrodon"
     },
     "Mega Lopunny": {
@@ -26894,6 +27296,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Scrappy"
         },
+        "otherFormes": [
+            "Mega Lopunny"
+        ],
         "baseSpecies": "Lopunny"
     },
     "Mega Garchomp": {
@@ -26913,6 +27318,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sand Force"
         },
+        "otherFormes": [
+            "Mega Garchomp"
+        ],
         "baseSpecies": "Garchomp"
     },
     "Mega Lucario": {
@@ -26932,6 +27340,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Adaptability"
         },
+        "otherFormes": [
+            "Mega Lucario"
+        ],
         "baseSpecies": "Lucario"
     },
     "Mega Abomasnow": {
@@ -26951,6 +27362,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Snow Warning"
         },
+        "otherFormes": [
+            "Mega Abomasnow"
+        ],
         "baseSpecies": "Abomasnow"
     },
     "Mega Gallade": {
@@ -26970,8 +27384,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Inner Focus"
         },
-        "gender": "M",
-        "baseSpecies": "Gallade"
+        "otherFormes": [
+            "Mega Gallade"
+        ],
+        "baseSpecies": "Gallade",
+        "gender": "M"
     },
     "Heat Rotom": {
         "types": [
@@ -26990,8 +27407,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "N",
-        "baseSpecies": "Rotom"
+        "otherFormes": [
+            "Heat Rotom"
+        ],
+        "baseSpecies": "Rotom",
+        "gender": "N"
     },
     "Wash Rotom": {
         "types": [
@@ -27010,8 +27430,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "N",
-        "baseSpecies": "Rotom"
+        "otherFormes": [
+            "Wash Rotom"
+        ],
+        "baseSpecies": "Rotom",
+        "gender": "N"
     },
     "Frost Rotom": {
         "types": [
@@ -27030,8 +27453,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "N",
-        "baseSpecies": "Rotom"
+        "otherFormes": [
+            "Frost Rotom"
+        ],
+        "baseSpecies": "Rotom",
+        "gender": "N"
     },
     "Fan Rotom": {
         "types": [
@@ -27050,8 +27476,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Motor Drive"
         },
-        "gender": "N",
-        "baseSpecies": "Rotom"
+        "otherFormes": [
+            "Fan Rotom"
+        ],
+        "baseSpecies": "Rotom",
+        "gender": "N"
     },
     "Mow Rotom": {
         "types": [
@@ -27070,8 +27499,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "N",
-        "baseSpecies": "Rotom"
+        "otherFormes": [
+            "Mow Rotom"
+        ],
+        "baseSpecies": "Rotom",
+        "gender": "N"
     },
     "Origin Forme": {
         "types": [
@@ -27090,8 +27522,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
-        "gender": "N",
-        "baseSpecies": "Giratina"
+        "otherFormes": [
+            "Origin Forme"
+        ],
+        "baseSpecies": "Giratina",
+        "gender": "N"
     },
     "Sky Forme": {
         "types": [
@@ -27110,8 +27545,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Serene Grace"
         },
-        "gender": "N",
-        "baseSpecies": "Shaymin"
+        "otherFormes": [
+            "Sky Forme"
+        ],
+        "baseSpecies": "Shaymin",
+        "gender": "N"
     },
     "Hisuian Samurott": {
         "types": [
@@ -27130,6 +27568,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shell Armor"
         },
+        "otherFormes": [
+            "Hisuian Samurott"
+        ],
         "baseSpecies": "Samurott"
     },
     "Mega Audino": {
@@ -27149,6 +27590,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Healer"
         },
+        "otherFormes": [
+            "Mega Audino"
+        ],
         "baseSpecies": "Audino"
     },
     "Hisuian Lilligant": {
@@ -27168,8 +27612,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Leaf Guard"
         },
-        "gender": "F",
-        "baseSpecies": "Lilligant"
+        "otherFormes": [
+            "Hisuian Lilligant"
+        ],
+        "baseSpecies": "Lilligant",
+        "gender": "F"
     },
     "Blue-Striped Form": {
         "types": [
@@ -27187,6 +27634,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Mold Breaker"
         },
+        "otherFormes": [
+            "Blue-Striped Form"
+        ],
         "baseSpecies": "Basculin"
     },
     "White-Striped Form": {
@@ -27205,6 +27655,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Mold Breaker"
         },
+        "otherFormes": [
+            "White-Striped Form"
+        ],
         "baseSpecies": "Basculin"
     },
     "Galarian Darumaka": {
@@ -27223,6 +27676,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Inner Focus"
         },
+        "otherFormes": [
+            "Galarian Darumaka"
+        ],
         "baseSpecies": "Darumaka"
     },
     "Zen Mode": {
@@ -27242,6 +27698,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Zen Mode"
         },
+        "otherFormes": [
+            "Zen Mode"
+        ],
         "baseSpecies": "Darmanitan"
     },
     "Galarian Standard Mode": {
@@ -27260,6 +27719,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Zen Mode"
         },
+        "otherFormes": [
+            "Galarian Standard Mode"
+        ],
         "baseSpecies": "Darmanitan"
     },
     "Galarian Zen Mode": {
@@ -27279,6 +27741,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Zen Mode"
         },
+        "otherFormes": [
+            "Galarian Zen Mode"
+        ],
         "baseSpecies": "Darmanitan"
     },
     "Galarian Yamask": {
@@ -27298,6 +27763,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Wandering Spirit"
         },
+        "otherFormes": [
+            "Galarian Yamask"
+        ],
         "baseSpecies": "Yamask"
     },
     "Gigantamax Garbodor": {
@@ -27316,6 +27784,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aftermath"
         },
+        "otherFormes": [
+            "Gigantamax Garbodor"
+        ],
         "baseSpecies": "Garbodor"
     },
     "Hisuian Zorua": {
@@ -27335,6 +27806,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Illusion"
         },
+        "otherFormes": [
+            "Hisuian Zorua"
+        ],
         "baseSpecies": "Zorua"
     },
     "Hisuian Zoroark": {
@@ -27354,6 +27828,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Illusion"
         },
+        "otherFormes": [
+            "Hisuian Zoroark"
+        ],
         "baseSpecies": "Zoroark"
     },
     "Summer Form": {
@@ -27373,6 +27850,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Serene Grace"
         },
+        "otherFormes": [
+            "Summer Form"
+        ],
         "baseSpecies": "Sawsbuck"
     },
     "Autumn Form": {
@@ -27392,6 +27872,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Serene Grace"
         },
+        "otherFormes": [
+            "Autumn Form"
+        ],
         "baseSpecies": "Sawsbuck"
     },
     "Winter Form": {
@@ -27411,6 +27894,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Serene Grace"
         },
+        "otherFormes": [
+            "Winter Form"
+        ],
         "baseSpecies": "Sawsbuck"
     },
     "Galarian Stunfisk": {
@@ -27430,6 +27916,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Mimicry"
         },
+        "otherFormes": [
+            "Galarian Stunfisk"
+        ],
         "baseSpecies": "Stunfisk"
     },
     "Hisuian Braviary": {
@@ -27449,8 +27938,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Tinted Lens"
         },
-        "gender": "M",
-        "baseSpecies": "Braviary"
+        "otherFormes": [
+            "Hisuian Braviary"
+        ],
+        "baseSpecies": "Braviary",
+        "gender": "M"
     },
     "Therian Forme": {
         "types": [
@@ -27469,8 +27961,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Contrary"
         },
-        "gender": "F",
-        "baseSpecies": "Enamorus"
+        "otherFormes": [
+            "Therian Forme"
+        ],
+        "baseSpecies": "Enamorus",
+        "gender": "F"
     },
     "White Kyurem": {
         "types": [
@@ -27489,8 +27984,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Turboblaze"
         },
-        "gender": "N",
-        "baseSpecies": "Kyurem"
+        "otherFormes": [
+            "White Kyurem"
+        ],
+        "baseSpecies": "Kyurem",
+        "gender": "N"
     },
     "Black Kyurem": {
         "types": [
@@ -27509,8 +28007,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Teravolt"
         },
-        "gender": "N",
-        "baseSpecies": "Kyurem"
+        "otherFormes": [
+            "Black Kyurem"
+        ],
+        "baseSpecies": "Kyurem",
+        "gender": "N"
     },
     "Resolute Form": {
         "types": [
@@ -27529,8 +28030,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Justified"
         },
-        "gender": "N",
-        "baseSpecies": "Keldeo"
+        "otherFormes": [
+            "Resolute Form"
+        ],
+        "baseSpecies": "Keldeo",
+        "gender": "N"
     },
     "Pirouette Forme": {
         "types": [
@@ -27549,8 +28053,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Serene Grace"
         },
-        "gender": "N",
-        "baseSpecies": "Meloetta"
+        "otherFormes": [
+            "Pirouette Forme"
+        ],
+        "baseSpecies": "Meloetta",
+        "gender": "N"
     },
     "Shock Drive Genesect": {
         "types": [
@@ -27569,8 +28076,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Download"
         },
-        "gender": "N",
-        "baseSpecies": "Genesect"
+        "otherFormes": [
+            "Shock Drive Genesect"
+        ],
+        "baseSpecies": "Genesect",
+        "gender": "N"
     },
     "Burn Drive Genesect": {
         "types": [
@@ -27589,8 +28099,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Download"
         },
-        "gender": "N",
-        "baseSpecies": "Genesect"
+        "otherFormes": [
+            "Burn Drive Genesect"
+        ],
+        "baseSpecies": "Genesect",
+        "gender": "N"
     },
     "Chill Drive Genesect": {
         "types": [
@@ -27609,8 +28122,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Download"
         },
-        "gender": "N",
-        "baseSpecies": "Genesect"
+        "otherFormes": [
+            "Chill Drive Genesect"
+        ],
+        "baseSpecies": "Genesect",
+        "gender": "N"
     },
     "Douse Drive Genesect": {
         "types": [
@@ -27629,8 +28145,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Download"
         },
-        "gender": "N",
-        "baseSpecies": "Genesect"
+        "otherFormes": [
+            "Douse Drive Genesect"
+        ],
+        "baseSpecies": "Genesect",
+        "gender": "N"
     },
     "Ash-Greninja": {
         "types": [
@@ -27649,8 +28168,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Battle Bond"
         },
-        "gender": "M",
-        "baseSpecies": "Greninja"
+        "otherFormes": [
+            "Ash-Greninja"
+        ],
+        "baseSpecies": "Greninja",
+        "gender": "M"
     },
     "Polar Pattern": {
         "types": [
@@ -27669,6 +28191,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Polar Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Tundra Pattern": {
@@ -27688,6 +28213,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Tundra Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Continental Pattern": {
@@ -27707,6 +28235,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Continental Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Garden Pattern": {
@@ -27726,6 +28257,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Garden Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Elegant Pattern": {
@@ -27745,6 +28279,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Elegant Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Icy Snow Pattern": {
@@ -27764,6 +28301,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Icy Snow Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Modern Pattern": {
@@ -27783,6 +28323,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Modern Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Marine Pattern": {
@@ -27802,6 +28345,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Marine Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Archipelago Pattern": {
@@ -27821,6 +28367,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Archipelago Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "High Plains Pattern": {
@@ -27840,6 +28389,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "High Plains Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Sandstorm Pattern": {
@@ -27859,6 +28411,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Sandstorm Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "River Pattern": {
@@ -27878,6 +28433,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "River Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Monsoon Pattern": {
@@ -27897,6 +28455,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Monsoon Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Savanna Pattern": {
@@ -27916,6 +28477,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Savanna Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Sun Pattern": {
@@ -27935,6 +28499,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Sun Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Ocean Pattern": {
@@ -27954,6 +28521,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Ocean Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Jungle Pattern": {
@@ -27973,6 +28543,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Jungle Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Fancy Pattern": {
@@ -27992,6 +28565,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Fancy Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Poké Ball Pattern": {
@@ -28011,6 +28587,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Friend Guard"
         },
+        "otherFormes": [
+            "Poké Ball Pattern"
+        ],
         "baseSpecies": "Vivillon"
     },
     "Yellow Flower": {
@@ -28029,8 +28608,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Symbiosis"
         },
-        "gender": "F",
-        "baseSpecies": "Florges"
+        "otherFormes": [
+            "Yellow Flower"
+        ],
+        "baseSpecies": "Florges",
+        "gender": "F"
     },
     "Orange Flower": {
         "types": [
@@ -28048,8 +28630,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Symbiosis"
         },
-        "gender": "F",
-        "baseSpecies": "Florges"
+        "otherFormes": [
+            "Orange Flower"
+        ],
+        "baseSpecies": "Florges",
+        "gender": "F"
     },
     "Blue Flower": {
         "types": [
@@ -28067,8 +28652,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Symbiosis"
         },
-        "gender": "F",
-        "baseSpecies": "Florges"
+        "otherFormes": [
+            "Blue Flower"
+        ],
+        "baseSpecies": "Florges",
+        "gender": "F"
     },
     "White Flower": {
         "types": [
@@ -28086,8 +28674,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Symbiosis"
         },
-        "gender": "F",
-        "baseSpecies": "Florges"
+        "otherFormes": [
+            "White Flower"
+        ],
+        "baseSpecies": "Florges",
+        "gender": "F"
     },
     "Eternal Flower Floette": {
         "types": [
@@ -28105,8 +28696,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Symbiosis"
         },
-        "gender": "F",
-        "baseSpecies": "Floette"
+        "otherFormes": [
+            "Eternal Flower Floette"
+        ],
+        "baseSpecies": "Floette",
+        "gender": "F"
     },
     "Heart Trim": {
         "types": [
@@ -28124,6 +28718,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Heart Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Star Trim": {
@@ -28142,6 +28739,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Star Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Diamond Trim": {
@@ -28160,6 +28760,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Diamond Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Debutante Trim": {
@@ -28178,6 +28781,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Debutante Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Matron Trim": {
@@ -28196,6 +28802,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Matron Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Dandy Trim": {
@@ -28214,6 +28823,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Dandy Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "La Reine Trim": {
@@ -28232,6 +28844,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "La Reine Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Kabuki Trim": {
@@ -28250,6 +28865,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Kabuki Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Pharaoh Trim": {
@@ -28268,6 +28886,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fur Coat"
         },
+        "otherFormes": [
+            "Pharaoh Trim"
+        ],
         "baseSpecies": "Furfrou"
     },
     "Meowstic-F": {
@@ -28286,8 +28907,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Competitive"
         },
-        "gender": "F",
-        "baseSpecies": "Meowstic"
+        "otherFormes": [
+            "Meowstic-F"
+        ],
+        "baseSpecies": "Meowstic",
+        "gender": "F"
     },
     "Blade Forme": {
         "types": [
@@ -28306,6 +28930,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Stance Change"
         },
+        "otherFormes": [
+            "Blade Forme"
+        ],
         "baseSpecies": "Aegislash"
     },
     "Hisuian Sliggoo": {
@@ -28325,6 +28952,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Gooey"
         },
+        "otherFormes": [
+            "Hisuian Sliggoo"
+        ],
         "baseSpecies": "Sliggoo"
     },
     "Hisuian Goodra": {
@@ -28344,6 +28974,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Gooey"
         },
+        "otherFormes": [
+            "Hisuian Goodra"
+        ],
         "baseSpecies": "Goodra"
     },
     "Small Size": {
@@ -28363,6 +28996,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Insomnia"
         },
+        "otherFormes": [
+            "Small Size"
+        ],
         "baseSpecies": "Gourgeist"
     },
     "Large Size": {
@@ -28382,6 +29018,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Insomnia"
         },
+        "otherFormes": [
+            "Large Size"
+        ],
         "baseSpecies": "Gourgeist"
     },
     "Super Size": {
@@ -28401,6 +29040,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Insomnia"
         },
+        "otherFormes": [
+            "Super Size"
+        ],
         "baseSpecies": "Gourgeist"
     },
     "Hisuian Avalugg": {
@@ -28420,6 +29062,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sturdy"
         },
+        "otherFormes": [
+            "Hisuian Avalugg"
+        ],
         "baseSpecies": "Avalugg"
     },
     "Active Mode": {
@@ -28438,8 +29083,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Fairy Aura"
         },
-        "gender": "N",
-        "baseSpecies": "Xerneas"
+        "otherFormes": [
+            "Active Mode"
+        ],
+        "baseSpecies": "Xerneas",
+        "gender": "N"
     },
     "Zygarde 10% Forme": {
         "types": [
@@ -28458,8 +29106,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aura Break"
         },
-        "gender": "N",
-        "baseSpecies": "Zygarde"
+        "otherFormes": [
+            "Zygarde 10% Forme"
+        ],
+        "baseSpecies": "Zygarde",
+        "gender": "N"
     },
     "Zygarde Complete Forme": {
         "types": [
@@ -28478,8 +29129,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Power Construct"
         },
-        "gender": "N",
-        "baseSpecies": "Zygarde"
+        "otherFormes": [
+            "Zygarde Complete Forme"
+        ],
+        "baseSpecies": "Zygarde",
+        "gender": "N"
     },
     "Zygarde Core Forme": {
         "types": [
@@ -28498,8 +29152,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Dazzling"
         },
-        "gender": "N",
-        "baseSpecies": "Zygarde"
+        "otherFormes": [
+            "Zygarde Core Forme"
+        ],
+        "baseSpecies": "Zygarde",
+        "gender": "N"
     },
     "Zygarde Cell Forme": {
         "types": [
@@ -28518,8 +29175,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Power Construct"
         },
-        "gender": "N",
-        "baseSpecies": "Zygarde"
+        "otherFormes": [
+            "Zygarde Cell Forme"
+        ],
+        "baseSpecies": "Zygarde",
+        "gender": "N"
     },
     "Mega Diancie": {
         "types": [
@@ -28538,8 +29198,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Magic Bounce"
         },
-        "gender": "N",
-        "baseSpecies": "Diancie"
+        "otherFormes": [
+            "Mega Diancie"
+        ],
+        "baseSpecies": "Diancie",
+        "gender": "N"
     },
     "Hoopa Unbound": {
         "types": [
@@ -28558,8 +29221,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Magician"
         },
-        "gender": "N",
-        "baseSpecies": "Hoopa"
+        "otherFormes": [
+            "Hoopa Unbound"
+        ],
+        "baseSpecies": "Hoopa",
+        "gender": "N"
     },
     "Hisuian Decidueye": {
         "types": [
@@ -28578,6 +29244,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Scrappy"
         },
+        "otherFormes": [
+            "Hisuian Decidueye"
+        ],
         "baseSpecies": "Decidueye"
     },
     "Totem Gumshoos": {
@@ -28596,6 +29265,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Adaptability"
         },
+        "otherFormes": [
+            "Totem Gumshoos"
+        ],
         "baseSpecies": "Gumshoos"
     },
     "Totem Vikavolt": {
@@ -28615,6 +29287,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Levitate"
         },
+        "otherFormes": [
+            "Totem Vikavolt"
+        ],
         "baseSpecies": "Vikavolt"
     },
     "Pom-Pom Style": {
@@ -28634,6 +29309,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Dancer"
         },
+        "otherFormes": [
+            "Pom-Pom Style"
+        ],
         "baseSpecies": "Oricorio"
     },
     "Pa'u Style": {
@@ -28653,6 +29331,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Dancer"
         },
+        "otherFormes": [
+            "Pa'u Style"
+        ],
         "baseSpecies": "Oricorio"
     },
     "Sensu Style": {
@@ -28672,6 +29353,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Dancer"
         },
+        "otherFormes": [
+            "Sensu Style"
+        ],
         "baseSpecies": "Oricorio"
     },
     "Totem Ribombee": {
@@ -28691,6 +29375,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sweet Veil"
         },
+        "otherFormes": [
+            "Totem Ribombee"
+        ],
         "baseSpecies": "Ribombee"
     },
     "Rockruff Own-Tempo": {
@@ -28709,6 +29396,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Own Tempo"
         },
+        "otherFormes": [
+            "Rockruff Own-Tempo"
+        ],
         "baseSpecies": "Rockruff"
     },
     "Midnight Form": {
@@ -28727,6 +29417,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "No Guard"
         },
+        "otherFormes": [
+            "Midnight Form"
+        ],
         "baseSpecies": "Lycanroc"
     },
     "Dusk Form": {
@@ -28745,6 +29438,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Tough Claws"
         },
+        "otherFormes": [
+            "Dusk Form"
+        ],
         "baseSpecies": "Lycanroc"
     },
     "School Form": {
@@ -28763,6 +29459,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Schooling"
         },
+        "otherFormes": [
+            "School Form"
+        ],
         "baseSpecies": "Wishiwashi"
     },
     "Totem Araquanid": {
@@ -28782,6 +29481,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Water Bubble"
         },
+        "otherFormes": [
+            "Totem Araquanid"
+        ],
         "baseSpecies": "Araquanid"
     },
     "Totem Lurantis": {
@@ -28800,6 +29502,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Leaf Guard"
         },
+        "otherFormes": [
+            "Totem Lurantis"
+        ],
         "baseSpecies": "Lurantis"
     },
     "Totem Salazzle": {
@@ -28819,8 +29524,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Corrosion"
         },
-        "gender": "F",
-        "baseSpecies": "Salazzle"
+        "otherFormes": [
+            "Totem Salazzle"
+        ],
+        "baseSpecies": "Salazzle",
+        "gender": "F"
     },
     "Type: Fighting": {
         "types": [
@@ -28838,8 +29546,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Fighting"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Flying": {
         "types": [
@@ -28857,8 +29568,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Flying"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Poison": {
         "types": [
@@ -28876,8 +29590,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Poison"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Ground": {
         "types": [
@@ -28895,8 +29612,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Ground"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Rock": {
         "types": [
@@ -28914,8 +29634,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Rock"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Bug": {
         "types": [
@@ -28933,8 +29656,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Bug"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Ghost": {
         "types": [
@@ -28952,8 +29678,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Ghost"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Steel": {
         "types": [
@@ -28971,8 +29700,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Steel"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Fire": {
         "types": [
@@ -28990,8 +29722,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Fire"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Water": {
         "types": [
@@ -29009,8 +29744,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Water"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Grass": {
         "types": [
@@ -29028,8 +29766,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Grass"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Electric": {
         "types": [
@@ -29047,8 +29788,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Electric"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Psychic": {
         "types": [
@@ -29066,8 +29810,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Psychic"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Ice": {
         "types": [
@@ -29085,8 +29832,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Ice"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Dragon": {
         "types": [
@@ -29104,8 +29854,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Dragon"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Dark": {
         "types": [
@@ -29123,8 +29876,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Dark"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Type: Fairy": {
         "types": [
@@ -29142,8 +29898,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "RKS System"
         },
-        "gender": "N",
-        "baseSpecies": "Silvally"
+        "otherFormes": [
+            "Type: Fairy"
+        ],
+        "baseSpecies": "Silvally",
+        "gender": "N"
     },
     "Meteor Form": {
         "types": [
@@ -29162,8 +29921,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Meteor Form"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Red Core": {
         "types": [
@@ -29182,8 +29944,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Red Core"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Orange Core": {
         "types": [
@@ -29202,8 +29967,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Orange Core"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Yellow Core": {
         "types": [
@@ -29222,8 +29990,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Yellow Core"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Green Core": {
         "types": [
@@ -29242,8 +30013,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Green Core"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Blue Core": {
         "types": [
@@ -29262,8 +30036,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Blue Core"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Indigo Core": {
         "types": [
@@ -29282,8 +30059,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Indigo Core"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Violet Core": {
         "types": [
@@ -29302,8 +30082,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Shields Down"
         },
-        "gender": "N",
-        "baseSpecies": "Minior"
+        "otherFormes": [
+            "Violet Core"
+        ],
+        "baseSpecies": "Minior",
+        "gender": "N"
     },
     "Totem Togedemaru": {
         "types": [
@@ -29322,6 +30105,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sturdy"
         },
+        "otherFormes": [
+            "Totem Togedemaru"
+        ],
         "baseSpecies": "Togedemaru"
     },
     "Busted Form": {
@@ -29341,6 +30127,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Disguise"
         },
+        "otherFormes": [
+            "Busted Form"
+        ],
         "baseSpecies": "Mimikyu"
     },
     "Totem Mimikyu": {
@@ -29360,6 +30149,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Disguise"
         },
+        "otherFormes": [
+            "Totem Mimikyu"
+        ],
         "baseSpecies": "Mimikyu"
     },
     "Totem Kommo-o": {
@@ -29379,6 +30171,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Overcoat"
         },
+        "otherFormes": [
+            "Totem Kommo-o"
+        ],
         "baseSpecies": "Kommo-o"
     },
     "Dusk Mane Necrozma": {
@@ -29398,8 +30193,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Prism Armor"
         },
-        "gender": "N",
-        "baseSpecies": "Necrozma"
+        "otherFormes": [
+            "Dusk Mane Necrozma"
+        ],
+        "baseSpecies": "Necrozma",
+        "gender": "N"
     },
     "Dawn Wings Necrozma": {
         "types": [
@@ -29418,8 +30216,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Prism Armor"
         },
-        "gender": "N",
-        "baseSpecies": "Necrozma"
+        "otherFormes": [
+            "Dawn Wings Necrozma"
+        ],
+        "baseSpecies": "Necrozma",
+        "gender": "N"
     },
     "Ultra Necrozma": {
         "types": [
@@ -29438,8 +30239,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Neuroforce"
         },
-        "gender": "N",
-        "baseSpecies": "Necrozma"
+        "otherFormes": [
+            "Ultra Necrozma"
+        ],
+        "baseSpecies": "Necrozma",
+        "gender": "N"
     },
     "Original Color Magearna": {
         "types": [
@@ -29458,8 +30262,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Soul-Heart"
         },
-        "gender": "N",
-        "baseSpecies": "Magearna"
+        "otherFormes": [
+            "Original Color Magearna"
+        ],
+        "baseSpecies": "Magearna",
+        "gender": "N"
     },
     "Gigantamax Melmetal": {
         "types": [
@@ -29477,8 +30284,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Iron Fist"
         },
-        "gender": "N",
-        "baseSpecies": "Melmetal"
+        "otherFormes": [
+            "Gigantamax Melmetal"
+        ],
+        "baseSpecies": "Melmetal",
+        "gender": "N"
     },
     "Gigantamax Rillaboom": {
         "types": [
@@ -29496,6 +30306,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Grassy Surge"
         },
+        "otherFormes": [
+            "Gigantamax Rillaboom"
+        ],
         "baseSpecies": "Rillaboom"
     },
     "Gigantamax Cinderace": {
@@ -29514,6 +30327,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Libero"
         },
+        "otherFormes": [
+            "Gigantamax Cinderace"
+        ],
         "baseSpecies": "Cinderace"
     },
     "Gigantamax Inteleon": {
@@ -29532,6 +30348,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sniper"
         },
+        "otherFormes": [
+            "Gigantamax Inteleon"
+        ],
         "baseSpecies": "Inteleon"
     },
     "Gigantamax Corviknight": {
@@ -29551,6 +30370,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Mirror Armor"
         },
+        "otherFormes": [
+            "Gigantamax Corviknight"
+        ],
         "baseSpecies": "Corviknight"
     },
     "Gigantamax Orbeetle": {
@@ -29570,6 +30392,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Telepathy"
         },
+        "otherFormes": [
+            "Gigantamax Orbeetle"
+        ],
         "baseSpecies": "Orbeetle"
     },
     "Gigantamax Drednaw": {
@@ -29589,6 +30414,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Swift Swim"
         },
+        "otherFormes": [
+            "Gigantamax Drednaw"
+        ],
         "baseSpecies": "Drednaw"
     },
     "Gigantamax Coalossal": {
@@ -29608,6 +30436,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Flash Fire"
         },
+        "otherFormes": [
+            "Gigantamax Coalossal"
+        ],
         "baseSpecies": "Coalossal"
     },
     "Gigantamax Flapple": {
@@ -29627,6 +30458,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Hustle"
         },
+        "otherFormes": [
+            "Gigantamax Flapple"
+        ],
         "baseSpecies": "Flapple"
     },
     "Gigantamax Appletun": {
@@ -29646,6 +30480,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Thick Fat"
         },
+        "otherFormes": [
+            "Gigantamax Appletun"
+        ],
         "baseSpecies": "Appletun"
     },
     "Gigantamax Sandaconda": {
@@ -29664,6 +30501,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sand Veil"
         },
+        "otherFormes": [
+            "Gigantamax Sandaconda"
+        ],
         "baseSpecies": "Sandaconda"
     },
     "Gulping Form": {
@@ -29683,6 +30523,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Gulp Missile"
         },
+        "otherFormes": [
+            "Gulping Form"
+        ],
         "baseSpecies": "Cramorant"
     },
     "Gorging Form": {
@@ -29702,6 +30545,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Gulp Missile"
         },
+        "otherFormes": [
+            "Gorging Form"
+        ],
         "baseSpecies": "Cramorant"
     },
     "Low Key Form": {
@@ -29721,6 +30567,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Technician"
         },
+        "otherFormes": [
+            "Low Key Form"
+        ],
         "baseSpecies": "Toxtricity"
     },
     "Gigantamax Toxtricity": {
@@ -29740,6 +30589,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Technician"
         },
+        "otherFormes": [
+            "Gigantamax Toxtricity"
+        ],
         "baseSpecies": "Toxtricity"
     },
     "Gigantamax Centiskorch": {
@@ -29759,6 +30611,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Flame Body"
         },
+        "otherFormes": [
+            "Gigantamax Centiskorch"
+        ],
         "baseSpecies": "Centiskorch"
     },
     "Antique Form": {
@@ -29777,8 +30632,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Cursed Body"
         },
-        "gender": "N",
-        "baseSpecies": "Polteageist"
+        "otherFormes": [
+            "Antique Form"
+        ],
+        "baseSpecies": "Polteageist",
+        "gender": "N"
     },
     "Gigantamax Hatterene": {
         "types": [
@@ -29797,8 +30655,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Magic Bounce"
         },
-        "gender": "F",
-        "baseSpecies": "Hatterene"
+        "otherFormes": [
+            "Gigantamax Hatterene"
+        ],
+        "baseSpecies": "Hatterene",
+        "gender": "F"
     },
     "Gigantamax Grimmsnarl": {
         "types": [
@@ -29817,8 +30678,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pickpocket"
         },
-        "gender": "M",
-        "baseSpecies": "Grimmsnarl"
+        "otherFormes": [
+            "Gigantamax Grimmsnarl"
+        ],
+        "baseSpecies": "Grimmsnarl",
+        "gender": "M"
     },
     "Vanilla Cream": {
         "types": [
@@ -29836,8 +30700,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Vanilla Cream"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Ruby Cream": {
         "types": [
@@ -29855,8 +30722,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Ruby Cream"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Matcha Cream": {
         "types": [
@@ -29874,8 +30744,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Matcha Cream"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Mint Cream": {
         "types": [
@@ -29893,8 +30766,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Mint Cream"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Lemon Cream": {
         "types": [
@@ -29912,8 +30788,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Lemon Cream"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Salted Cream": {
         "types": [
@@ -29931,8 +30810,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Salted Cream"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Ruby Swirl": {
         "types": [
@@ -29950,8 +30832,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Ruby Swirl"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Caramel Swirl": {
         "types": [
@@ -29969,8 +30854,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Caramel Swirl"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Rainbow Swirl": {
         "types": [
@@ -29988,8 +30876,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Rainbow Swirl"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Gigantamax Alcremie": {
         "types": [
@@ -30007,8 +30898,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Aroma Veil"
         },
-        "gender": "F",
-        "baseSpecies": "Alcremie"
+        "otherFormes": [
+            "Gigantamax Alcremie"
+        ],
+        "baseSpecies": "Alcremie",
+        "gender": "F"
     },
     "Noice Face": {
         "types": [
@@ -30026,6 +30920,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Ice Face"
         },
+        "otherFormes": [
+            "Noice Face"
+        ],
         "baseSpecies": "Eiscue"
     },
     "Indeedee-F": {
@@ -30045,8 +30942,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Psychic Surge"
         },
-        "gender": "F",
-        "baseSpecies": "Indeedee"
+        "otherFormes": [
+            "Indeedee-F"
+        ],
+        "baseSpecies": "Indeedee",
+        "gender": "F"
     },
     "Hangry Mode": {
         "types": [
@@ -30065,6 +30965,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Hunger Switch"
         },
+        "otherFormes": [
+            "Hangry Mode"
+        ],
         "baseSpecies": "Morpeko"
     },
     "Gigantamax Copperajah": {
@@ -30083,6 +30986,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Heavy Metal"
         },
+        "otherFormes": [
+            "Gigantamax Copperajah"
+        ],
         "baseSpecies": "Copperajah"
     },
     "Gigantamax Duraludon": {
@@ -30102,6 +31008,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Stalwart"
         },
+        "otherFormes": [
+            "Gigantamax Duraludon"
+        ],
         "baseSpecies": "Duraludon"
     },
     "Crowned Sword": {
@@ -30121,8 +31030,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Intrepid Sword"
         },
-        "gender": "N",
-        "baseSpecies": "Zacian"
+        "otherFormes": [
+            "Crowned Sword"
+        ],
+        "baseSpecies": "Zacian",
+        "gender": "N"
     },
     "Crowned Shield": {
         "types": [
@@ -30141,8 +31053,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Dauntless Shield"
         },
-        "gender": "N",
-        "baseSpecies": "Zamazenta"
+        "otherFormes": [
+            "Crowned Shield"
+        ],
+        "baseSpecies": "Zamazenta",
+        "gender": "N"
     },
     "Eternamax Eternatus": {
         "types": [
@@ -30161,8 +31076,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Pressure"
         },
-        "gender": "N",
-        "baseSpecies": "Eternatus"
+        "otherFormes": [
+            "Eternamax Eternatus"
+        ],
+        "baseSpecies": "Eternatus",
+        "gender": "N"
     },
     "Rapid Strike Style": {
         "types": [
@@ -30181,6 +31099,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Unseen Fist"
         },
+        "otherFormes": [
+            "Rapid Strike Style"
+        ],
         "baseSpecies": "Urshifu"
     },
     "Gigantamax Urshifu": {
@@ -30200,6 +31121,9 @@ var SS_PATCH = {
         "abilities": {
             "0": "Unseen Fist"
         },
+        "otherFormes": [
+            "Gigantamax Urshifu"
+        ],
         "baseSpecies": "Urshifu"
     },
     "Dada Zarude": {
@@ -30219,8 +31143,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Leaf Guard"
         },
-        "gender": "N",
-        "baseSpecies": "Zarude"
+        "otherFormes": [
+            "Dada Zarude"
+        ],
+        "baseSpecies": "Zarude",
+        "gender": "N"
     },
     "Ice Rider Calyrex": {
         "types": [
@@ -30239,8 +31166,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "As One"
         },
-        "gender": "N",
-        "baseSpecies": "Calyrex"
+        "otherFormes": [
+            "Ice Rider Calyrex"
+        ],
+        "baseSpecies": "Calyrex",
+        "gender": "N"
     },
     "Shadow Rider Calyrex": {
         "types": [
@@ -30259,8 +31189,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "As One"
         },
-        "gender": "N",
-        "baseSpecies": "Calyrex"
+        "otherFormes": [
+            "Shadow Rider Calyrex"
+        ],
+        "baseSpecies": "Calyrex",
+        "gender": "N"
     },
     "Basculegion-F": {
         "types": [
@@ -30279,8 +31212,11 @@ var SS_PATCH = {
         "abilities": {
             "0": "Mold Breaker"
         },
-        "gender": "F",
-        "baseSpecies": "Basculegion"
+        "otherFormes": [
+            "Basculegion-F"
+        ],
+        "baseSpecies": "Basculegion",
+        "gender": "F"
     }
 };
 var SS = (0, util_1.extend)(true, {}, {}, SS_PATCH);
