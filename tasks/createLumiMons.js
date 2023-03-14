@@ -16,23 +16,16 @@ const speciesData = pokemonData.Personal.reduce((pkmn, currentPokemon, index) =>
     const formIndex = currentPokemon.form_index;
     if (formIndex === 0 || currentPokemon.id === currentPokemon.monsno) {
         const name = getPokemonName(currentPokemon.monsno);
-        pkmn[name] = {};
-        pkmn[name].types = getTypes(currentPokemon);
-        pkmn[name].bs = { hp: currentPokemon.basic_hp, at: currentPokemon.basic_atk, df: currentPokemon.basic_def, sa: currentPokemon.basic_spatk, sd: currentPokemon.basic_spdef, sp: currentPokemon.basic_agi }
-        pkmn[name].weightkg = currentPokemon.weight / 10;
-        pkmn[name].abilities = makeAbilityObject(currentPokemon.tokusei3)
-
+        pkmn[name] = createPokemonObject(currentPokemon, name);
         const gender = getGender(currentPokemon.sex);
         if (gender) {
             pkmn[name].gender = gender;
         }
-
         return pkmn;
     }
 
     const name = getPokemonName(currentPokemon.monsno);
     const formName = getFormName(index);
-
     if (!formName) {
         console.warn('Form Error:', index, formName,Name);
     }
@@ -40,19 +33,26 @@ const speciesData = pokemonData.Personal.reduce((pkmn, currentPokemon, index) =>
         pkmn[name].otherFormes = [];
     }
     pkmn[name].otherFormes.push(formName);
-    pkmn[formName] = {}
-    pkmn[formName].types = getTypes(currentPokemon);
-    pkmn[formName].bs = { hp: currentPokemon.basic_hp, at: currentPokemon.basic_atk, df: currentPokemon.basic_def, sa: currentPokemon.basic_spatk, sd: currentPokemon.basic_spdef, sp: currentPokemon.basic_agi }
-    pkmn[formName].weightkg = currentPokemon.weight / 10;
-    pkmn[formName].abilities = makeAbilityObject(currentPokemon.tokusei3)
+    pkmn[formName] = createPokemonObject(currentPokemon, name, formName);
+    pkmn[formName].baseSpecies = name;
     const gender = getGender(currentPokemon.sex);
     if (gender) {
         pkmn[formName].gender = gender;
     }
-
-    pkmn[formName].baseSpecies = name;
     return pkmn;
-}, {})
+}, {});
+
+function createPokemonObject(currentPokemon, name, formName) {
+    const obj = {};
+    obj.types = getTypes(currentPokemon);
+    obj.bs = { hp: currentPokemon.basic_hp, at: currentPokemon.basic_atk, df: currentPokemon.basic_def, sa: currentPokemon.basic_spatk, sd: currentPokemon.basic_spdef, sp: currentPokemon.basic_agi }
+    obj.weightkg = currentPokemon.weight / 10;
+    obj.abilities = makeAbilityObject(currentPokemon.tokusei3)
+    if (formName) {
+        obj.otherFormes = [formName];
+    }
+    return obj;
+}
 
 function createSpeciesFile(lumiMons) {
     const speciesFile = fs.readFileSync(path.join(__dirname, 'species.txt'), 'utf-8');
