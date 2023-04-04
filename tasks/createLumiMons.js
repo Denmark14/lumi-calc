@@ -27,7 +27,7 @@ const speciesData = pokemonData.Personal.reduce((pkmn, currentPokemon, index) =>
     const name = getPokemonName(currentPokemon.monsno);
     const formName = getFormName(index);
     if (!formName) {
-        console.warn('Form Error:', index, formName,Name);
+        console.warn('Form Error:', index, formName, name);
     }
     if (!pkmn[name].hasOwnProperty('otherFormes')) {
         pkmn[name].otherFormes = [];

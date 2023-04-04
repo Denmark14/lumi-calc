@@ -25,7 +25,7 @@ function makeAbilityObject(ha) {
     return { 0: abilitiyString };
 }
 
-function getPokemonName(monsNo) {
+function getPokemonName(monsNo = 0) {
     try {
         const pokemonName = NameData.labelDataArray[monsNo].wordDataArray[0].str;
         pokemonName.replace('♀', '-F')
@@ -94,6 +94,8 @@ function getFormName(id) {
             return 'Indeedee-F'
         case 1343:
             return 'Basculegion-F'
+        case 1456:
+            return 'Oinkologne-F'            
         default:
             return formNames.labelDataArray[id].wordDataArray[0].str;
     }
