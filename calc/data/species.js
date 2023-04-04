@@ -7568,9 +7568,9 @@ var SS_PATCH = {
             "0": "Grassy Surge"
         },
         "otherFormes": [
-            "Clone Venusaur",
+            "Mega Venusaur",
             "Gigantamax Venusaur",
-            "Mega Venusaur"
+            "Clone Venusaur"
         ]
     },
     "Charmander": {
@@ -7625,10 +7625,10 @@ var SS_PATCH = {
             "0": "Drought"
         },
         "otherFormes": [
-            "Clone Charizard",
+            "Mega Charizard X",
             "Mega Charizard Y",
             "Gigantamax Charizard",
-            "Mega Charizard X"
+            "Clone Charizard"
         ]
     },
     "Squirtle": {
@@ -7683,9 +7683,9 @@ var SS_PATCH = {
             "0": "Drizzle"
         },
         "otherFormes": [
-            "Clone Blastoise",
+            "Mega Blastoise",
             "Gigantamax Blastoise",
-            "Mega Blastoise"
+            "Clone Blastoise"
         ]
     },
     "Caterpie": {
@@ -9030,8 +9030,8 @@ var SS_PATCH = {
             "0": "Regenerator"
         },
         "otherFormes": [
-            "Galarian Slowbro",
-            "Mega Slowbro"
+            "Mega Slowbro",
+            "Galarian Slowbro"
         ]
     },
     "Magnemite": {
@@ -9296,9 +9296,9 @@ var SS_PATCH = {
             "0": "Merciless"
         },
         "otherFormes": [
-            "Stitched Gengar",
+            "Mega Gengar",
             "Gigantamax Gengar",
-            "Mega Gengar"
+            "Stitched Gengar"
         ]
     },
     "Onix": {
@@ -9927,7 +9927,12 @@ var SS_PATCH = {
         "abilities": {
             "0": "Sheer Force"
         },
-        "gender": "M"
+        "gender": "M",
+        "otherFormes": [
+            "Combat Breed",
+            "Blaze Breed",
+            "Aqua Breed"
+        ]
     },
     "Magikarp": {
         "types": [
@@ -10024,7 +10029,8 @@ var SS_PATCH = {
         },
         "otherFormes": [
             "Partner Eevee",
-            "Gigantamax Eevee"
+            "Gigantamax Eevee",
+            "Bandana Partner Eevee"
         ]
     },
     "Vaporeon": {
@@ -10345,9 +10351,10 @@ var SS_PATCH = {
         },
         "gender": "N",
         "otherFormes": [
-            "MK2 Armored Mewtwo",
+            "Mega Mewtwo X",
             "Mega Mewtwo Y",
-            "Mega Mewtwo X"
+            "MK2 Armored Mewtwo",
+            "MK2 Armored Mewtwo"
         ]
     },
     "Mew": {
@@ -11130,7 +11137,10 @@ var SS_PATCH = {
         "weightkg": 8.5,
         "abilities": {
             "0": "Simple"
-        }
+        },
+        "otherFormes": [
+            "Paldean Wooper"
+        ]
     },
     "Quagsire": {
         "types": [
@@ -11283,7 +11293,7 @@ var SS_PATCH = {
             "One form",
             "One form",
             "One form",
-            "One form",
+            "Ash-Greninja",
             "One form",
             "One form"
         ]
@@ -15149,7 +15159,7 @@ var SS_PATCH = {
         },
         "gender": "F",
         "otherFormes": [
-            "Sandy Cloak",
+            "Meowstic-F",
             "Trash Cloak"
         ]
     },
@@ -15417,7 +15427,7 @@ var SS_PATCH = {
             "hp": 65,
             "at": 106,
             "df": 84,
-            "sa": 54,
+            "sa": 44,
             "sd": 96,
             "sp": 105
         },
@@ -19613,7 +19623,7 @@ var SS_PATCH = {
             "0": "Protean"
         },
         "otherFormes": [
-            "Ash-Greninja",
+            "",
             "Ash-Greninja"
         ]
     },
@@ -20020,7 +20030,7 @@ var SS_PATCH = {
         },
         "gender": "M",
         "otherFormes": [
-            "Meowstic-F"
+            ""
         ]
     },
     "Honedge": {
@@ -21250,7 +21260,7 @@ var SS_PATCH = {
             "0": "Steadfast"
         },
         "otherFormes": [
-            "Rockruff Own-Tempo"
+            ""
         ]
     },
     "Lycanroc": {
@@ -21796,7 +21806,7 @@ var SS_PATCH = {
             "Type: Grass",
             "Type: Electric",
             "Type: Psychic",
-            "Type: Ice",
+            "Indeedee-F",
             "Type: Dragon",
             "Type: Dark",
             "Type: Fairy"
@@ -21830,7 +21840,7 @@ var SS_PATCH = {
             "Red Core",
             "Orange Core",
             "Yellow Core",
-            "Green Core",
+            "Basculegion-F",
             "Blue Core",
             "Indigo Core",
             "Violet Core"
@@ -23801,7 +23811,7 @@ var SS_PATCH = {
         },
         "gender": "M",
         "otherFormes": [
-            "Indeedee-F"
+            ""
         ]
     },
     "Morpeko": {
@@ -24307,7 +24317,7 @@ var SS_PATCH = {
         },
         "gender": "M",
         "otherFormes": [
-            "Basculegion-F"
+            ""
         ]
     },
     "Sneasler": {
@@ -24368,6 +24378,1965 @@ var SS_PATCH = {
             "Therian Forme"
         ]
     },
+    "Sprigatito": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Floragato": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Meowscarada": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Fuecoco": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Crocalor": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Skeledirge": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Quaxly": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Quaxwell": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Quaquaval": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Lechonk": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Oinkologne": {
+        "types": [
+            "Psychic",
+            "Fighting"
+        ],
+        "bs": {
+            "hp": 68,
+            "at": 125,
+            "df": 65,
+            "sa": 65,
+            "sd": 115,
+            "sp": 80
+        },
+        "weightkg": 52,
+        "abilities": {
+            "0": "Inner Focus"
+        },
+        "gender": "M",
+        "otherFormes": [
+            "Oinkologne-F"
+        ]
+    },
+    "Tarountula": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Spidops": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Nymble": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Lokix": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Pawmi": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Pawmo": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Pawmot": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Tandemaus": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Maushold": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N",
+        "otherFormes": [
+            "Family of Three"
+        ]
+    },
+    "Fidough": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Dachsbun": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Smoliv": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Dolliv": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Arboliva": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Squawkabilly": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Blue Plumage",
+            "Yellow Plumage",
+            "White Plumage"
+        ]
+    },
+    "Nacli": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Naclstack": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Garganacl": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Charcadet": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Armarouge": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Ceruledge": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Tadbulb": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Bellibolt": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Wattrel": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Kilowattrel": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Maschiff": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Mabosstiff": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Shroodle": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Grafaiai": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Bramblin": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Brambleghast": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Toedscool": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Toedscruel": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Klawf": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Capsakid": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Scovillain": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Rellor": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Rabsca": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Flittle": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Espathra": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Tinkatink": {
+        "types": [
+            "Normal"
+        ],
+        "bs": {
+            "hp": 255,
+            "at": 10,
+            "df": 10,
+            "sa": 75,
+            "sd": 135,
+            "sp": 55
+        },
+        "weightkg": 46.8,
+        "abilities": {
+            "0": "Healer"
+        },
+        "gender": "F"
+    },
+    "Tinkatuff": {
+        "types": [
+            "Normal"
+        ],
+        "bs": {
+            "hp": 255,
+            "at": 10,
+            "df": 10,
+            "sa": 75,
+            "sd": 135,
+            "sp": 55
+        },
+        "weightkg": 46.8,
+        "abilities": {
+            "0": "Healer"
+        },
+        "gender": "F"
+    },
+    "Tinkaton": {
+        "types": [
+            "Normal"
+        ],
+        "bs": {
+            "hp": 255,
+            "at": 10,
+            "df": 10,
+            "sa": 75,
+            "sd": 135,
+            "sp": 55
+        },
+        "weightkg": 46.8,
+        "abilities": {
+            "0": "Healer"
+        },
+        "gender": "F"
+    },
+    "Wiglett": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Wugtrio": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Bombirdier": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Finizen": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Palafin": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Hero Form"
+        ]
+    },
+    "Varoom": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Revravroom": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Cyclizar": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Orthworm": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Glimmet": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Glimmora": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Greavard": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Houndstone": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Flamigo": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Cetoddle": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Cetitan": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Veluza": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Dondozo": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Tatsugiri": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Droopy Form",
+            "Stretchy Form"
+        ]
+    },
+    "Annihilape": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Clodsire": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Farigiraf": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Dudunsparce": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Three-Segment Form"
+        ]
+    },
+    "Kingambit": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Great Tusk": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Scream Tail": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Brute Bonnet": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Flutter Mane": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Slither Wing": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Sandy Shocks": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Treads": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Bundle": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Hands": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Jugulis": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Moth": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Thorns": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Frigibax": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Arctibax": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Baxcalibur": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        }
+    },
+    "Gimmighoul": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N",
+        "otherFormes": [
+            "Roaming Form"
+        ]
+    },
+    "Gholdengo": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Wo-Chien": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Chien-Pao": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Ting-Lu": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Chi-Yu": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Roaring Moon": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Valiant": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Koraidon": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Miraidon": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Walking Wake": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Iron Leaves": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "gender": "N"
+    },
+    "Mega Venusaur": {
+        "types": [
+            "Grass",
+            "Poison"
+        ],
+        "bs": {
+            "hp": 80,
+            "at": 100,
+            "df": 123,
+            "sa": 122,
+            "sd": 120,
+            "sp": 80
+        },
+        "weightkg": 155.5,
+        "abilities": {
+            "0": "Thick Fat"
+        },
+        "otherFormes": [
+            "Mega Venusaur"
+        ],
+        "baseSpecies": "Venusaur"
+    },
+    "Gigantamax Venusaur": {
+        "types": [
+            "Grass",
+            "Poison"
+        ],
+        "bs": {
+            "hp": 80,
+            "at": 82,
+            "df": 83,
+            "sa": 110,
+            "sd": 100,
+            "sp": 80
+        },
+        "weightkg": 100,
+        "abilities": {
+            "0": "Chlorophyll"
+        },
+        "otherFormes": [
+            "Gigantamax Venusaur"
+        ],
+        "baseSpecies": "Venusaur"
+    },
     "Clone Venusaur": {
         "types": [
             "Grass",
@@ -24390,69 +26359,25 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Venusaur"
     },
-    "Gigantamax Venusaur": {
-        "types": [
-            "Grass",
-            "Poison"
-        ],
-        "bs": {
-            "hp": 80,
-            "at": 82,
-            "df": 83,
-            "sa": 100,
-            "sd": 100,
-            "sp": 80
-        },
-        "weightkg": 100,
-        "abilities": {
-            "0": "Chlorophyll"
-        },
-        "otherFormes": [
-            "Gigantamax Venusaur"
-        ],
-        "baseSpecies": "Venusaur"
-    },
-    "Mega Venusaur": {
-        "types": [
-            "Grass",
-            "Poison"
-        ],
-        "bs": {
-            "hp": 80,
-            "at": 82,
-            "df": 83,
-            "sa": 100,
-            "sd": 100,
-            "sp": 80
-        },
-        "weightkg": 100,
-        "abilities": {
-            "0": "Chlorophyll"
-        },
-        "otherFormes": [
-            "Mega Venusaur"
-        ],
-        "baseSpecies": "Venusaur"
-    },
-    "Clone Charizard": {
+    "Mega Charizard X": {
         "types": [
             "Fire",
             "Dragon"
         ],
         "bs": {
             "hp": 78,
-            "at": 84,
-            "df": 78,
-            "sa": 110,
+            "at": 130,
+            "df": 111,
+            "sa": 130,
             "sd": 85,
             "sp": 100
         },
-        "weightkg": 90.5,
+        "weightkg": 110.5,
         "abilities": {
-            "0": "Drought"
+            "0": "Tough Claws"
         },
         "otherFormes": [
-            "Clone Charizard"
+            "Mega Charizard X"
         ],
         "baseSpecies": "Charizard"
     },
@@ -24487,7 +26412,7 @@ var SS_PATCH = {
             "hp": 78,
             "at": 84,
             "df": 78,
-            "sa": 109,
+            "sa": 110,
             "sd": 85,
             "sp": 100
         },
@@ -24500,47 +26425,46 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Charizard"
     },
-    "Mega Charizard X": {
+    "Clone Charizard": {
         "types": [
             "Fire",
-            "Flying"
+            "Dragon"
         ],
         "bs": {
             "hp": 78,
             "at": 84,
             "df": 78,
-            "sa": 109,
+            "sa": 110,
             "sd": 85,
             "sp": 100
         },
         "weightkg": 90.5,
         "abilities": {
-            "0": "Solar Power"
+            "0": "Drought"
         },
         "otherFormes": [
-            "Mega Charizard X"
+            "Clone Charizard"
         ],
         "baseSpecies": "Charizard"
     },
-    "Clone Blastoise": {
+    "Mega Blastoise": {
         "types": [
-            "Water",
-            "Steel"
+            "Water"
         ],
         "bs": {
             "hp": 79,
-            "at": 83,
-            "df": 100,
-            "sa": 90,
-            "sd": 105,
+            "at": 103,
+            "df": 120,
+            "sa": 135,
+            "sd": 115,
             "sp": 78
         },
-        "weightkg": 85.5,
+        "weightkg": 101.1,
         "abilities": {
-            "0": "Drizzle"
+            "0": "Mega Launcher"
         },
         "otherFormes": [
-            "Clone Blastoise"
+            "Mega Blastoise"
         ],
         "baseSpecies": "Blastoise"
     },
@@ -24565,24 +26489,25 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Blastoise"
     },
-    "Mega Blastoise": {
+    "Clone Blastoise": {
         "types": [
-            "Water"
+            "Water",
+            "Steel"
         ],
         "bs": {
             "hp": 79,
             "at": 83,
             "df": 100,
-            "sa": 85,
+            "sa": 90,
             "sd": 105,
             "sp": 78
         },
-        "weightkg": 101.1,
+        "weightkg": 85.5,
         "abilities": {
-            "0": "Rain Dish"
+            "0": "Drizzle"
         },
         "otherFormes": [
-            "Mega Blastoise"
+            "Clone Blastoise"
         ],
         "baseSpecies": "Blastoise"
     },
@@ -25542,28 +27467,6 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Slowpoke"
     },
-    "Galarian Slowbro": {
-        "types": [
-            "Poison",
-            "Psychic"
-        ],
-        "bs": {
-            "hp": 95,
-            "at": 100,
-            "df": 95,
-            "sa": 100,
-            "sd": 70,
-            "sp": 30
-        },
-        "weightkg": 120,
-        "abilities": {
-            "0": "Regenerator"
-        },
-        "otherFormes": [
-            "Galarian Slowbro"
-        ],
-        "baseSpecies": "Slowbro"
-    },
     "Mega Slowbro": {
         "types": [
             "Water",
@@ -25577,12 +27480,34 @@ var SS_PATCH = {
             "sd": 80,
             "sp": 30
         },
-        "weightkg": 70.5,
+        "weightkg": 120,
         "abilities": {
             "0": "Shell Armor"
         },
         "otherFormes": [
             "Mega Slowbro"
+        ],
+        "baseSpecies": "Slowbro"
+    },
+    "Galarian Slowbro": {
+        "types": [
+            "Poison",
+            "Psychic"
+        ],
+        "bs": {
+            "hp": 95,
+            "at": 100,
+            "df": 95,
+            "sa": 100,
+            "sd": 70,
+            "sp": 30
+        },
+        "weightkg": 70.5,
+        "abilities": {
+            "0": "Regenerator"
+        },
+        "otherFormes": [
+            "Galarian Slowbro"
         ],
         "baseSpecies": "Slowbro"
     },
@@ -25673,7 +27598,7 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Muk"
     },
-    "Stitched Gengar": {
+    "Mega Gengar": {
         "types": [
             "Ghost",
             "Poison"
@@ -25681,17 +27606,17 @@ var SS_PATCH = {
         "bs": {
             "hp": 60,
             "at": 65,
-            "df": 60,
-            "sa": 130,
-            "sd": 75,
-            "sp": 110
+            "df": 80,
+            "sa": 170,
+            "sd": 95,
+            "sp": 130
         },
         "weightkg": 40.5,
         "abilities": {
-            "0": "Merciless"
+            "0": "Shadow Tag"
         },
         "otherFormes": [
-            "Stitched Gengar"
+            "Mega Gengar"
         ],
         "baseSpecies": "Gengar"
     },
@@ -25717,7 +27642,7 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Gengar"
     },
-    "Mega Gengar": {
+    "Stitched Gengar": {
         "types": [
             "Ghost",
             "Poison"
@@ -25732,10 +27657,10 @@ var SS_PATCH = {
         },
         "weightkg": 40.5,
         "abilities": {
-            "0": "Cursed Body"
+            "0": "Merciless"
         },
         "otherFormes": [
-            "Mega Gengar"
+            "Stitched Gengar"
         ],
         "baseSpecies": "Gengar"
     },
@@ -25982,6 +27907,72 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Pinsir"
     },
+    "Combat Breed": {
+        "types": [
+            "Normal"
+        ],
+        "bs": {
+            "hp": 75,
+            "at": 100,
+            "df": 95,
+            "sa": 70,
+            "sd": 70,
+            "sp": 110
+        },
+        "weightkg": 88.4,
+        "abilities": {
+            "0": "Sheer Force"
+        },
+        "otherFormes": [
+            "Combat Breed"
+        ],
+        "baseSpecies": "Tauros",
+        "gender": "M"
+    },
+    "Blaze Breed": {
+        "types": [
+            "Normal"
+        ],
+        "bs": {
+            "hp": 75,
+            "at": 100,
+            "df": 95,
+            "sa": 70,
+            "sd": 70,
+            "sp": 110
+        },
+        "weightkg": 88.4,
+        "abilities": {
+            "0": "Sheer Force"
+        },
+        "otherFormes": [
+            "Blaze Breed"
+        ],
+        "baseSpecies": "Tauros",
+        "gender": "M"
+    },
+    "Aqua Breed": {
+        "types": [
+            "Normal"
+        ],
+        "bs": {
+            "hp": 75,
+            "at": 100,
+            "df": 95,
+            "sa": 70,
+            "sd": 70,
+            "sp": 110
+        },
+        "weightkg": 88.4,
+        "abilities": {
+            "0": "Sheer Force"
+        },
+        "otherFormes": [
+            "Aqua Breed"
+        ],
+        "baseSpecies": "Tauros",
+        "gender": "M"
+    },
     "Mega Gyarados": {
         "types": [
             "Water",
@@ -26031,12 +28022,12 @@ var SS_PATCH = {
             "Normal"
         ],
         "bs": {
-            "hp": 70,
-            "at": 80,
+            "hp": 65,
+            "at": 75,
             "df": 70,
-            "sa": 85,
+            "sa": 75,
             "sd": 85,
-            "sp": 90
+            "sp": 80
         },
         "weightkg": 6.5,
         "abilities": {
@@ -26052,8 +28043,29 @@ var SS_PATCH = {
             "Normal"
         ],
         "bs": {
-            "hp": 70,
-            "at": 80,
+            "hp": 55,
+            "at": 55,
+            "df": 50,
+            "sa": 45,
+            "sd": 65,
+            "sp": 55
+        },
+        "weightkg": 6.5,
+        "abilities": {
+            "0": "Anticipation"
+        },
+        "otherFormes": [
+            "Gigantamax Eevee"
+        ],
+        "baseSpecies": "Eevee"
+    },
+    "Bandana Partner Eevee": {
+        "types": [
+            "Normal"
+        ],
+        "bs": {
+            "hp": 65,
+            "at": 85,
             "df": 70,
             "sa": 85,
             "sd": 85,
@@ -26061,10 +28073,10 @@ var SS_PATCH = {
         },
         "weightkg": 6.5,
         "abilities": {
-            "0": "Protean"
+            "0": "Libero"
         },
         "otherFormes": [
-            "Gigantamax Eevee"
+            "Bandana Partner Eevee"
         ],
         "baseSpecies": "Eevee"
     },
@@ -26180,7 +28192,7 @@ var SS_PATCH = {
         "baseSpecies": "Moltres",
         "gender": "N"
     },
-    "MK2 Armored Mewtwo": {
+    "Mega Mewtwo X": {
         "types": [
             "Fighting",
             "Psychic"
@@ -26198,7 +28210,7 @@ var SS_PATCH = {
             "0": "Steadfast"
         },
         "otherFormes": [
-            "MK2 Armored Mewtwo"
+            "Mega Mewtwo X"
         ],
         "baseSpecies": "Mewtwo",
         "gender": "N"
@@ -26225,7 +28237,7 @@ var SS_PATCH = {
         "baseSpecies": "Mewtwo",
         "gender": "N"
     },
-    "Mega Mewtwo X": {
+    "MK2 Armored Mewtwo": {
         "types": [
             "Psychic"
         ],
@@ -26242,7 +28254,7 @@ var SS_PATCH = {
             "0": "Unnerve"
         },
         "otherFormes": [
-            "Mega Mewtwo X"
+            "MK2 Armored Mewtwo"
         ],
         "baseSpecies": "Mewtwo",
         "gender": "N"
@@ -26313,6 +28325,28 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Ampharos"
     },
+    "Paldean Wooper": {
+        "types": [
+            "Water",
+            "Ground"
+        ],
+        "bs": {
+            "hp": 55,
+            "at": 55,
+            "df": 55,
+            "sa": 25,
+            "sd": 25,
+            "sp": 15
+        },
+        "weightkg": 8.5,
+        "abilities": {
+            "0": "Simple"
+        },
+        "otherFormes": [
+            "Paldean Wooper"
+        ],
+        "baseSpecies": "Wooper"
+    },
     "Galarian Slowking": {
         "types": [
             "Poison",
@@ -26356,6 +28390,29 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Unown",
         "gender": "N"
+    },
+    "Ash-Greninja": {
+        "types": [
+            "Water",
+            "Dark"
+        ],
+        "bs": {
+            "hp": 72,
+            "at": 145,
+            "df": 67,
+            "sa": 153,
+            "sd": 71,
+            "sp": 132
+        },
+        "weightkg": 40,
+        "abilities": {
+            "0": "Battle Bond"
+        },
+        "otherFormes": [
+            "Ash-Greninja"
+        ],
+        "baseSpecies": "Greninja",
+        "gender": "M"
     },
     "Mega Steelix": {
         "types": [
@@ -27191,26 +29248,24 @@ var SS_PATCH = {
     },
     "Sandy Cloak": {
         "types": [
-            "Bug",
-            "Ground"
+            "Bug"
         ],
         "bs": {
-            "hp": 60,
-            "at": 79,
-            "df": 105,
-            "sa": 59,
-            "sd": 85,
+            "hp": 40,
+            "at": 29,
+            "df": 45,
+            "sa": 29,
+            "sd": 45,
             "sp": 36
         },
-        "weightkg": 6.5,
+        "weightkg": 3.4,
         "abilities": {
             "0": "Overcoat"
         },
         "otherFormes": [
             "Sandy Cloak"
         ],
-        "baseSpecies": "Wormadam",
-        "gender": "F"
+        "baseSpecies": "Burmy"
     },
     "Trash Cloak": {
         "types": [
@@ -27231,6 +29286,29 @@ var SS_PATCH = {
         },
         "otherFormes": [
             "Trash Cloak"
+        ],
+        "baseSpecies": "Wormadam",
+        "gender": "F"
+    },
+    "Meowstic-F": {
+        "types": [
+            "Bug",
+            "Ground"
+        ],
+        "bs": {
+            "hp": 60,
+            "at": 79,
+            "df": 105,
+            "sa": 59,
+            "sd": 85,
+            "sp": 36
+        },
+        "weightkg": 6.5,
+        "abilities": {
+            "0": "Overcoat"
+        },
+        "otherFormes": [
+            "Meowstic-F"
         ],
         "baseSpecies": "Wormadam",
         "gender": "F"
@@ -27549,6 +29627,28 @@ var SS_PATCH = {
             "Sky Forme"
         ],
         "baseSpecies": "Shaymin",
+        "gender": "N"
+    },
+    "Rockruff Own-Tempo": {
+        "types": [
+            "Ghost"
+        ],
+        "bs": {
+            "hp": 120,
+            "at": 120,
+            "df": 120,
+            "sa": 120,
+            "sd": 120,
+            "sp": 120
+        },
+        "weightkg": 320,
+        "abilities": {
+            "0": "Multitype"
+        },
+        "otherFormes": [
+            "Rockruff Own-Tempo"
+        ],
+        "baseSpecies": "Arceus",
         "gender": "N"
     },
     "Hisuian Samurott": {
@@ -28151,28 +30251,25 @@ var SS_PATCH = {
         "baseSpecies": "Genesect",
         "gender": "N"
     },
-    "Ash-Greninja": {
+    "": {
         "types": [
             "Water",
-            "Dark"
+            "Ghost"
         ],
         "bs": {
-            "hp": 72,
-            "at": 145,
-            "df": 67,
-            "sa": 153,
-            "sd": 71,
-            "sp": 132
+            "hp": 70,
+            "at": 92,
+            "df": 65,
+            "sa": 80,
+            "sd": 55,
+            "sp": 98
         },
-        "weightkg": 40,
+        "weightkg": 110,
         "abilities": {
-            "0": "Battle Bond"
+            "0": "Mold Breaker"
         },
-        "otherFormes": [
-            "Ash-Greninja"
-        ],
-        "baseSpecies": "Greninja",
-        "gender": "M"
+        "baseSpecies": "Basculegion",
+        "gender": "F"
     },
     "Polar Pattern": {
         "types": [
@@ -28891,28 +30988,6 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Furfrou"
     },
-    "Meowstic-F": {
-        "types": [
-            "Psychic"
-        ],
-        "bs": {
-            "hp": 74,
-            "at": 48,
-            "df": 76,
-            "sa": 83,
-            "sd": 81,
-            "sp": 104
-        },
-        "weightkg": 8.5,
-        "abilities": {
-            "0": "Competitive"
-        },
-        "otherFormes": [
-            "Meowstic-F"
-        ],
-        "baseSpecies": "Meowstic",
-        "gender": "F"
-    },
     "Blade Forme": {
         "types": [
             "Steel",
@@ -29380,27 +31455,6 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Ribombee"
     },
-    "Rockruff Own-Tempo": {
-        "types": [
-            "Rock"
-        ],
-        "bs": {
-            "hp": 45,
-            "at": 65,
-            "df": 40,
-            "sa": 30,
-            "sd": 40,
-            "sp": 60
-        },
-        "weightkg": 9.2,
-        "abilities": {
-            "0": "Own Tempo"
-        },
-        "otherFormes": [
-            "Rockruff Own-Tempo"
-        ],
-        "baseSpecies": "Rockruff"
-    },
     "Midnight Form": {
         "types": [
             "Rock"
@@ -29816,7 +31870,7 @@ var SS_PATCH = {
         "baseSpecies": "Silvally",
         "gender": "N"
     },
-    "Type: Ice": {
+    "Indeedee-F": {
         "types": [
             "Ice"
         ],
@@ -29833,7 +31887,7 @@ var SS_PATCH = {
             "0": "RKS System"
         },
         "otherFormes": [
-            "Type: Ice"
+            "Indeedee-F"
         ],
         "baseSpecies": "Silvally",
         "gender": "N"
@@ -29996,7 +32050,7 @@ var SS_PATCH = {
         "baseSpecies": "Minior",
         "gender": "N"
     },
-    "Green Core": {
+    "Basculegion-F": {
         "types": [
             "Rock",
             "Flying"
@@ -30014,7 +32068,7 @@ var SS_PATCH = {
             "0": "Shields Down"
         },
         "otherFormes": [
-            "Green Core"
+            "Basculegion-F"
         ],
         "baseSpecies": "Minior",
         "gender": "N"
@@ -30925,29 +32979,6 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Eiscue"
     },
-    "Indeedee-F": {
-        "types": [
-            "Psychic",
-            "Normal"
-        ],
-        "bs": {
-            "hp": 70,
-            "at": 55,
-            "df": 65,
-            "sa": 95,
-            "sd": 105,
-            "sp": 85
-        },
-        "weightkg": 28,
-        "abilities": {
-            "0": "Psychic Surge"
-        },
-        "otherFormes": [
-            "Indeedee-F"
-        ],
-        "baseSpecies": "Indeedee",
-        "gender": "F"
-    },
     "Hangry Mode": {
         "types": [
             "Electric",
@@ -31195,28 +33226,225 @@ var SS_PATCH = {
         "baseSpecies": "Calyrex",
         "gender": "N"
     },
-    "Basculegion-F": {
+    "Oinkologne-F": {
         "types": [
-            "Water",
-            "Ghost"
+            "Normal"
         ],
         "bs": {
-            "hp": 70,
-            "at": 92,
-            "df": 65,
-            "sa": 80,
-            "sd": 55,
-            "sp": 98
+            "hp": 255,
+            "at": 10,
+            "df": 10,
+            "sa": 75,
+            "sd": 135,
+            "sp": 55
         },
-        "weightkg": 110,
+        "weightkg": 46.8,
         "abilities": {
-            "0": "Mold Breaker"
+            "0": "Healer"
         },
         "otherFormes": [
-            "Basculegion-F"
+            "Oinkologne-F"
         ],
-        "baseSpecies": "Basculegion",
+        "baseSpecies": "Oinkologne",
         "gender": "F"
+    },
+    "Family of Three": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "otherFormes": [
+            "Family of Three"
+        ],
+        "baseSpecies": "Maushold",
+        "gender": "N"
+    },
+    "Blue Plumage": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Blue Plumage"
+        ],
+        "baseSpecies": "Squawkabilly"
+    },
+    "Yellow Plumage": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Yellow Plumage"
+        ],
+        "baseSpecies": "Squawkabilly"
+    },
+    "White Plumage": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "White Plumage"
+        ],
+        "baseSpecies": "Squawkabilly"
+    },
+    "Hero Form": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Hero Form"
+        ],
+        "baseSpecies": "Palafin"
+    },
+    "Droopy Form": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Droopy Form"
+        ],
+        "baseSpecies": "Tatsugiri"
+    },
+    "Stretchy Form": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Stretchy Form"
+        ],
+        "baseSpecies": "Tatsugiri"
+    },
+    "Three-Segment Form": {
+        "types": [
+            "Water",
+            "Steel"
+        ],
+        "bs": {
+            "hp": 84,
+            "at": 86,
+            "df": 88,
+            "sa": 116,
+            "sd": 101,
+            "sp": 60
+        },
+        "weightkg": 84.5,
+        "abilities": {
+            "0": "Slush Rush"
+        },
+        "otherFormes": [
+            "Three-Segment Form"
+        ],
+        "baseSpecies": "Dudunsparce"
+    },
+    "Roaming Form": {
+        "types": [
+            "Grass"
+        ],
+        "bs": {
+            "hp": 100,
+            "at": 100,
+            "df": 100,
+            "sa": 100,
+            "sd": 100,
+            "sp": 100
+        },
+        "weightkg": 2.1,
+        "abilities": {
+            "0": "Natural Cure"
+        },
+        "otherFormes": [
+            "Roaming Form"
+        ],
+        "baseSpecies": "Gimmighoul",
+        "gender": "N"
     }
 };
 var SS = (0, util_1.extend)(true, {}, {}, SS_PATCH);
