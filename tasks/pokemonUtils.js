@@ -39,16 +39,18 @@ function getPokemonName(monsNo) {
 
 function getFormName(id) {
     switch (id) {
-        case 1131:
+        case 1242:
             return 'Ash-Greninja'
-        case 1174:
+        case 1285:
             return 'Meowstic-F'
-        case 1199:
+        case 1310:
             return 'Rockruff Own-Tempo'
-        case 1330:
+        case 1441:
             return 'Indeedee-F'
-        case 1343:
+        case 1454:
             return 'Basculegion-F'
+        case 1456:
+            return 'Oinkologne-F'
         default:
             return formNames.labelDataArray[id].wordDataArray[0].str;
     }
