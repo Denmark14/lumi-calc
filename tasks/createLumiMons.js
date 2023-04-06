@@ -26,13 +26,14 @@ const speciesData = pokemonData.Personal.reduce((pkmn, currentPokemon, index) =>
 
     const name = getPokemonName(currentPokemon.monsno);
     let formName = getFormName(index);
-    const badList = ["Galarian Farfetch'd", "Ash-Greninja", "Meowstic-F", "Indeedee-F", "Basculegion-F", "SPOOKYDEVTHING", "Rockruff Own-Tempo"]
+    //const badList = ["Galarian Farfetch'd", "Ash-Greninja", "Meowstic-F", "Indeedee-F", "Basculegion-F", "SPOOKYDEVTHING", "Rockruff Own-Tempo"]
     if (!formName) {
         console.warn('Form Error:', index, formName, name);
     }
-    if (formName && !formName.includes(name) && !badList.includes(formName)) {
-      formName = name + ' ' + getFormName(index);
-    }
+    // if (formName && !formName.includes(name) && !badList.includes(formName)) {
+    //   console.info('Oh no', formName, name, getFormName(index));
+    //   formName = name + ' ' + getFormName(index);
+    // }
     if (!pkmn[name].hasOwnProperty('otherFormes')) {
         pkmn[name].otherFormes = [];
     }
