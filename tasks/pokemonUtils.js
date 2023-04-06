@@ -8,6 +8,7 @@ const formNames = require('../input/english_ss_zkn_form.json');
 const natureNameData = require('../input/english_ss_seikaku.json');
 const itemNameData = require('../input/english_ss_itemname.json');
 const SMOGON_MOVES = require('../input/moves.json');
+const PersonalTable = require('../input/PersonalTable.json')
 const learnset = require('../input/WazaOboeTable.json');
 const moveEnum = fs.readFileSync(path.join(parentFilePath, 'input', 'moves.txt'), 'utf-8').split('\n').map(e => e.trim()).filter(e => e);
 
@@ -53,10 +54,11 @@ function getFormName(id) {
             return 'Oinkologne-F'
         default:
             let name = formNames.labelDataArray[id].wordDataArray[0].str;
-            const dexNum = formNames.labelDataArray[id].labelName.slice(-7, -4);
-            if (name === "") return get_pokemon_name(id);
-            if (!get_pokemon_name(Number(dexNum)).includes(name)) {
-                name = get_pokemon_name(int(dexNum)) + ' ' + name
+            const dexNum = parseInt(formNames.labelDataArray[id].labelName.slice(-7, -4));
+            
+            if (name === "") return getPokemonName(id);
+            if (!name.includes(getPokemonName(dexNum))) {
+                name = getPokemonName(dexNum) + ' ' + name
             }
             return name
     }
@@ -86,25 +88,6 @@ function isSmogonCompatible(str) {
     }
 
     return false;
-}
-
-function getFormName(id) {
-    switch (id) {
-        case 1131:
-            return 'Ash-Greninja'
-        case 1174:
-            return 'Meowstic-F'
-        case 1199:
-            return 'Rockruff Own-Tempo'
-        case 1330:
-            return 'Indeedee-F'
-        case 1343:
-            return 'Basculegion-F'
-        case 1456:
-            return 'Oinkologne-F'            
-        default:
-            return formNames.labelDataArray[id].wordDataArray[0].str;
-    }
 }
 
 function getMoveId(moveName) {
@@ -184,6 +167,19 @@ function getMoves(m1, m2, m3, m4, monsno, level) {
     return moves;
 }
 
+function getFormNameFromDocumentation(pokemonName) {
+    if(pokemonName.includes("'")) return pokemonName.replace("'", "’")
+    if(pokemonName.includes("-")) {
+        const [pokemon, form] = pokemonName.split('-');
+        const monsno = getPokemonMonsNoFromName(pokemon);
+        if(form.includes("Altered") || form.includes('Male') || form.includes('Female')) return monsno;
+        const formIds = PersonalTable.Personal.filter(e => e.monsno === monsno).map(p => p.id);
+        const names = formIds.map(id => formNames.labelDataArray[id].wordDataArray[0].str);
+        const formindex = names.findIndex(f => f.includes(form));
+        return formIds[formindex];
+    }
+}
+
 module.exports = {
     isSmogonCompatible,
     getNatureName,
@@ -194,7 +190,6 @@ module.exports = {
     makeAbilityObject,
     getTypeName,
     getTypes,
-    getFormName,
     getMoveId,
     getAbilityIdFromAbilityName,
     getPokemonMonsNoFromName,
@@ -203,5 +198,6 @@ module.exports = {
     getMoves,
     getMoveString,
     generateMovesViaLearnset,
-    getGender
+    getGender,
+    getFormNameFromDocumentation
 }
