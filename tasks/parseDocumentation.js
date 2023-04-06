@@ -17,14 +17,13 @@ const {
     getMoveId,
     getMoveString,
     generateMovesViaLearnset,
+    getFormNameFromDocumentation
 } = require('./pokemonUtils');
+
+require('./createLumiMons')();
 
 if(!fs.existsSync(path.join(parentFilePath, 'output'))) {
     fs.mkdirSync(path.join(parentFilePath, 'output'));
-}
-
-if(!fs.existsSync(path.join(parentFilePath, 'output', 'LumiMons.json'))) {
-    require('./createLumiMons')();
 }
 
 if(!fs.existsSync(path.join(parentFilePath, 'output', 'missingTrainers.json'))) {
@@ -55,13 +54,13 @@ function stripTypeFromHiddenPower(str) {
 
 function generateDocPokemonObject(documentName, documentLevel, documentNature, documentAbility, documentItemName, documentMove1, documentMove2, documentMove3, documentMove4, ivs, evs, id, pNum) {
 
-    const documentMonsNo = getPokemonMonsNoFromName(documentName);
+    let documentMonsNo = getPokemonMonsNoFromName(documentName);
     if (!documentName || !documentLevel || isNaN(parseInt(documentLevel))) return;
 
     if (documentMonsNo === -1) {
-        console.error(`Unhandled MonsNo: ${documentMonsNo}, ${documentName}, ${id}`);
-        return;
-    };
+        documentMonsNo = getFormNameFromDocumentation(documentName);
+        if(documentMonsNo === -1) return console.error(`Unhandled MonsNo: ${documentMonsNo}, ${documentName}, ${id}`);
+    }
 
     const documentAbilityId = getAbilityIdFromAbilityName(documentAbility);
     const trainerPokeData = trainerData.TrainerPoke[id];
