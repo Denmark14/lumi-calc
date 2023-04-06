@@ -9068,7 +9068,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       "0": "Defiant"
     },
     "otherFormes": [
-      "Farfetch’d Galarian Farfetch'd"
+      "Galarian Farfetch’d"
     ]
   },
   "Doduo": {
@@ -27489,7 +27489,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     ],
     "baseSpecies": "Slowbro"
   },
-  "Farfetch’d Galarian Farfetch'd": {
+  "Galarian Farfetch’d": {
     "types": [
       "Fighting"
     ],
@@ -27506,7 +27506,7 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       "0": "Scrappy"
     },
     "otherFormes": [
-      "Farfetch’d Galarian Farfetch'd"
+      "Galarian Farfetch’d"
     ],
     "baseSpecies": "Farfetch’d"
   },
