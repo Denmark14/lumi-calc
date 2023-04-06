@@ -52,7 +52,13 @@ function getFormName(id) {
         case 1456:
             return 'Oinkologne-F'
         default:
-            return formNames.labelDataArray[id].wordDataArray[0].str;
+            const name = formNames.labelDataArray[id].wordDataArray[0].str;
+            const dexNum = formNames.labelDataArray[id].labelName.slice(-7, -4);
+            if (name === "") return get_pokemon_name(id);
+            if (!name.includes(get_pokemon_name(Number(dexNum)))) {
+                const name = get_pokemon_name(int(dexNum)) + ' ' + name
+            }
+            return name
     }
 }
 
