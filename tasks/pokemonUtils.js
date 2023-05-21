@@ -12,6 +12,15 @@ const PersonalTable = require('../input/PersonalTable.json')
 const learnset = require('../input/WazaOboeTable.json');
 const moveEnum = fs.readFileSync(path.join(parentFilePath, 'input', 'moves.txt'), 'utf-8').split('\n').map(e => e.trim()).filter(e => e);
 
+const FORM_MAP = PersonalTable.Personal.reduce((acc, curr) => {
+    if (!Array.isArray(acc[curr.monsno])) {
+        acc[curr.monsno] = [];
+    }
+
+    acc[curr.monsno].push(curr.id);
+    return acc;
+}, {})
+
 function getTypes(e) {
     return e.type1 === e.type2 ? [getTypeName(e.type1)] : [getTypeName(e.type1), getTypeName(e.type2)];
 }
@@ -93,12 +102,14 @@ function isSmogonCompatible(str) {
 function getMoveId(moveName) {
     if (!moveName) return 0;
     const id = moveEnum.findIndex(e => e === moveName.trim());
+    if(id === -1) throw Error(`Bad move name: ${moveName}`)
     return id;
 }
 
 function getAbilityIdFromAbilityName(abilityString) {
     if (!abilityString) return -1;
     const abilityId = AbilityNameData.labelDataArray.findIndex(e => e.wordDataArray[0].str === abilityString);
+    if(abilityId === -1) throw Error(`Bad ability name: ${abilityString}`);
     return abilityId;
 }
 
@@ -109,12 +120,17 @@ function getPokemonMonsNoFromName(pokemonName) {
 
 function getNatureId(natureString) {
     if(!natureString) return -1;
-    return natureNameData.labelDataArray.findIndex(e => e.wordDataArray[0].str === natureString);
+    const index = natureNameData.labelDataArray.findIndex(e => e.wordDataArray[0].str === natureString);
+    if(index === -1) throw Error(`Bad natureString: ${natureString}`);
+    return index;
 }
 
 function getItemIdFromItemName(itemName) {
     if(!itemName) return -1;
-    return itemNameData.labelDataArray.findIndex(e => e.wordDataArray[0]?.str === itemName);
+    if(itemName === "King's Rock") return itemNameData.labelDataArray.findIndex(e => e.wordDataArray[0]?.str === "King’s Rock");
+    const index = itemNameData.labelDataArray.findIndex(e => e.wordDataArray[0]?.str === itemName);
+    if(index === -1) throw Error(`Bad item name: ${itemName}`);
+    return index;
 }
 
 function getGender(sex) {
@@ -176,8 +192,37 @@ function getFormNameFromDocumentation(pokemonName) {
         const formIds = PersonalTable.Personal.filter(e => e.monsno === monsno).map(p => p.id);
         const names = formIds.map(id => formNames.labelDataArray[id].wordDataArray[0].str);
         const formindex = names.findIndex(f => f.includes(form));
+        return getFormName(formIds[formindex]);
+    }
+
+    const monsno = getPokemonMonsNoFromName(pokemonName);
+    const formIds = PersonalTable.Personal.filter(e => e.monsno === monsno).map(p => p.id);
+    const names = formIds.map(id => formNames.labelDataArray[id].wordDataArray[0].str);
+    const formindex = names.findIndex(f => f.includes(monsno));
+    if(formindex === -1) return getPokemonName(monsno);
+    return formIds[formindex];
+}
+
+function getPokemonIdFromDocumentation(nameString) {
+    let pokemonName = nameString
+    if(pokemonName === "Porygon-Z") return NameData.labelDataArray.findIndex(e => e.wordDataArray[0].str === "Porygon-Z");
+    if(pokemonName.includes("'")) pokemonName = pokemonName.replace("'", "’")
+    if(pokemonName.includes("-")) {
+        const [pokemon, form] = pokemonName.split('-');
+        const monsno = getPokemonMonsNoFromName(pokemon);
+        if(form.includes("Altered") || form.includes('Male') || form.includes('Female')) return monsno;
+        const formIds = PersonalTable.Personal.filter(e => e.monsno === monsno).map(p => p.id);
+        const names = formIds.map(id => formNames.labelDataArray[id].wordDataArray[0].str);
+        const formindex = names.findIndex(f => f.includes(form));
         return formIds[formindex];
     }
+
+    const monsno = getPokemonMonsNoFromName(pokemonName);
+    const formIds = PersonalTable.Personal.filter(e => e.monsno === monsno).map(p => p.id);
+    const names = formIds.map(id => formNames.labelDataArray[id].wordDataArray[0].str);
+    const formindex = names.findIndex(f => f.includes(monsno));
+    if(formindex === -1) return monsno;
+    return formIds[formindex];
 }
 
 module.exports = {
@@ -199,5 +244,7 @@ module.exports = {
     getMoveString,
     generateMovesViaLearnset,
     getGender,
-    getFormNameFromDocumentation
+    getFormNameFromDocumentation,
+    getPokemonIdFromDocumentation,
+    FORM_MAP
 }

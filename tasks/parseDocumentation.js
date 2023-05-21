@@ -20,11 +20,17 @@ const {
     getFormNameFromDocumentation
 } = require('./pokemonUtils');
 
-require('./createLumiMons')();
+const {
+    parseEvs,
+    parseIvs,
+    getAttribName
+} = require('./docUtils');
 
 if(!fs.existsSync(path.join(parentFilePath, 'output'))) {
     fs.mkdirSync(path.join(parentFilePath, 'output'));
 }
+
+require('./createLumiMons')();
 
 if(!fs.existsSync(path.join(parentFilePath, 'output', 'missingTrainers.json'))) {
     require('./createMissingTrainers')();
@@ -468,110 +474,6 @@ rawDocumentFile.split('\n').forEach((line, i) => {
 
 
 const sets = {}
-
-function parseIvs(ivString) {
-    const x = ivString.replace('All ', '');
-    const ivs = x.split('/')
-    if (ivs.length === 1) {
-        const iv = parseInt(ivs[0].trim())
-        return { hp: iv, at: iv, df: iv, sa: iv, sd: iv, sp: iv };
-    }
-
-    if (ivString.includes('All') && ivs.length === 2) {
-        const [value, rawAttr] = ivs[0].trim().split(' ');
-        const iv = parseInt(value.trim());
-        const pokemonIvs = { hp: iv, at: iv, df: iv, sa: iv, sd: iv, sp: iv };
-
-        const [value2, rawAttr2] = ivs[1].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr2)] = parseInt(value2.trim());
-        return pokemonIvs;
-    }
-    if (ivs.length === 2) {
-        const pokemonIvs = { hp: 0, at: 0, df: 0, sa: 0, sd: 0, sp: 0 };
-        const [value, rawAttr] = ivs[0].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr)] = parseInt(value.trim());
-        const [value2, rawAttr2] = ivs[1].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr2)] = parseInt(value2.trim());
-        return pokemonIvs;
-    }
-    if (ivs.length === 6) {
-        const parsedIvs = ivs.map(x => parseInt(x.trim()));
-        return { hp: parsedIvs[0], at: parsedIvs[1], df: parsedIvs[2], sa: parsedIvs[3], sd: parsedIvs[4], sp: parsedIvs[5] }
-    }
-}
-
-function parseEvs(ivString) {
-    if (!ivString || ivString === 'None') return { hp: 0, at: 0, df: 0, sa: 0, sd: 0, sp: 0 };
-    const x = ivString.replace('All ', '');
-    const ivs = x.split('/');
-    if (ivs.length === 1) {
-        const pokemonIvs = { hp: 0, at: 0, df: 0, sa: 0, sd: 0, sp: 0 };
-        const [value, rawAttr] = ivs[0].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr)] = parseInt(value.trim());
-        return pokemonIvs;
-    }
-    if (ivs.length === 2) {
-        const pokemonIvs = { hp: 0, at: 0, df: 0, sa: 0, sd: 0, sp: 0 };
-        const [value, rawAttr] = ivs[0].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr)] = parseInt(value.trim());
-        const [value2, rawAttr2] = ivs[1].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr2)] = parseInt(value2.trim());
-        return pokemonIvs;
-    }
-    if (ivs.length === 3) {
-        const pokemonIvs = { hp: 0, at: 0, df: 0, sa: 0, sd: 0, sp: 0 };
-        const [value, rawAttr] = ivs[0].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr)] = parseInt(value.trim());
-        const [value2, rawAttr2] = ivs[1].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr2)] = parseInt(value2.trim());
-        const [value3, rawAttr3] = ivs[2].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr3)] = parseInt(value3.trim());
-        return pokemonIvs
-    }
-
-    if (ivs.length === 4) {
-        const pokemonIvs = { hp: 0, at: 0, df: 0, sa: 0, sd: 0, sp: 0 };
-        const [value, rawAttr] = ivs[0].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr)] = parseInt(value.trim());
-        const [value2, rawAttr2] = ivs[1].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr2)] = parseInt(value2.trim());
-        const [value3, rawAttr3] = ivs[2].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr3)] = parseInt(value3.trim());
-        const [value4, rawAttr4] = ivs[3].trim().split(' ');
-        pokemonIvs[getAttribName(rawAttr4)] = parseInt(value4.trim());
-        return pokemonIvs
-    }
-
-    if (ivs.length === 5) {
-        const parsedIvs = ivs.map(x => parseInt(x.trim()));
-        return { hp: parsedIvs[0], at: parsedIvs[1], df: parsedIvs[2], sa: parsedIvs[3], sd: parsedIvs[4], sp: 0 };
-        //return pokemonIvs;
-    }
-    if (ivs.length === 6) {
-        const parsedIvs = ivs.map(x => parseInt(x.trim()));
-        return { hp: parsedIvs[0], at: parsedIvs[1], df: parsedIvs[2], sa: parsedIvs[3], sd: parsedIvs[4], sp: parsedIvs[5] }
-    }
-}
-
-function getAttribName(str) {
-    switch (str?.toUpperCase()) {
-        case 'HP':
-            return 'hp';
-        case 'ATK':
-            return 'at';
-        case 'DEF':
-            return 'df';
-        case 'SPD':
-            return 'sd';
-        case 'SPA':
-            return 'sa';
-        case 'SPE':
-            return 'sp';
-        default:
-            console.warn('GetAttribError:', str);
-            throw Error();
-    }
-}
 
 trainerDocs.forEach((e, i) => {
     const partyData = trainerData.TrainerPoke[e.id];

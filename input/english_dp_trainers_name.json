@@ -32533,6 +32533,66 @@
                     "strWidth": 100.75
                 }
             ]
+        },
+        {
+            "labelIndex": 1058,
+            "arrayIndex": 1085,
+            "labelName": "DP_Trainers_Name_TR_DAHLIA",
+            "styleInfo": {
+                "styleIndex": 0,
+                "colorIndex": -1,
+                "fontSize": 54,
+                "maxWidth": 1080,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Dahlia",
+                    "strWidth": 100.75
+                }
+            ]
+        },
+        {
+            "labelIndex": 1059,
+            "arrayIndex": 1086,
+            "labelName": "DP_Trainers_Name_TR_STEVEN",
+            "styleInfo": {
+                "styleIndex": 0,
+                "colorIndex": -1,
+                "fontSize": 54,
+                "maxWidth": 1080,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Steven",
+                    "strWidth": 100.75
+                }
+            ]
         }
     ]
 }

@@ -3133,6 +3133,36 @@
                     "strWidth": 162.109375
                 }
             ]
+        },
+        {
+            "labelIndex": 104,
+            "arrayIndex": 104,
+            "labelName": "DP_Trainers_Type_TR_ARCADE_STAR",
+            "styleInfo": {
+                "styleIndex": 48,
+                "colorIndex": -1,
+                "fontSize": 42,
+                "maxWidth": 672,
+                "controlID": 0
+            },
+            "attributeValueArray": [
+                -1,
+                0,
+                0,
+                -1,
+                0
+            ],
+            "tagDataArray": [],
+            "wordDataArray": [
+                {
+                    "patternID": 0,
+                    "eventID": 7,
+                    "tagIndex": -1,
+                    "tagValue": 0.0,
+                    "str": "Arcade Star",
+                    "strWidth": 162.109375
+                }
+            ]
         }
     ]
 }
