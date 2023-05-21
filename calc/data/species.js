@@ -9090,7 +9090,7 @@ var SS_PATCH = {
             "0": "Defiant"
         },
         "otherFormes": [
-            "Galarian Farfetch'd"
+            "Galarian Farfetch’d"
         ]
     },
     "Doduo": {
@@ -9164,7 +9164,7 @@ var SS_PATCH = {
             "0": "Snow Warning"
         },
         "otherFormes": [
-            "SPOOKYDEVTHING"
+            "Dewgong SPOOKYDEVTHING"
         ]
     },
     "Grimer": {
@@ -11293,7 +11293,7 @@ var SS_PATCH = {
             "Unown One form",
             "Unown One form",
             "Unown One form",
-            "Ash-Greninja",
+            "Unown One form",
             "Unown One form",
             "Unown One form"
         ]
@@ -15159,7 +15159,7 @@ var SS_PATCH = {
         },
         "gender": "F",
         "otherFormes": [
-            "Meowstic-F",
+            "Wormadam Sandy Cloak",
             "Wormadam Trash Cloak"
         ]
     },
@@ -19623,7 +19623,7 @@ var SS_PATCH = {
             "0": "Protean"
         },
         "otherFormes": [
-            "",
+            "Ash-Greninja",
             "Ash-Greninja"
         ]
     },
@@ -20030,7 +20030,7 @@ var SS_PATCH = {
         },
         "gender": "M",
         "otherFormes": [
-            ""
+            "Meowstic-F"
         ]
     },
     "Honedge": {
@@ -21260,7 +21260,7 @@ var SS_PATCH = {
             "0": "Steadfast"
         },
         "otherFormes": [
-            ""
+            "Rockruff Own-Tempo"
         ]
     },
     "Lycanroc": {
@@ -21806,7 +21806,7 @@ var SS_PATCH = {
             "Silvally Type: Grass",
             "Silvally Type: Electric",
             "Silvally Type: Psychic",
-            "Indeedee-F",
+            "Silvally Type: Ice",
             "Silvally Type: Dragon",
             "Silvally Type: Dark",
             "Silvally Type: Fairy"
@@ -21840,7 +21840,7 @@ var SS_PATCH = {
             "Minior Red Core",
             "Minior Orange Core",
             "Minior Yellow Core",
-            "Basculegion-F",
+            "Minior Green Core",
             "Minior Blue Core",
             "Minior Indigo Core",
             "Minior Violet Core"
@@ -23811,7 +23811,7 @@ var SS_PATCH = {
         },
         "gender": "M",
         "otherFormes": [
-            ""
+            "Indeedee-F"
         ]
     },
     "Morpeko": {
@@ -24317,7 +24317,7 @@ var SS_PATCH = {
         },
         "gender": "M",
         "otherFormes": [
-            ""
+            "Basculegion-F"
         ]
     },
     "Sneasler": {
@@ -27511,7 +27511,7 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Slowbro"
     },
-    "Galarian Farfetch'd": {
+    "Galarian Farfetch’d": {
         "types": [
             "Fighting"
         ],
@@ -27528,11 +27528,11 @@ var SS_PATCH = {
             "0": "Scrappy"
         },
         "otherFormes": [
-            "Galarian Farfetch'd"
+            "Galarian Farfetch’d"
         ],
         "baseSpecies": "Farfetch’d"
     },
-    "SPOOKYDEVTHING": {
+    "Dewgong SPOOKYDEVTHING": {
         "types": [
             "Water",
             "Ice"
@@ -27550,7 +27550,7 @@ var SS_PATCH = {
             "0": "Ice Body"
         },
         "otherFormes": [
-            "SPOOKYDEVTHING"
+            "Dewgong SPOOKYDEVTHING"
         ],
         "baseSpecies": "Dewgong"
     },
@@ -28390,29 +28390,6 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Unown",
         "gender": "N"
-    },
-    "Ash-Greninja": {
-        "types": [
-            "Water",
-            "Dark"
-        ],
-        "bs": {
-            "hp": 72,
-            "at": 145,
-            "df": 67,
-            "sa": 153,
-            "sd": 71,
-            "sp": 132
-        },
-        "weightkg": 40,
-        "abilities": {
-            "0": "Battle Bond"
-        },
-        "otherFormes": [
-            "Ash-Greninja"
-        ],
-        "baseSpecies": "Greninja",
-        "gender": "M"
     },
     "Mega Steelix": {
         "types": [
@@ -29288,7 +29265,7 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Burmy"
     },
-    "Meowstic-F": {
+    "Wormadam Sandy Cloak": {
         "types": [
             "Bug",
             "Ground"
@@ -29306,7 +29283,7 @@ var SS_PATCH = {
             "0": "Overcoat"
         },
         "otherFormes": [
-            "Meowstic-F"
+            "Wormadam Sandy Cloak"
         ],
         "baseSpecies": "Wormadam",
         "gender": "F"
@@ -29715,28 +29692,6 @@ var SS_PATCH = {
             "Shaymin Sky Forme"
         ],
         "baseSpecies": "Shaymin",
-        "gender": "N"
-    },
-    "Rockruff Own-Tempo": {
-        "types": [
-            "Ghost"
-        ],
-        "bs": {
-            "hp": 120,
-            "at": 120,
-            "df": 120,
-            "sa": 120,
-            "sd": 120,
-            "sp": 120
-        },
-        "weightkg": 320,
-        "abilities": {
-            "0": "Multitype"
-        },
-        "otherFormes": [
-            "Rockruff Own-Tempo"
-        ],
-        "baseSpecies": "Arceus",
         "gender": "N"
     },
     "Hisuian Samurott": {
@@ -30450,25 +30405,28 @@ var SS_PATCH = {
         "baseSpecies": "Genesect",
         "gender": "N"
     },
-    "": {
+    "Ash-Greninja": {
         "types": [
             "Water",
-            "Ghost"
+            "Dark"
         ],
         "bs": {
-            "hp": 70,
-            "at": 92,
-            "df": 65,
-            "sa": 80,
-            "sd": 55,
-            "sp": 98
+            "hp": 72,
+            "at": 145,
+            "df": 67,
+            "sa": 153,
+            "sd": 71,
+            "sp": 132
         },
-        "weightkg": 110,
+        "weightkg": 40,
         "abilities": {
-            "0": "Mold Breaker"
+            "0": "Battle Bond"
         },
-        "baseSpecies": "Basculegion",
-        "gender": "F"
+        "otherFormes": [
+            "Ash-Greninja"
+        ],
+        "baseSpecies": "Greninja",
+        "gender": "M"
     },
     "Vivillon Polar Pattern": {
         "types": [
@@ -31363,6 +31321,28 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Furfrou"
     },
+    "Meowstic-F": {
+        "types": [
+            "Psychic"
+        ],
+        "bs": {
+            "hp": 74,
+            "at": 48,
+            "df": 76,
+            "sa": 83,
+            "sd": 81,
+            "sp": 104
+        },
+        "weightkg": 8.5,
+        "abilities": {
+            "0": "Competitive"
+        },
+        "otherFormes": [
+            "Meowstic-F"
+        ],
+        "baseSpecies": "Meowstic",
+        "gender": "F"
+    },
     "Aegislash Blade Forme": {
         "types": [
             "Steel",
@@ -31896,6 +31876,27 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Ribombee"
     },
+    "Rockruff Own-Tempo": {
+        "types": [
+            "Rock"
+        ],
+        "bs": {
+            "hp": 45,
+            "at": 65,
+            "df": 40,
+            "sa": 30,
+            "sd": 40,
+            "sp": 60
+        },
+        "weightkg": 9.2,
+        "abilities": {
+            "0": "Own Tempo"
+        },
+        "otherFormes": [
+            "Rockruff Own-Tempo"
+        ],
+        "baseSpecies": "Rockruff"
+    },
     "Lycanroc Midnight Form": {
         "types": [
             "Rock"
@@ -32311,7 +32312,7 @@ var SS_PATCH = {
         "baseSpecies": "Silvally",
         "gender": "N"
     },
-    "Indeedee-F": {
+    "Silvally Type: Ice": {
         "types": [
             "Ice"
         ],
@@ -32328,7 +32329,7 @@ var SS_PATCH = {
             "0": "RKS System"
         },
         "otherFormes": [
-            "Indeedee-F"
+            "Silvally Type: Ice"
         ],
         "baseSpecies": "Silvally",
         "gender": "N"
@@ -32491,7 +32492,7 @@ var SS_PATCH = {
         "baseSpecies": "Minior",
         "gender": "N"
     },
-    "Basculegion-F": {
+    "Minior Green Core": {
         "types": [
             "Rock",
             "Flying"
@@ -32509,7 +32510,7 @@ var SS_PATCH = {
             "0": "Shields Down"
         },
         "otherFormes": [
-            "Basculegion-F"
+            "Minior Green Core"
         ],
         "baseSpecies": "Minior",
         "gender": "N"
@@ -33442,6 +33443,29 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Eiscue"
     },
+    "Indeedee-F": {
+        "types": [
+            "Psychic",
+            "Normal"
+        ],
+        "bs": {
+            "hp": 70,
+            "at": 55,
+            "df": 65,
+            "sa": 95,
+            "sd": 105,
+            "sp": 85
+        },
+        "weightkg": 28,
+        "abilities": {
+            "0": "Psychic Surge"
+        },
+        "otherFormes": [
+            "Indeedee-F"
+        ],
+        "baseSpecies": "Indeedee",
+        "gender": "F"
+    },
     "Morpeko Hangry Mode": {
         "types": [
             "Electric",
@@ -33688,6 +33712,29 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Calyrex",
         "gender": "N"
+    },
+    "Basculegion-F": {
+        "types": [
+            "Water",
+            "Ghost"
+        ],
+        "bs": {
+            "hp": 70,
+            "at": 92,
+            "df": 65,
+            "sa": 80,
+            "sd": 55,
+            "sp": 98
+        },
+        "weightkg": 110,
+        "abilities": {
+            "0": "Mold Breaker"
+        },
+        "otherFormes": [
+            "Basculegion-F"
+        ],
+        "baseSpecies": "Basculegion",
+        "gender": "F"
     },
     "Enamorus Therian Forme": {
         "types": [
