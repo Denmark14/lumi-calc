@@ -21021,9 +21021,9 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
     "bs": {
       "hp": 80,
       "at": 120,
-      "df": 75,
-      "sa": 75,
-      "sd": 75,
+      "df": 85,
+      "sa": 70,
+      "sd": 85,
       "sp": 60
     },
     "weightkg": 26,

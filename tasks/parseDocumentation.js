@@ -109,8 +109,6 @@ function generateDocPokemonObject(documentName, documentLevel, documentNature, d
         level: documentLevel,
         ability: documentAbility,
         nature: documentNature,
-        ivs: parseIvs(ivs),
-        evs: parseEvs(evs),
         moves: getMoves(
             getMoveId(documentMove1),
             getMoveId(documentMove2),
@@ -177,53 +175,22 @@ function generateDocPokemonObject(documentName, documentLevel, documentNature, d
     }
 
     //{hp: iv, at: iv, df: iv, sa: iv, sd: iv, sp: iv};
-    if (ivs) {
-        const [hp, atk, def, spa, spd, spe] = [
-            parseInt(trainerPokeData[`${propName}TalentHp`]),
-            parseInt(trainerPokeData[`${propName}TalentAtk`]),
-            parseInt(trainerPokeData[`${propName}TalentDef`]),
-            parseInt(trainerPokeData[`${propName}TalentSpAtk`]),
-            parseInt(trainerPokeData[`${propName}TalentSpDef`]),
-            parseInt(trainerPokeData[`${propName}TalentAgi`])
-        ]
-        if (
-            docSet.ivs.hp !== hp ||
-            docSet.ivs.at !== atk ||
-            docSet.ivs.df !== def ||
-            docSet.ivs.sa !== spa ||
-            docSet.ivs.sd !== spd ||
-            docSet.ivs.sp !== spe
-        ) {
-            const gameIvs = [hp, atk, def, spa, spd, spe];
-            ivMatchups.push(`Bad IV Matchup:\n\tParty: ${id}\n\tParty Slot:${pNum}\n\tDoc Data: ${ivs} - ${prettifyEvs(docSet.ivs)}\n\tGame Data: ${gameIvs.join(', ')}`)
-        }
+    docSet.ivs = {
+        hp: parseInt(trainerPokeData[`${propName}TalentHp`]),
+        at: parseInt(trainerPokeData[`${propName}TalentAtk`]),
+        df: parseInt(trainerPokeData[`${propName}TalentDef`]),
+        sa: parseInt(trainerPokeData[`${propName}TalentSpAtk`]),
+        sd: parseInt(trainerPokeData[`${propName}TalentSpDef`]),
+        sp: parseInt(trainerPokeData[`${propName}TalentAgi`])
     }
 
-    if (evs) {
-        let [hp, atk, def, spa, spd, spe] = [
-            parseInt(trainerPokeData[`${propName}EffortHp`]),
-            parseInt(trainerPokeData[`${propName}EffortAtk`]),
-            parseInt(trainerPokeData[`${propName}EffortDef`]),
-            parseInt(trainerPokeData[`${propName}EffortSpAtk`]),
-            parseInt(trainerPokeData[`${propName}EffortSpDef`]),
-            parseInt(trainerPokeData[`${propName}EffortAgi`])
-        ]
-
-        docSet.evs = {
-            hp: hp,
-            at: atk,
-            df: def,
-            sa: spa,
-            sd: spd,
-            sp: spe
-        };
-        //This is the EV Validation code. Don't touch it, WIP
-        // const evValidation = areEffortValuesValid(docSet, hp, atk, def, spa, spd, spe);
-        // if (!evValidation.valid) {
-        //     const response = correctPokemonEvs(evValidation, docSet, hp, atk, def, spa, spd, spe, id, pNum, name);
-        //     response.changed ? evChangelog.push(`Party ${id} Slot ${pNum} - ${name} changed to ${response.source} - ${prettifyEvs(response.data)}`) : evChangelog.push(`Party ${id} Slot ${pNum} unchanged.`);
-        //     docSet.evs = response.data;
-        // }
+    docSet.evs = {
+        hp: parseInt(trainerPokeData[`${propName}EffortHp`]),
+        at: parseInt(trainerPokeData[`${propName}EffortAtk`]),
+        df: parseInt(trainerPokeData[`${propName}EffortDef`]),
+        sa: parseInt(trainerPokeData[`${propName}EffortSpAtk`]),
+        sd: parseInt(trainerPokeData[`${propName}EffortSpDef`]),
+        sp: parseInt(trainerPokeData[`${propName}EffortAgi`])
     }
 
 
@@ -233,98 +200,6 @@ function generateDocPokemonObject(documentName, documentLevel, documentNature, d
 
 function prettifyEvs({ hp, at, df, sa, sd, sp }) {
     return `HP: ${hp}, ATK: ${at}, DEF: ${df}, SPA: ${sa}, SPD: ${sd}, SPE: ${sp}`;
-}
-
-
-function correctPokemonEvs(evValidation, docSet, hp, atk, def, spa, spd, spe, id, pNum, name) {
-    const { badMatches, badProp } = evValidation;
-
-    const effortValues = { hp, at: atk, df: def, sa: spa, sd: spd, sp: spe };
-    const documentEvSum = Object.values(docSet.evs).reduce((a, b) => a + b, 0);
-    const gameEvSum = Object.values(effortValues).reduce((a, b) => a + b, 0);
-    //Handle obvious legality errors
-    const legality = checkSpreadLegality(docSet, hp, atk, def, spa, spd, spe, id, pNum, name);
-
-    if (legality.changed) {
-        return legality;
-    }
-
-    //Handle typo errors
-    const typoResponse = handleTypoEffortValueErrors(documentEvSum, gameEvSum, docSet, effortValues);
-    if (typoResponse.changed) {
-        if (typoResponse.source === 'docs') {
-            badGameData.push(`Bad EV Matchup (Typo): \n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}\n\tGame Data: HP: ${hp}, ATK: ${atk}, DEF: ${def}, SPA: ${spa}, SPD: ${spd}, SPE: ${spe}`);
-            return typoResponse;
-        } else if (typoResponse.source === 'game') {
-            badDocs.push(`Bad EV Matchup (Typo): \n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}\n\tGame Data: HP: ${hp}, ATK: ${atk}, DEF: ${def}, SPA: ${spa}, SPD: ${spd}, SPE: ${spe}`);
-            return typoResponse;
-        }
-    }
-
-    if (documentEvSum >= 508 && gameEvSum < 510 && documentEvSum !== gameEvSum) {
-        badGameData.push(`Bad EV Matchup (Missing Stat): \n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}\n\tGame Data: HP: ${hp}, ATK: ${atk}, DEF: ${def}, SPA: ${spa}, SPD: ${spd}, SPE: ${spe}`);
-        return { changed: true, source: 'docs', data: docSet.evs };
-    } else if (gameEvSum >= 508 && documentEvSum < 510 && documentEvSum !== gameEvSum) {
-        badDocs.push(`Bad EV Matchup (Missing Stat): \n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}\n\tGame Data: HP: ${hp}, ATK: ${atk}, DEF: ${def}, SPA: ${spa}, SPD: ${spd}, SPE: ${spe}`);
-        return { changed: true, source: 'game', data: { hp, at: atk, df: def, sa: spa, sd: spd, sp: spe } };
-    }
-
-    const swapAttempt = swapEvsUntilTheyWork(docSet, badProp, hp, atk, def, spa, spe, spe, id, pNum, name);
-    if (swapAttempt.changed) {
-        return swapAttempt;
-    }
-
-    evMatchups.push(`Bad EV Matchup (Attempted Swap Fix): ${swapAttempt.badProp}\n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}\n\tGame Data: HP: ${swapAttempt.data.hp}, ATK: ${swapAttempt.data.at}, DEF: ${swapAttempt.data.df}, SPA: ${swapAttempt.data.sa}, SPD: ${swapAttempt.data.sd}, SPE: ${swapAttempt.data.sp}`)
-}
-
-function swapEvsUntilTheyWork(docSet, badProp, hp, atk, def, spa, spd, spe, id, pNum, name) {
-
-    let swapAttempt = swapEvValues(docSet, badProp, hp, atk, def, spa, spd, spe)
-    let swapAttempttValidation = areEffortValuesValid(docSet, swapAttempt.hp, swapAttempt.at, swapAttempt.df, swapAttempt.sa, swapAttempt.sd, swapAttempt.sp);
-    
-    if(swapAttempttValidation.badMatches?.length === 1) {
-        swapAttempt = swapEvValues(docSet, swapAttempttValidation.badProp, swapAttempt.hp, swapAttempt.at, swapAttempt.df, swapAttempt.sa, swapAttempt.sd, swapAttempt.sp);
-        swapAttempttValidation = areEffortValuesValid(docSet, swapAttempt.hp, swapAttempt.at, swapAttempt.df, swapAttempt.sa, swapAttempt.sd, swapAttempt.sp);
-    }
-
-    if (swapAttempttValidation.valid && isEvSpreadValid(swapAttempt) ) {
-        return { changed: true, source: 'docs', data: swapAttempt };
-    }
-
-    evMatchups.push(`Bad EV Matchup (Attempted Swap Fix): ${swapAttempttValidation.badProp}\n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}\n\tGame Data: HP: ${swapAttempt.hp}, ATK: ${swapAttempt.at}, DEF: ${swapAttempt.df}, SPA: ${swapAttempt.sa}, SPD: ${swapAttempt.sd}, SPE: ${swapAttempt.sp}`)
-    return { changed: false, badProp: swapAttempttValidation.badProp, data: swapAttempt };
-}
-function handleTypoEffortValueErrors(documentEvSum, gameEvSum, docSet, gameEvs) {
-    if (Math.abs(documentEvSum - gameEvSum) < 3 && documentEvSum !== gameEvSum) {
-        if (documentEvSum % 2 === 0) {
-            return { changed: true, source: 'docs', data: docSet.evs };
-        } else if(gameEvSum % 2 === 0) {
-            return { changed: true, source: 'game', data: gameEvs };
-        }
-    }
-
-    return { changed: false };
-}
-
-function checkSpreadLegality(docSet, hp, atk, def, spa, spd, spe, id, pNum, name) {
-    const docSetValid = isEvSpreadValid(docSet.evs);
-    const y = { hp, at: atk, df: def, sa: spa, sd: spd, sp: spe };
-    const attemptSetValid = isEvSpreadValid(y);
-    const documentEvSum = Object.values(docSet.evs).reduce((a, b) => a + b, 0);
-    const gameEvSum = Object.values(y).reduce((a, b) => a + b, 0);
-
-    const docHasNoSpread = documentEvSum === 0;
-    const gameHasNoSpread = gameEvSum === 0;
-
-    if (!docSetValid || docHasNoSpread) {
-        badDocs.push(`Illegal EV Matchup (Attempted Fix): \n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}, Legal: ${docSetValid}\n\tGame Data: HP: ${hp}, ATK: ${atk}, DEF: ${def}, SPA: ${spa}, SPD: ${spd}, SPE: ${spe}, Legal: ${attemptSetValid}`);
-        return { changed: true, source: 'game', data: y };
-    } else if (!attemptSetValid || gameHasNoSpread) {
-        badGameData.push(`Illegal EV Matchup (Attempted Fix): \n\tParty: ${id}\n\tParty Slot:${pNum} - ${name}\n\tDoc Data: HP: ${docSet.evs.hp}, ATK: ${docSet.evs.at}, DEF: ${docSet.evs.df}, SPA: ${docSet.evs.sa}, SPD: ${docSet.evs.sd}, SPE: ${docSet.evs.sp}, Legal: ${docSetValid}\n\tGame Data: HP: ${hp}, ATK: ${atk}, DEF: ${def}, SPA: ${spa}, SPD: ${spd}, SPE: ${spe}, Legal: ${attemptSetValid}`);
-        return { changed: true, source: 'docs', data: docSet.evs };
-    } else {
-        return { changed: false }
-    }
 }
 
 function swapEvValues(docSet, evString, hp, at, df, sa, sd, sp) {
@@ -340,48 +215,6 @@ function swapEvValues(docSet, evString, hp, at, df, sa, sd, sp) {
     }
 
     return pokemonEvs;
-}
-function isEvSpreadValid({ hp, at, df, sa, sd, sp }) {
-    if (hp > 255) return false;
-    if (at > 255) return false;
-    if (df > 255) return false;
-    if (sa > 255) return false;
-    if (sd > 255) return false;
-    if (sp > 255) return false;
-
-    const evSum = (hp + at + df + sa + sd + sp)
-    if (isNaN(evSum)) throw Error(`EV Sum is NaN: ${evSum}`)
-    return evSum <= 510;
-}
-
-function areEffortValuesValid(docSet, hp, atk, def, spa, spd, spe) {
-    let badProp = '';
-    let badMatches = [];
-    if (docSet.evs.hp !== hp) {
-        badProp += 'HP '
-        badMatches.push('HP');
-    }
-    if (docSet.evs.at !== atk) {
-        badProp += 'ATK '
-        badMatches.push('ATK');
-    }
-    if (docSet.evs.df !== def) {
-        badProp += 'DEF '
-        badMatches.push('DEF');
-    }
-    if (docSet.evs.sa !== spa) {
-        badProp += 'SPA '
-        badMatches.push('SPA');
-    }
-    if (docSet.evs.sd !== spd) {
-        badProp += 'SPD '
-        badMatches.push('SPD');
-    }
-    if (docSet.evs.sp !== spe) {
-        badProp += 'SPE '
-        badMatches.push('SPE');
-    }
-    return badProp === '' ? { valid: true } : { valid: false, badProp, badMatches };
 }
 
 rawDocumentFile.split('\n').forEach((line, i) => {
