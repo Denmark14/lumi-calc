@@ -11,6 +11,8 @@ const SMOGON_MOVES = require('../input/moves.json');
 const PersonalTable = require('../input/PersonalTable.json')
 const learnset = require('../input/WazaOboeTable.json');
 const moveEnum = fs.readFileSync(path.join(parentFilePath, 'input', 'moves.txt'), 'utf-8').split('\n').map(e => e.trim()).filter(e => e);
+const IS_MOVE_INDEX = false;
+const MAX_TM_COUNT = 104;
 
 const FORM_MAP = PersonalTable.Personal.reduce((acc, curr) => {
     if (!Array.isArray(acc[curr.monsno])) {
@@ -150,29 +152,42 @@ function getMoveString(id = 0) {
 }
 
 function generateMovesViaLearnset(monsNo, level) {
-    const idx = learnset.WazaOboe[monsNo].ar.findIndex((e, i) => {
-        if (i % 2 === 1) return;
-        return e > level;
-    })
-
-    const moves = learnset.WazaOboe[monsNo].ar.slice(0, idx);
-
-    return [
-        getMoveString(moves.at(-7)),
-        getMoveString(moves.at(-5)),
-        getMoveString(moves.at(-3)),
-        getMoveString(moves.at(-1)),
-    ]
-}
+    /**
+     * In BDSP, a trainer's Pokemon, when provided no moves,
+     * will use the four most recent moves in the learnset.
+     */
+    if (!Number.isInteger(monsNo) || monsNo < 0 || !learnset.WazaOboe[monsNo]) {
+      throw new Error('Invalid Pokémon number');
+    }
+  
+    if (!Number.isInteger(level) || level < 0) {
+      throw new Error('Invalid level');
+    }
+  
+    let cutoffIndex = learnset.WazaOboe[monsNo].ar.findIndex((currentMoveOrLevel, i) => {
+      if (i % 2 === 1) return IS_MOVE_INDEX;
+      return currentMoveOrLevel > level;
+    });
+    if (cutoffIndex === -1) {
+      cutoffIndex = learnset.WazaOboe[monsNo].ar.length;
+    }
+    const moves = learnset.WazaOboe[monsNo].ar.slice(0, cutoffIndex);
+  
+    const moveset = [moves.at(-7) || 0, moves.at(-5) || 0, moves.at(-3) || 0, moves.at(-1) || 0].sort((a, b) => {
+        console.log(a, b);
+        if(a === 0) return -1;
+        if(b === 0) return 1;
+        return 0;
+    });
+  
+    return moveset.map(getMoveString);
+  }
 
 function getMoves(m1, m2, m3, m4, monsno, level) {
-    if (m1 === m2 && m1 === m3 && m1 === m4) {
+    if (m1 === 0 && m2 === 0 && m3 === 0 && m4 === 0) {
         return generateMovesViaLearnset(monsno, level);
     }
 
-    if([m1, m2, m3, m4].includes(216)) {
-        throw Error(`Return is invalid: ${monsno} - ${level}`);
-    }
     const moves = [
         moveEnum[m1],
         moveEnum[m2],

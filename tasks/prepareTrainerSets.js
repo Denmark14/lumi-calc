@@ -295,7 +295,6 @@ BDSPTrainers.forEach((e, i) => {
     }
 });
 
-
 const filepath = path.join(parentFilePath, 'output')
 fs.writeFileSync(path.join(filepath, 'trainerSets.json'), JSON.stringify(sets), 'utf-8');
 

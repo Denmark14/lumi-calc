@@ -5,8 +5,9 @@ const path = require('path');
 const babel = require('@babel/core');
 const terser = require('terser');
 
+require('./tasks/createLumiMons')();
 require('./tasks/parseDocumentation');
-require('./tasks/prepareTrainerSets');
+require('./tasks/prepareTrainerSets')();
 
 const config = {
   compact: false,

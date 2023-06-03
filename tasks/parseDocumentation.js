@@ -5,26 +5,16 @@ const parentFilePath = path.resolve(__dirname, '..');
 const rawDocumentFile = fs.readFileSync(path.join(parentFilePath, 'input', 'docs.csv'), 'utf-8');
 const {generateTrainerName} = require('./trainerUtils');
 const { 
-    getAbilityIdFromAbilityName,
     getAbilityString,
     getPokemonName,
-    getPokemonMonsNoFromName,
-    getNatureId,
     getNatureName,
-    getItemIdFromItemName,
     getItemString,
     getMoves,
-    getMoveId,
-    getMoveString,
-    generateMovesViaLearnset,
-    getFormNameFromDocumentation
 } = require('./pokemonUtils');
 
 if(!fs.existsSync(path.join(parentFilePath, 'output'))) {
     fs.mkdirSync(path.join(parentFilePath, 'output'));
 }
-
-require('./createLumiMons')();
 
 if(!fs.existsSync(path.join(parentFilePath, 'output', 'missingTrainers.json'))) {
     require('./createMissingTrainers')();
@@ -33,7 +23,6 @@ if(!fs.existsSync(path.join(parentFilePath, 'output', 'missingTrainers.json'))) 
 const speciesData = require(path.join(parentFilePath, 'output', 'LumiMons.json'));
 const missingTrainers = require(path.join(parentFilePath, 'output', 'missingTrainers.json'));
 
-const docSets = [];
 const trainerDocs = [];
 const partyMatchups = [];
 const abilityMatchups = [];
@@ -46,151 +35,6 @@ const evMatchups = [];
 const badDocs = [];
 const badGameData = [];
 const evChangelog = [];
-
-function stripTypeFromHiddenPower(str) {
-    const i = str.indexOf('(');
-    return str.substring(0, i).trim();
-}
-
-function generateDocPokemonObject(documentName, documentLevel, documentNature, documentAbility, documentItemName, documentMove1, documentMove2, documentMove3, documentMove4, ivs, evs, id, pNum) {
-
-    let documentMonsNo = getPokemonMonsNoFromName(documentName);
-    if (!documentName || !documentLevel || isNaN(parseInt(documentLevel))) return;
-
-    if (documentMonsNo === -1) {
-        documentMonsNo = getFormNameFromDocumentation(documentName);
-        if(documentMonsNo === -1) return console.error(`Unhandled MonsNo: ${documentMonsNo}, ${documentName}, ${id}`);
-    }
-
-    const documentAbilityId = getAbilityIdFromAbilityName(documentAbility);
-    const trainerPokeData = trainerData.TrainerPoke[id];
-
-    if (trainerPokeData === undefined) {
-        console.warn(`Invalid Trainer ID: ${id}`);
-        throw new Error(`${documentName || 'undefined'} - ${id || 'undefined'}`);
-    }
-
-    const propName = `P${pNum}`;
-    const gameMonsNo = trainerPokeData[`${propName}MonsNo`]
-    const gameMonsName = getPokemonName(gameMonsNo);
-    const gameMonLevel = trainerPokeData[`${propName}Level`];
-    
-    if (gameMonsNo !== documentMonsNo) {
-        partyMatchups.push(`Bad party matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum}\n\tDocs: ${documentName}\n\tGame: ${gameMonsName}`)
-        return;
-    }
-
-    const trainerAbilityId = trainerPokeData[`${propName}Tokusei`];
-    const abilityMatch = trainerAbilityId === documentAbilityId;
-    if (!abilityMatch) {
-        abilityMatchups.push(`Party ID ${id} - ${getPokemonName(documentMonsNo)}\nDocs ability: ${documentAbility || 'undefined'} - ${documentAbilityId}\nGamedata Ability: ${getAbilityString(trainerAbilityId) || 'undefined'} - ${trainerAbilityId}`)
-    }
-
-    if (documentMove1.includes('Hidden Power')) {
-        documentMove1 = stripTypeFromHiddenPower(documentMove1);
-    }
-    if (documentMove2.includes('Hidden Power')) {
-        documentMove2 = stripTypeFromHiddenPower(documentMove2);
-    }
-    if (documentMove3.includes('Hidden Power')) {
-        documentMove3 = stripTypeFromHiddenPower(documentMove3);
-    }
-    if (documentMove4.includes('Hidden Power')) {
-        documentMove4 = stripTypeFromHiddenPower(documentMove4);
-    }
-
-    const docSet = {
-        level: documentLevel,
-        ability: documentAbility,
-        nature: documentNature,
-        moves: getMoves(
-            getMoveId(documentMove1),
-            getMoveId(documentMove2),
-            getMoveId(documentMove3),
-            getMoveId(documentMove4),
-            documentName,
-            documentLevel
-        )
-    }
-
-    if (documentItemName) {
-        docSet['item'] = documentItemName;
-    }
-
-    const docMove1Id = getMoveId(docSet.moves[0]);
-    const docMove2Id = getMoveId(docSet.moves[1]);
-    const docMove3Id = getMoveId(docSet.moves[2]);
-    const docMove4Id = getMoveId(docSet.moves[3]);
-
-    let generatedFromLearnset = false;
-    let [gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id] = [
-        trainerPokeData[`${propName}Waza1`],
-        trainerPokeData[`${propName}Waza2`],
-        trainerPokeData[`${propName}Waza3`],
-        trainerPokeData[`${propName}Waza4`],
-    ];
-
-    
-    if (gameMove1Id === 0 && gameMove2Id === 0 && gameMove3Id === 0 && gameMove4Id === 0) {
-        const moveNames = generateMovesViaLearnset(gameMonsNo, gameMonLevel);
-        [gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id] = [getMoveId(moveNames[0]), getMoveId(moveNames[1]), getMoveId(moveNames[2]), getMoveId(moveNames[3])];
-        generatedFromLearnset = true;
-    }
-
-
-    if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove1Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${1}\n\tDocs: ${documentMove1} - ${docMove1Id}\n\tGame: ${getMoveString(gameMove1Id)} - ${gameMove1Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
-    }
-    if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove2Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${2}\n\tDocs: ${documentMove2} - ${docMove2Id}\n\tGame: ${getMoveString(gameMove2Id)} - ${gameMove2Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
-    }
-    if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove3Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${3}\n\tDocs: ${documentMove3} - ${docMove3Id}\n\tGame: ${getMoveString(gameMove3Id)} - ${gameMove3Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
-    }
-    if (![gameMove1Id, gameMove2Id, gameMove3Id, gameMove4Id].includes(docMove4Id)) {
-        moveMatchups.push(`Bad move matchup:\n\tParty ID: ${id}\n\tParty Slot ${pNum} - ${documentName}\n\tMove Slot: ${4}\n\tDocs: ${documentMove4} - ${docMove4Id}\n\tGame: ${getMoveString(gameMove4Id)} - ${gameMove4Id}${generatedFromLearnset ? ' - Generated via learnset' : ''}`)
-    }
-
-    if (documentItemName) {
-        const docItemName = documentItemName.replaceAll('\'', '’');//Kings rock hack
-        const gameItemId = trainerPokeData[`${propName}Item`];
-        const itemId = getItemIdFromItemName(docItemName);
-        if (itemId === -1 || (itemId !== gameItemId)) {
-            itemMatchups.push(`Bad Item Matchup:\n\tParty: ${id}\n\tParty Slot:${pNum}\n\tDoc Data: ${docItemName} - ${itemId}\n\tGame Data: ${getItemString(gameItemId)} - ${gameItemId}`);
-        }
-    }
-
-    const docNatureId = getNatureId(documentNature);
-    const gameNatureId = trainerPokeData[`${propName}Seikaku`];
-    if (docNatureId === -1 || docNatureId !== gameNatureId) {
-        const docNatureString = getNatureName(docNatureId);
-        const gameNatureString = getNatureName(gameNatureId);
-        natureMatchups.push(`Bad Nature Matchup:\n\tParty: ${id}\n\tParty Slot:${pNum}\n\tDoc Data: ${docNatureString} - ${docNatureId}\n\tGame Data: ${gameNatureString} - ${gameNatureId}`);
-    }
-
-    //{hp: iv, at: iv, df: iv, sa: iv, sd: iv, sp: iv};
-    docSet.ivs = {
-        hp: parseInt(trainerPokeData[`${propName}TalentHp`]),
-        at: parseInt(trainerPokeData[`${propName}TalentAtk`]),
-        df: parseInt(trainerPokeData[`${propName}TalentDef`]),
-        sa: parseInt(trainerPokeData[`${propName}TalentSpAtk`]),
-        sd: parseInt(trainerPokeData[`${propName}TalentSpDef`]),
-        sp: parseInt(trainerPokeData[`${propName}TalentAgi`])
-    }
-
-    docSet.evs = {
-        hp: parseInt(trainerPokeData[`${propName}EffortHp`]),
-        at: parseInt(trainerPokeData[`${propName}EffortAtk`]),
-        df: parseInt(trainerPokeData[`${propName}EffortDef`]),
-        sa: parseInt(trainerPokeData[`${propName}EffortSpAtk`]),
-        sd: parseInt(trainerPokeData[`${propName}EffortSpDef`]),
-        sp: parseInt(trainerPokeData[`${propName}EffortAgi`])
-    }
-
-
-    docSets.push(docSet);
-    return docSet;
-}
 
 rawDocumentFile.split('\n').forEach((line, i) => {
     if (line > 3) return;
@@ -217,12 +61,12 @@ rawDocumentFile.split('\n').forEach((line, i) => {
         const p5 = generatePokemonObject(parseInt(trainerID), 5);
         const p6 = generatePokemonObject(parseInt(trainerID), 6);
 
-        if (p1 !== undefined) party.p1 = p1;
-        if (p2 !== undefined) party.p2 = p2;
-        if (p3 !== undefined) party.p3 = p3;
-        if (p4 !== undefined) party.p4 = p4;
-        if (p5 !== undefined) party.p5 = p5;
-        if (p6 !== undefined) party.p6 = p6;
+        if (verifyPokemonObject(p1, trainerID, 1)) party.p1 = p1;
+        if (verifyPokemonObject(p2, trainerID, 2)) party.p2 = p2;
+        if (verifyPokemonObject(p3, trainerID, 3)) party.p3 = p3;
+        if (verifyPokemonObject(p4, trainerID, 4)) party.p4 = p4;
+        if (verifyPokemonObject(p5, trainerID, 5)) party.p5 = p5;
+        if (verifyPokemonObject(p6, trainerID, 6)) party.p6 = p6;
     }
 
 
@@ -236,6 +80,18 @@ rawDocumentFile.split('\n').forEach((line, i) => {
         party
     })
 })
+
+function verifyPokemonObject(p, trainerId, partyNo) {
+    if(!checkValue(p.level) || !checkValue(p.ability) || !checkValue(p.nature) || p.moves.some(x => !checkValue(x))) {
+        throw Error(`Bad Pokemon Object: ${trainerId}, ${partyNo} - ${JSON.stringify(p)}`)
+    }
+
+    return true;
+}
+
+function checkValue(value) {
+    return value !== false && value !== undefined && value !== null && value !== '';
+}
 
 function generatePokemonObject(trainerId, partyNo) {
     const tr = trainerData.TrainerPoke[trainerId];
