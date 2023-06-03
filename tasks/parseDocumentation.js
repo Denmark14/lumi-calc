@@ -20,12 +20,6 @@ const {
     getFormNameFromDocumentation
 } = require('./pokemonUtils');
 
-const {
-    parseEvs,
-    parseIvs,
-    getAttribName
-} = require('./docUtils');
-
 if(!fs.existsSync(path.join(parentFilePath, 'output'))) {
     fs.mkdirSync(path.join(parentFilePath, 'output'));
 }
@@ -198,47 +192,12 @@ function generateDocPokemonObject(documentName, documentLevel, documentNature, d
     return docSet;
 }
 
-function prettifyEvs({ hp, at, df, sa, sd, sp }) {
-    return `HP: ${hp}, ATK: ${at}, DEF: ${df}, SPA: ${sa}, SPD: ${sd}, SPE: ${sp}`;
-}
-
-function swapEvValues(docSet, evString, hp, at, df, sa, sd, sp) {
-    const statMap = { 'HP': hp, 'ATK': at, 'DEF': df, 'SPA': sa, 'SPD': sd, 'SPE': sp };
-    const rawAttribs = evString.trim().split(' ')
-    const attribs = rawAttribs.map(x => getAttribName(x.trim()));
-
-    const pokemonEvs = { hp, at, df, sa, sd, sp };
-
-    
-    for (let attrib of attribs) {
-        pokemonEvs[attrib] = docSet.evs[attrib];
-    }
-
-    return pokemonEvs;
-}
-
 rawDocumentFile.split('\n').forEach((line, i) => {
     if (line > 3) return;
     const [
         trainerID, rawTrainerName, LevelCap, format,
         //P1
-        pokemon1Icon, Pokemon1Name, Pokemon1Level, Pokemon1Nature, Pokemon1Ability, Item1Icon, Item1Name,
-        Pokemon1Move1, Pokemon1Move2, Pokemon1Move3, Pokemon1Move4, Pokemon1IV, Pokemon1EV,
-        //P2
-        Pokemon2Icon, Pokemon2Name, Pokemon2Level, Pokemon2Nature, Pokemon2Ability, Item2Icon, Item2Name,
-        Pokemon2Move1, Pokemon2Move2, Pokemon2Move3, Pokemon2Move4, Pokemon2IV, Pokemon2EV,
-        //P3
-        Pokemon3Icon, Pokemon3Name, Pokemon3Level, Pokemon3Nature, Pokemon3Ability, Item3Icon, Item3Name,
-        Pokemon3Move1, Pokemon3Move3, Pokemon3Move2, Pokemon3Move4, Pokemon3IV, Pokemon3EV,
-        //P4
-        Pokemon4Icon, Pokemon4Name, Pokemon4Level, Pokemon4Nature, Pokemon4Ability, Item4Icon, Item4Name,
-        Pokemon4Move1, Pokemon4Move2, Pokemon4Move3, Pokemon4Move4, Pokemon4IV, Pokemon4EV,
-        //P5
-        Pokemon5Icon, Pokemon5Name, Pokemon5Level, Pokemon5Nature, Pokemon5Ability, Item5Icon, Item5Name,
-        Pokemon5Move1, Pokemon5Move2, Pokemon5Move3, Pokemon5Move4, Pokemon5IV, Pokemon5EV,
-        //P6
-        Pokemon6Icon, Pokemon6Name, Pokemon6Level, Pokemon6Nature, Pokemon6Ability, Item6Icon, Item6Name,
-        Pokemon6Move1, Pokemon6Move2, Pokemon6Move3, Pokemon6Move4, Pokemon6IV, Pokemon6EV, trainerItem, specialNotes
+        pokemon1Icon, Pokemon1Name, Pokemon1Level,
     ] = line.split(',').map(x => x.trim());
 
     const trainerName = generateTrainerName(rawTrainerName, Pokemon1Level);
@@ -251,39 +210,12 @@ rawDocumentFile.split('\n').forEach((line, i) => {
             missingTrainers.splice(missingTrainerIdx, 1);
         }
 
-        const p1Level = parseInt(trainerData.TrainerPoke[trainerID].P1Level);
-        const p2Level = parseInt(trainerData.TrainerPoke[trainerID].P2Level);
-        const p3Level = parseInt(trainerData.TrainerPoke[trainerID].P3Level);
-        const p4Level = parseInt(trainerData.TrainerPoke[trainerID].P4Level);
-        const p5Level = parseInt(trainerData.TrainerPoke[trainerID].P5Level);
-        const p6Level = parseInt(trainerData.TrainerPoke[trainerID].P6Level);
-
-        // if(p1Level != Pokemon1Level) {
-        //     console.warn(`Bad level mismatch Party ID: ${trainerID}, Slot 1, [Doc: ${Pokemon1Level}, Game: ${p1Level}]`)
-        // }
-        // if(p2Level != Pokemon2Level) {
-        //     console.warn(`Bad level mismatch Party ID: ${trainerID}, Slot 2, [Doc: ${Pokemon2Level}, Game: ${p2Level}]`)
-        // }
-        // if(p3Level != Pokemon3Level) {
-        //     console.warn(`Bad level mismatch Party ID: ${trainerID}, Slot 3, [Doc: ${Pokemon3Level}, Game: ${p3Level}]`)
-        // }
-        // if(p4Level != Pokemon4Level) {
-        //     console.warn(`Bad level mismatch Party ID: ${trainerID}, Slot 4, [Doc: ${Pokemon4Level}, Game: ${p4Level}]`)
-        // }
-        // if(p5Level != Pokemon5Level) {
-        //     console.warn(`Bad level mismatch Party ID: ${trainerID}, Slot 5, [Doc: ${Pokemon5Level}, Game: ${p5Level}]`)
-        // }
-        // if(p6Level != Pokemon6Level) {
-        //     console.warn(`Bad level mismatch Party ID: ${trainerID}, Slot 6, [Doc: ${Pokemon6Level}, Game: ${p6Level}]`)
-        // }
-        const p1 = generateDocPokemonObject(Pokemon1Name, p1Level, Pokemon1Nature, Pokemon1Ability, Item1Name, Pokemon1Move1, Pokemon1Move2, Pokemon1Move3, Pokemon1Move4, Pokemon1IV, Pokemon1EV, trainerID, 1);
-        const p2 = generateDocPokemonObject(Pokemon2Name, p2Level, Pokemon2Nature, Pokemon2Ability, Item2Name, Pokemon2Move1, Pokemon2Move2, Pokemon2Move3, Pokemon2Move4, Pokemon2IV, Pokemon2EV, trainerID, 2);
-        const p3 = generateDocPokemonObject(Pokemon3Name, p3Level, Pokemon3Nature, Pokemon3Ability, Item3Name, Pokemon3Move1, Pokemon3Move2, Pokemon3Move3, Pokemon3Move4, Pokemon3IV, Pokemon3EV, trainerID, 3);
-        const p4 = generateDocPokemonObject(Pokemon4Name, p4Level, Pokemon4Nature, Pokemon4Ability, Item4Name, Pokemon4Move1, Pokemon4Move2, Pokemon4Move3, Pokemon4Move4, Pokemon4IV, Pokemon4EV, trainerID, 4);
-        const p5 = generateDocPokemonObject(Pokemon5Name, p5Level, Pokemon5Nature, Pokemon5Ability, Item5Name, Pokemon5Move1, Pokemon5Move2, Pokemon5Move3, Pokemon5Move4, Pokemon5IV, Pokemon5EV, trainerID, 5);
-        const p6 = generateDocPokemonObject(Pokemon6Name, p6Level, Pokemon6Nature, Pokemon6Ability, Item6Name, Pokemon6Move1, Pokemon6Move2, Pokemon6Move3, Pokemon6Move4, Pokemon6IV, Pokemon6EV, trainerID, 6);
-
-
+        const p1 = generatePokemonObject(parseInt(trainerID), 1);
+        const p2 = generatePokemonObject(parseInt(trainerID), 2);
+        const p3 = generatePokemonObject(parseInt(trainerID), 3);
+        const p4 = generatePokemonObject(parseInt(trainerID), 4);
+        const p5 = generatePokemonObject(parseInt(trainerID), 5);
+        const p6 = generatePokemonObject(parseInt(trainerID), 6);
 
         if (p1 !== undefined) party.p1 = p1;
         if (p2 !== undefined) party.p2 = p2;
@@ -304,6 +236,23 @@ rawDocumentFile.split('\n').forEach((line, i) => {
         party
     })
 })
+
+function generatePokemonObject(trainerId, partyNo) {
+    const tr = trainerData.TrainerPoke[trainerId];
+    return {
+        level: tr[`P${partyNo}Level`],
+        ability: tr[`P${partyNo}Tokusei`],
+        nature: tr[`P${partyNo}Seikaku`],
+        moves: getMoves(
+            tr[`P${partyNo}Waza1`],
+            tr[`P${partyNo}Waza2`],
+            tr[`P${partyNo}Waza3`],
+            tr[`P${partyNo}Waza4`],
+            tr[`P${partyNo}MonsNo`],
+            tr[`P${partyNo}Level`]
+        )
+    }
+}
 
 
 const sets = {}

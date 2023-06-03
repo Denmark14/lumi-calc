@@ -170,6 +170,9 @@ function getMoves(m1, m2, m3, m4, monsno, level) {
         return generateMovesViaLearnset(monsno, level);
     }
 
+    if([m1, m2, m3, m4].includes(216)) {
+        throw Error(`Return is invalid: ${monsno} - ${level}`);
+    }
     const moves = [
         moveEnum[m1],
         moveEnum[m2],
