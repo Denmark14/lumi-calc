@@ -5,6 +5,10 @@ const path = require('path');
 const babel = require('@babel/core');
 const terser = require('terser');
 
+if(!fs.existsSync(path.join(__dirname, 'output'))) {
+  fs.mkdirSync(path.join(__dirname, 'output'));
+}
+
 require('./tasks/createLumiMons')();
 require('./tasks/parseDocumentation');
 require('./tasks/prepareTrainerSets')();

@@ -174,7 +174,6 @@ function generateMovesViaLearnset(monsNo, level) {
     const moves = learnset.WazaOboe[monsNo].ar.slice(0, cutoffIndex);
   
     const moveset = [moves.at(-7) || 0, moves.at(-5) || 0, moves.at(-3) || 0, moves.at(-1) || 0].sort((a, b) => {
-        console.log(a, b);
         if(a === 0) return -1;
         if(b === 0) return 1;
         return 0;
