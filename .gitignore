@@ -8,7 +8,8 @@ pnpm-debug.log
 npm-debug.log
 
 # Lumi additions
-output
+output/*.json
+output/*.txt
 
 !/dist/index.html
 python/__pycache__/trainerUtils.cpython-310.pyc
