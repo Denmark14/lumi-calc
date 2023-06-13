@@ -9090,7 +9090,7 @@ var SS_PATCH = {
             "0": "Defiant"
         },
         "otherFormes": [
-            "Galarian Farfetch’d"
+            "Farfetch’d Galarian Farfetch'd"
         ]
     },
     "Doduo": {
@@ -21043,9 +21043,9 @@ var SS_PATCH = {
         "bs": {
             "hp": 80,
             "at": 120,
-            "df": 85,
-            "sa": 70,
-            "sd": 85,
+            "df": 75,
+            "sa": 75,
+            "sd": 75,
             "sp": 60
         },
         "weightkg": 26,
@@ -27511,7 +27511,7 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Slowbro"
     },
-    "Galarian Farfetch’d": {
+    "Farfetch’d Galarian Farfetch'd": {
         "types": [
             "Fighting"
         ],
@@ -27528,7 +27528,7 @@ var SS_PATCH = {
             "0": "Scrappy"
         },
         "otherFormes": [
-            "Galarian Farfetch’d"
+            "Farfetch’d Galarian Farfetch'd"
         ],
         "baseSpecies": "Farfetch’d"
     },
