@@ -3981,7 +3981,7 @@
         },
         {
             "Caption": "コトブキ:トレーナースクール 1F",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_170",
             "PokePlaceName": "DP_fld_arenames_002",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -9273,7 +9273,7 @@
         },
         {
             "Caption": "クロガネ:炭坑博物館 1F",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_171",
             "PokePlaceName": "DP_fld_arenames_008",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -10841,10 +10841,10 @@
             "ReflectionCamera": 0,
             "FixedTime": 1,
             "AssetBundleName": "prefab_map/c04gym0102",
-            "RoomPanCamera": 1,
+            "RoomPanCamera": 0,
             "Locators": [
                 {
-                    "x": 16.0,
+                    "x": 15.0,
                     "y": 29.0,
                     "z": 2.0,
                     "w": 0.0
@@ -11541,7 +11541,7 @@
         },
         {
             "Caption": "ハクタイ:自転車屋",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_173",
             "PokePlaceName": "DP_fld_arenames_010",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -11730,7 +11730,7 @@
         },
         {
             "Caption": "ハクタイ:ギンガ団支部ビル 1F",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_172",
             "PokePlaceName": "DP_fld_arenames_010",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -11919,7 +11919,7 @@
         },
         {
             "Caption": "ハクタイ:ギンガ団支部ビル 2F",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_172",
             "PokePlaceName": "DP_fld_arenames_010",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -12108,7 +12108,7 @@
         },
         {
             "Caption": "ハクタイ:ギンガ団支部ビル 3F",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_172",
             "PokePlaceName": "DP_fld_arenames_010",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -12297,7 +12297,7 @@
         },
         {
             "Caption": "ハクタイ:ギンガ団支部ビル 4F",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_172",
             "PokePlaceName": "DP_fld_arenames_010",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -93378,7 +93378,7 @@
         },
         {
             "Caption": "ハクタイ:ギンガ団支部ビル　ロトムの部屋（プラチナ要素）",
-            "MSLabel": "",
+            "MSLabel": "DP_fld_areaname_display_172",
             "PokePlaceName": "DP_fld_arenames_010",
             "FlyingPlaceName": "",
             "MapType": 3,
@@ -125345,12 +125345,12 @@
         },
         {
             "ariaID": 57,
-            "pitch": 45.0,
+            "pitch": 30.0,
             "fov": 20.0,
-            "targetRange": 30.0,
-            "panDistance": 25.0,
+            "targetRange": 22.0,
+            "panDistance": 28.0,
             "panPitch": 30.0,
-            "panFov": 20.0,
+            "panFov": 28.0,
             "panpos_useflag": 1,
             "panMinposY": 0.0,
             "panMaxposY": 4.5,
@@ -125358,7 +125358,7 @@
             "panMaxposZ": 37.650001525878906,
             "defocusStart": 0.0,
             "defocusEnd": 10.5,
-            "distance": 30.0
+            "distance": 28.0
         },
         {
             "ariaID": 58,
