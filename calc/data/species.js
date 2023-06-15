@@ -9090,7 +9090,7 @@ var SS_PATCH = {
             "0": "Defiant"
         },
         "otherFormes": [
-            "Farfetch’d Galarian Farfetch'd"
+            "Galarian Farfetch’d"
         ]
     },
     "Doduo": {
@@ -21043,9 +21043,9 @@ var SS_PATCH = {
         "bs": {
             "hp": 80,
             "at": 120,
-            "df": 75,
-            "sa": 75,
-            "sd": 75,
+            "df": 85,
+            "sa": 70,
+            "sd": 85,
             "sp": 60
         },
         "weightkg": 26,
@@ -27511,7 +27511,7 @@ var SS_PATCH = {
         ],
         "baseSpecies": "Slowbro"
     },
-    "Farfetch’d Galarian Farfetch'd": {
+    "Galarian Farfetch’d": {
         "types": [
             "Fighting"
         ],
@@ -27528,7 +27528,7 @@ var SS_PATCH = {
             "0": "Scrappy"
         },
         "otherFormes": [
-            "Farfetch’d Galarian Farfetch'd"
+            "Galarian Farfetch’d"
         ],
         "baseSpecies": "Farfetch’d"
     },
@@ -28374,12 +28374,12 @@ var SS_PATCH = {
             "Psychic"
         ],
         "bs": {
-            "hp": 48,
-            "at": 72,
-            "df": 48,
-            "sa": 72,
-            "sd": 48,
-            "sp": 48
+            "hp": 54,
+            "at": 108,
+            "df": 54,
+            "sa": 108,
+            "sd": 54,
+            "sp": 54
         },
         "weightkg": 5,
         "abilities": {
