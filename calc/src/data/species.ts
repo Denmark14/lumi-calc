@@ -28352,12 +28352,12 @@ const SS_PATCH: {[name: string]: DeepPartial<SpeciesData>} = {
       "Psychic"
     ],
     "bs": {
-      "hp": 48,
-      "at": 72,
-      "df": 48,
-      "sa": 72,
-      "sd": 48,
-      "sp": 48
+      "hp": 54,
+      "at": 108,
+      "df": 54,
+      "sa": 108,
+      "sd": 54,
+      "sp": 54
     },
     "weightkg": 5,
     "abilities": {
