@@ -25310,55 +25310,58 @@ var SS_PATCH = {
     },
     "Tinkatink": {
         "types": [
-            "Normal"
+            "Fairy",
+            "Steel"
         ],
         "bs": {
-            "hp": 255,
-            "at": 10,
-            "df": 10,
-            "sa": 75,
-            "sd": 135,
-            "sp": 55
+            "hp": 50,
+            "at": 60,
+            "df": 45,
+            "sa": 35,
+            "sd": 64,
+            "sp": 58
         },
-        "weightkg": 46.8,
+        "weightkg": 8.9,
         "abilities": {
-            "0": "Healer"
+            "0": "Pickpocket"
         },
         "gender": "F"
     },
     "Tinkatuff": {
         "types": [
-            "Normal"
+            "Fairy",
+            "Steel"
         ],
         "bs": {
-            "hp": 255,
-            "at": 10,
-            "df": 10,
-            "sa": 75,
-            "sd": 135,
-            "sp": 55
+            "hp": 65,
+            "at": 70,
+            "df": 55,
+            "sa": 45,
+            "sd": 82,
+            "sp": 78
         },
-        "weightkg": 46.8,
+        "weightkg": 59.1,
         "abilities": {
-            "0": "Healer"
+            "0": "Pickpocket"
         },
         "gender": "F"
     },
     "Tinkaton": {
         "types": [
-            "Normal"
+            "Fairy",
+            "Steel"
         ],
         "bs": {
-            "hp": 255,
-            "at": 10,
-            "df": 10,
-            "sa": 75,
-            "sd": 135,
-            "sp": 55
+            "hp": 85,
+            "at": 90,
+            "df": 77,
+            "sa": 70,
+            "sd": 105,
+            "sp": 94
         },
-        "weightkg": 46.8,
+        "weightkg": 128,
         "abilities": {
-            "0": "Healer"
+            "0": "Pickpocket"
         },
         "gender": "F"
     },
@@ -27670,16 +27673,16 @@ var SS_PATCH = {
             "Ice"
         ],
         "bs": {
-            "hp": 35,
-            "at": 45,
-            "df": 160,
-            "sa": 30,
-            "sd": 80,
-            "sp": 75
+            "hp": 55,
+            "at": 92,
+            "df": 45,
+            "sa": 108,
+            "sd": 75,
+            "sp": 100
         },
         "weightkg": 210,
         "abilities": {
-            "0": "Ice Body"
+            "0": "Weak Armor"
         },
         "otherFormes": [
             "Crystal Onix"
