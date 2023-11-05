@@ -25359,7 +25359,7 @@ var SS_PATCH = {
             "sd": 105,
             "sp": 94
         },
-        "weightkg": 128,
+        "weightkg": 112.8,
         "abilities": {
             "0": "Pickpocket"
         },
